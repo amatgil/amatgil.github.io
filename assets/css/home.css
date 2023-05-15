@@ -1,0 +1,9 @@
+body {
+  background-color: #f573c1;
+  font-color: #000000;
+}
+
+.main-content {
+  font-color: blue;
+  float: left;
+}
