@@ -1,11 +1,15 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    {{ content }}
-  </body>
-</html>
+<head>
+  <link rel="stylesheet" href="/assets/css/home.css">
+  <link rel="stylesheet" href="/assets/css/sidebar.css">
+</head>
+<body>
+
+{% include home-sidebar.html %}
+<div style="margin-left:20%">
+  {{ content }}
+</div> 
+
+</body>
+</html> 

@@ -8,4 +8,6 @@ layout: home
 
 Benvolgut! 
 
-Aquí hi anirà més text, però de moment, no tinc nidea de què posar-hi!
+textextextetxetxetxext AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+we stay silly with it :3
