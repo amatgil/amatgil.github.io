@@ -4,12 +4,11 @@
 
 layout: home
 ---
-# Títol
+# Benvolgut/a!
 
-Benvolgut! 
+Benvolgut/a! 
 
-textextextetxetxetxext AAAAAAAA AAAAAAAAAAAAAAAAAA
+A aquesta web trobaràs un conjunt d'utils creats sense un motiu definit exacte.
+S'hi accedeix amb els botons de la _sidebar_ de l'esquerra. T'invito a explorar-los, la idea és que tots siguin interessants a la seva manera.
 
-AAAAAAAA lAAAAAAAAAAAAA AAAAAAAAAAAA AAAAAAAAAAAAA
-
-we stay silly with it :3
+[//]: Aquí podria posar alguna imatge? No sé quina estaria bé

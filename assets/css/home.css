@@ -1,9 +1,31 @@
 body {
-  background-color: #f573c1;
-  font-color: #000000;
+  font-size: 20px;
+  background-color: rgb(54, 58, 79);
+  color: white;
 }
 
 .main-content {
-  font-color: blue;
-  float: left;
+  color: rgb(183, 189, 248);
+  /*float: left; */
+  max-width: 80%; 
+  line-height: 1.75em;
+  overflow-wrap: break-word;
 }
+.main-amatgil-title {
+  font-size: 50px;
+  max-width: 4.5em;
+  border-style: solid;
+  border-width: 0.125em;
+  border-radius: 0.625em;
+  border-color: rgb(147, 154, 183);
+  padding-left: 0.5em;
+  padding-bottom: 0.75px;
+
+  /*position: sticky; Always visible
+  top: 0;*/
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+} 

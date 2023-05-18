@@ -3,13 +3,21 @@
 <head>
   <link rel="stylesheet" href="/assets/css/home.css">
   <link rel="stylesheet" href="/assets/css/sidebar.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
 </head>
 <body>
+  <div class="home-flex-container">
+    <h1 class="main-amatgil-title">Amat Gil</h1> 
 
-{% include home-sidebar.html %}
-<div class="main-content">
-  {{ content }}
-</div> 
+    {% include sidebar.html %}
+
+    <div class="main-content">
+      {{ content }}
+    </div> 
+
+  </div>
+
+  {% include footer.html %}
 
 </body>
 </html> 
