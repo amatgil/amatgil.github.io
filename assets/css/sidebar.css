@@ -11,19 +11,22 @@ a {
 }
 
 .home-sidebar-area {
-  height: 100%;
   line-height: 2em;
-  width: 20%;
-  float: left;
-  width: 20%;
-  margin-right:10%;
+  width: 10em;
 
   border-style: solid;
   border-width: 0.2em;
   border-radius: 0.5em;
   border-color: rgb(147, 154, 183);
-  padding-left: 0.5em;
+  padding-left: 0.8em;
   padding-bottom: 0.5em;
+
+  max-height: 16em;
+  grid-row-start: 1;
+  grid-row-start: 2;
+
+  grid-column-start: 0;
+  grid-column-start: 1;
 
 }
 .sidebar-button-list {

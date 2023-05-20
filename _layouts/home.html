@@ -4,20 +4,28 @@
   <link rel="stylesheet" href="/assets/css/home.css">
   <link rel="stylesheet" href="/assets/css/sidebar.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="/assets/css/dropdowns.css">
 </head>
 <body>
-  <div class="home-flex-container">
-    <h1 class="main-amatgil-title">Amat Gil</h1> 
+  <div class="home-grid-container">
+    <h1 class="main-amatgil-title home-grid-item">casenc</h1>
 
     {% include sidebar.html %}
 
-    <div class="main-content">
+    <div class="main-content home-grid-item">
       {{ content }}
     </div> 
+    <div>
+      <img class= "home-right-image" src="assets/imgs/man.jpg" alt="horse at the sea">
+      <img class= "home-right-image" src="assets/imgs/man.jpg" alt="horse at the sea">
+      <img class= "home-right-image" src="assets/imgs/man.jpg" alt="horse at the sea">
+      <!-- <p class="home-right-element"> Aquí hi anirà alguna imatge o res per l'estil. Encara no m'ho he pensat molt</p> -->
+    </div>
 
   </div>
-
   {% include footer.html %}
 
+
+  <img class="ifunny-watermark" src="/assets/imgs/ifunny.jpg" alt="ifunny.co">
 </body>
 </html> 

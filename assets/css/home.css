@@ -1,31 +1,67 @@
+@font-face {
+	font-family: "iosevka-bold";
+	src: local("../assets/fonts/iosevka-bold.woff2");
+}
+
 body {
   font-size: 20px;
   background-color: rgb(54, 58, 79);
   color: white;
+  font-family: isoevka, sans-serif;
 }
 
 .main-content {
   color: rgb(183, 189, 248);
-  /*float: left; */
-  max-width: 80%; 
+  max-width: 30em; 
   line-height: 1.75em;
   overflow-wrap: break-word;
 }
 .main-amatgil-title {
   font-size: 50px;
+
   max-width: 4.5em;
+  max-height: 1.3em;
+
   border-style: solid;
   border-width: 0.125em;
   border-radius: 0.625em;
   border-color: rgb(147, 154, 183);
-  padding-left: 0.5em;
-  padding-bottom: 0.75px;
 
-  /*position: sticky; Always visible
-  top: 0;*/
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+
+  grid-column: span 3; /* From 1 to 4 */
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-} 
+.home-right-element {
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+  column-width: 3em;
+}
+
+.home-grid-container {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: auto auto 15em; /* 3 cols */
+  grid-template-rows: auto 1fr auto; /* 3 rows*/
+}
+
+.ifunny-watermark {
+  position: absolute;
+
+  bottom: 0px;
+  right: 0;
+  height: 10px;
+
+  opacity: 0.3;
+}
+
+.home-right-image {
+  width: 15em;
+}
