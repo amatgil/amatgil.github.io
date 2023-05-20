@@ -10,12 +10,6 @@ body {
   font-family: isoevka, sans-serif;
 }
 
-.main-content {
-  color: rgb(183, 189, 248);
-  max-width: 30em; 
-  line-height: 1.75em;
-  overflow-wrap: break-word;
-}
 .main-amatgil-title {
   font-size: 50px;
 
@@ -32,15 +26,28 @@ body {
   padding-top: 0.1em;
   padding-bottom: 0.1em;
 
-  grid-column: span 3; /* From 1 to 4 */
+  grid-column: 1/-1; /* All first row */
+}
+
+.main-content {
+  color: rgb(183, 189, 248);
+  max-width: 30em; 
+  line-height: 1.75em;
+  overflow-wrap: break-word;
+
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .home-right-element {
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
 
   column-width: 3em;
 }

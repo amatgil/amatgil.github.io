@@ -1,16 +1,23 @@
 .report-404 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+  padding-left: 9em;
+  min-width: 20em;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
-.report-404.container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
+.video-404 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
-.report-404.h1 {
-  font-size: 4em;
+.entire-404 {
+  display: flex;
 }
+

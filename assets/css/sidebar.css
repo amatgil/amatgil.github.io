@@ -13,6 +13,7 @@ a {
 .home-sidebar-area {
   line-height: 2em;
   width: 10em;
+  height: 18em;
 
   border-style: solid;
   border-width: 0.2em;
@@ -21,12 +22,11 @@ a {
   padding-left: 0.8em;
   padding-bottom: 0.5em;
 
-  max-height: 16em;
   grid-row-start: 1;
   grid-row-start: 2;
 
-  grid-column-start: 0;
   grid-column-start: 1;
+  grid-column-start: 2;
 
 }
 .sidebar-button-list {

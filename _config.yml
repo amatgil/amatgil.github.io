@@ -27,11 +27,10 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://amatgil.cat" # the base hostname & protocol for your site, e.g. http://example.com
 
-assets:
-  sources:
-    - ./_assets
-      #- ./_assets/imgs/
-      # ....
+include:
+  - ./_assets
+    #- ./_assets/imgs/
+    # ....
 
 # Build settings
 #theme: 
