@@ -1,0 +1,16 @@
+.report-404 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.report-404.container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.report-404.h1 {
+  font-size: 4em;
+}
