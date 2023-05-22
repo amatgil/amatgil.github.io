@@ -12,12 +12,13 @@
 	</head>
   <body>
     <div class="home-grid-container">
-      <h1 class="main-amatgil-title home-grid-item"><a href="{{site.url}}">{{ site.title }}</a></h1>
+      <h1 class="main-amatgil-title home-grid-item">
+        <a href="{{site.url}}">{{ site.title }}</a>
+      </h1>
 
       {{ content }}
 
     </div>
     {% include always-present/footer.html %}
-
   </body>
 </html>

@@ -15,7 +15,12 @@ Encara no hi ha res interessant, per aquesta zona
     - [ ] Lògica
     - [ ] ...
 - [ ] Favicon
-- [ ] ifunny.co in home
+- [X] ifunny.co in home
+- [ ] Loss in home (top right). Links to the racismn't building
+- [ ] Text when hovering over links/images
+- [ ] Submit a skill issue when 404/About me
+- [ ] Plaintext in sidebar formatted like a link that says "Zelda". But it doesn't work. It's not a link. Zelda != Link
+
 
 ## Idees per útil
 - [ ] Coses per matrius?

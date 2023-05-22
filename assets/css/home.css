@@ -69,11 +69,28 @@ body {
   position: absolute;
 
   bottom: 0px;
-  right: 0;
+  right: 0px;
   height: 10px;
 
   opacity: 0.3;
 }
+
+.loss {
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+
+  color: rgb(110, 115, 141);
+  font-size: 0.5em;
+
+
+  /* Don't show link */
+  text-decoration: inherit;
+
+  /* Don't compress whitespace */ 
+  white-space: break-spaces
+}
+
 
 .home-right-image {
   width: 15em;
