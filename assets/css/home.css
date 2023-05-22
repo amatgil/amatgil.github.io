@@ -7,7 +7,7 @@ body {
   font-size: 20px;
   background-color: rgb(54, 58, 79);
   color: white;
-  font-family: isoevka, sans-serif;
+  font-family: iosevka, sans-serif;
 }
 
 .main-amatgil-title {
@@ -27,6 +27,12 @@ body {
   padding-bottom: 0.1em;
 
   grid-column: 1/-1; /* All first row */
+
+}
+/* It's a link, but hidden: */
+.main-amatgil-title a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .main-content {

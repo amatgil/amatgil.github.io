@@ -16,3 +16,7 @@ Encara no hi ha res interessant, per aquesta zona
     - [ ] ...
 - [ ] Favicon
 - [ ] ifunny.co in home
+
+## Idees per útil
+- [ ] Coses per matrius?
+

@@ -11,6 +11,7 @@ a {
 }
 
 .home-sidebar-area {
+  font-family: inherit;
   line-height: 2em;
   width: 10em;
   height: 18em;

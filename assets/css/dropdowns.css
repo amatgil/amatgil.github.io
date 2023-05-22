@@ -1,6 +1,8 @@
+
 /* Style The Dropdown Button */
 .dropbtn {
   font-size: 19px;
+  font-family: inherit;
   padding: 10px;
   cursor: pointer;
   background-color: rgb(54, 58, 79);
