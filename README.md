@@ -19,4 +19,9 @@ Encara no hi ha res interessant, per aquesta zona
 
 ## Idees per útil
 - [ ] Coses per matrius?
+- [ ] Breakout?
+- [ ] Gravity?
+- [ ] Conway?
+- [ ] Calculadora nota uni?
+- [ ] Conway GoL?
 
