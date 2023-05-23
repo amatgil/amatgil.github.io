@@ -20,6 +20,7 @@ Encara no hi ha res interessant, per aquesta zona
 - [ ] Text when hovering over links/images
 - [ ] Submit a skill issue when 404/About me
 - [ ] Plaintext in sidebar formatted like a link that says "Zelda". But it doesn't work. It's not a link. Zelda != Link
+- [ ] Subpàgines per les categories: make a localhost:40/utils on t'explica que son (s'hi accedeix amb el mateix botó de la sidebar, que ara mateix no fa res quan el clickes)
 
 
 ## Idees per útil
