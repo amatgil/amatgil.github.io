@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Amat Gil
+title: casenc__
 email: amatgilvinyes@gmail.com
 gitlab: https://gitlab.com/amatgilvinyes
 github: https://github.com/amatgil

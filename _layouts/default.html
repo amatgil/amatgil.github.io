@@ -6,15 +6,19 @@
     <title>{{ site.title }} - {{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/home.css">
     <link rel="stylesheet" href="/assets/css/sidebar.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
     <link rel="stylesheet" href="/assets/css/dropdowns.css">
     <link rel="stylesheet" href="/assets/css/404.css">
     <link rel="stylesheet" href="/assets/css/wasm.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="icon"       href="./assets/brand/favicon.ico" type="image/x-icon">
 	</head>
   <body>
     <div class="home-grid-container">
       <h1 class="main-amatgil-title home-grid-item">
-        <a href="{{site.url}}">{{ site.title }}</a>
+        <a href="{{site.url}}">
+          {{site.title}}
+          <img class="main-amatgil-logo" src="assets/brand/logo.png" width=70 alt="My Logo">
+        </a>
       </h1>
 
       {{ content }}

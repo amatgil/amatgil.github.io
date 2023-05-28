@@ -13,6 +13,7 @@ body {
 .main-amatgil-title {
   font-size: 50px;
 
+  min-width: 6em;
   max-width: 4.5em;
   max-height: 1.3em;
 
@@ -33,6 +34,11 @@ body {
 .main-amatgil-title a {
   color: inherit;
   text-decoration: inherit;
+}
+
+.main-amatgil-logo {
+  vertical-align: middle;
+  margin-bottom: 5px;   
 }
 
 .main-content {
@@ -63,7 +69,9 @@ body {
   column-gap: 10px;
   grid-template-columns: auto auto 15em; /* 3 cols */
   grid-template-rows: auto 1fr auto; /* 3 rows*/
+  min-height: 100%
 }
+
 
 .ifunny-watermark {
   position: absolute;
