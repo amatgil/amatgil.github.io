@@ -23,14 +23,16 @@
   background-color: rgb(36, 39, 58);
   box-shadow: 0.5em 0.5em 0.5em 0.5em rgba(0,0,0,0.2);
   z-index: 1;
+  width: 10em;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a, .dropdown-content p {
-  padding: 1em 1em;
+  padding: 1em 1em 1em 1em; /* top right bottom left */
   text-decoration: none;
   display: block;
   color: hotpink;
+  line-height: 1.5em;
 }
 
 /* Change color of dropdown links on hover */
