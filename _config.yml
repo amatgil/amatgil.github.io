@@ -28,10 +28,20 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://amatgil.cat" # the base hostname & protocol for your site, e.g. http://example.com
 
 include:
-  - ./_assets
-    #- ./_assets/imgs/
+  - ./assets
     # ....
 
+# Github specifics
+lsi: false
+safe: true
+source: .
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 # Build settings
 #theme: 
 #plugins:
