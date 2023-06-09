@@ -22,6 +22,7 @@ Encara no hi ha res interessant, per aquesta zona
 - [X] Plaintext in sidebar formatted like a link that says "Zelda". But it doesn't work. It's not a link. Zelda != Link
 - [X] Subpàgines per les categories: make a {url}:/utils on t'explica que son (s'hi accedeix amb el mateix botó de la sidebar, que ara mateix no fa res quan el clickes)
 - [ ] Que els links de skill issue al repo portin a la part del repo on es submiteja un issue
+- [ ] Custom domain (https://medium.com/@xiang_zhou/how-to-add-custom-domain-to-your-jekyll-blog-provided-that-you-built-your-site-using-github-6e1c8bf20afe)
 
 
 ## Idees per útil

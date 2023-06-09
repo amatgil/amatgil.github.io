@@ -18,13 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: casenc__
+title: Amat Gil
 email: amatgilvinyes@gmail.com
 gitlab: https://gitlab.com/amatgilvinyes
 github: https://github.com/amatgil
 description: >- # this means to ignore newlines until "baseurl:"
   Benvolgut! Aquesta web encara està en construcció; encara no hi ha res interessant.
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://amatgil.cat" # the base hostname & protocol for your site, e.g. http://example.com
 
 include:
