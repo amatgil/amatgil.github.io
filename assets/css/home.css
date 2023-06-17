@@ -8,6 +8,8 @@ body {
   background-color: rgb(54, 58, 79);
   color: white;
   font-family: iosevka, sans-serif;
+  height: 100%;
+  overflow: visible; /*No scroll when cap tot*/
 }
 
 .main-amatgil-title {
@@ -67,9 +69,13 @@ body {
 .home-grid-container {
   display: grid;
   column-gap: 10px;
-  grid-template-columns: auto auto 15em; /* 3 cols */
-  grid-template-rows: auto 1fr auto; /* 3 rows*/
-  min-height: 100%
+  grid-template-columns: auto auto 15em; 
+  grid-template-rows: 8em auto auto; 
+  min-height: 100vh;
+  margin-top:auto;
+}
+
+.home-grid-item {
 }
 
 
@@ -96,10 +102,13 @@ body {
   text-decoration: inherit;
 
   /* Don't compress whitespace */ 
-  white-space: break-spaces
+  white-space: break-spaces;
 }
 
 
 .home-right-image {
-  width: 15em;
+  width: 14em;
+}
+.home-right-multiple-images {
+  grid-row: 2 / 4;
 }

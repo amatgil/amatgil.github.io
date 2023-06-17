@@ -1,8 +1,10 @@
 .main-footer {
-  /*grid-row-start: -1;*/
+  grid-row-start: 3;
+  /*
   position:absolute;
   bottom:0;
   left:0;
+  */
 }
 .git-icon {
   vertical-align:middle;
