@@ -32,7 +32,7 @@ include:
 
 # Github specifics
 lsi: false
-safe: true
+#safe: true # Desactiva tots els plugins
 source: .
 incremental: false
 highlighter: rouge
@@ -43,8 +43,9 @@ kramdown:
   syntax_highlighter: rouge
 # Build settings
 #theme: 
-#plugins:
+plugins:
   #- jekyll-feed
+  - jekyll-sitemap # Hauria d'estar al final de la llista perquè es carreguen en ordre
 
 # Exclude from processing.
 # The following items will not be processed, by default.
