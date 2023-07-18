@@ -1,0 +1,59 @@
+---
+layout: default
+title: Calculadora Nota Selectivitat
+permalink: /utils/calculadora_sele
+---
+
+{% include always-present/sidebar.html %}
+<link rel="stylesheet" href="/assets/css/subpagines/utils/calculadora_sele/calculadora_sele.css">
+
+<div class="main-content">
+  <h1>Introdueix-hi les dades:</h1>
+  <div class="calculadora-sele">
+    <div class="calculadora-item secc-batx-i-esp">
+      <h2>Batxillerat</h2>
+      <p>Nota batxillerat: <input type="number" min="0" max="10" class="nota-input"></input></p>
+      <h2>Fase específica</h2>
+
+      <p>
+        Específica 1:
+        <!-- <input type="number" min="0" max="0.2" class="ponderacio-input"></input> -->
+        <div class="ponderacio-select">
+          <select>
+            <option value="0">0.1</option>
+            <option value="1">0.2</option>
+          </select>
+        </div>
+        <input type="number" min="0" max="10" class="nota-input"></input>
+      </p>
+
+      <p>
+        Específica 2: 
+        <div class="ponderacio-select">
+          <select>
+            <option value="0">0.1</option>
+            <option value="1">0.2</option>
+          </select>
+        </div>
+        <input type="number" min="0" max="10" class="nota-input"></input>
+      </p>
+
+    </div>
+
+    <div class="calculadora-item secc-general">
+      <h2>Fase General</h2>
+      <p>Català:         <input type="number" min="0" max="10" class="nota-input"></input></p>
+      <p>Castellà:       <input type="number" min="0" max="10" class="nota-input"></input></p>
+      <p>Anglès:         <input type="number" min="0" max="10" class="nota-input"></input></p>
+      <p>Història:       <input type="number" min="0" max="10" class="nota-input"></input></p>
+      <p>Comuna d'opció: <input type="number" min="0" max="10" class="nota-input"></input></p>
+    </div>
+
+    <div class="calculadora-item secc-resultats">
+      <h2>Resultat</h2>
+      <button class="sele">Calcular</button>
+      <p>El resultat és: </p>
+    </div>
+
+  </div>
+</div>

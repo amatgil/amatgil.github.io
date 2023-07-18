@@ -70,7 +70,7 @@ body {
   display: grid;
   column-gap: 10px;
   grid-template-columns: auto auto 15em; 
-  grid-template-rows: 8em auto auto; 
+  grid-template-rows: 8em 1fr auto; 
   min-height: 100vh;
   margin-top:auto;
 }

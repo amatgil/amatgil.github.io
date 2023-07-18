@@ -1,0 +1,39 @@
+button.sele {
+  font-size: 19px;
+  font-family: inherit;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(54, 58, 79);
+  color: hotpink;
+}
+
+.calculadora-sele {
+  display: grid;
+  line-height: 0.5em;
+  border-width: 1.2em; 
+  font-size: 17px;
+}
+
+.calculadora-item {
+  display: inline-grid;
+  grid-template-row: 1.2fr 2fr 1fr;
+}
+.secc-batx-i-esp {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.secc-general {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.secc-resultats {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.nota-input {
+  width: 10em;
+}
+.ponderacio-select {
+  width: 10em;
+}
