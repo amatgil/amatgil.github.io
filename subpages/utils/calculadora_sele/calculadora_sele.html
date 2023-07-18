@@ -14,20 +14,23 @@ permalink: /utils/calculadora_sele
     <div class="calculadora-item secc-batx-i-esp">
       <h2>Batxillerat</h2>
       <p>Nota batxillerat: 
-      <label>
-        <input type="number" min="0" max="10" class="nota-input" id="batx"></input></p>
-      </label>
+        <label>
+          <input type="number" min="0" max="10" class="nota-input" id="batx"></input>
+        </label>
+      </p>
       <h2>Fase específica</h2>
 
       <p>
         Específica 1:
         <!-- <input type="number" min="0" max="0.2" class="ponderacio-input"></input> -->
         <div class="ponderacio-select">
-          <select class="ponderacio-opcions-select" id="ponderacio-1">
-            <option class="ponderacio-opcio" value="0">0.0</option>
-            <option class="ponderacio-opcio" value="1">0.1</option>
-            <option class="ponderacio-opcio" value="2">0.2</option>
-          </select>
+          <label>
+            <select class="ponderacio-opcions-select" id="ponderacio-1">
+              <option class="ponderacio-opcio" value="0">0.0</option>
+              <option class="ponderacio-opcio" value="1">0.1</option>
+              <option class="ponderacio-opcio" value="2">0.2</option>
+            </select>
+          </label>
         </div>
         <input type="number" min="0" max="10" class="nota-input" id="especifica-1"></input>
       </p>
@@ -35,11 +38,13 @@ permalink: /utils/calculadora_sele
       <p>
         Específica 2: 
         <div class="ponderacio-select">
-          <select class="ponderacio-opcions-select" id="ponderacio-2">
-            <option class="ponderacio-opcio" value="0">0.0</option>
-            <option class="ponderacio-opcio" value="1">0.1</option>
-            <option class="ponderacio-opcio" value="2">0.2</option>
-          </select>
+          <label>
+            <select class="ponderacio-opcions-select" id="ponderacio-2">
+              <option class="ponderacio-opcio" value="0">0.0</option>
+              <option class="ponderacio-opcio" value="1">0.1</option>
+              <option class="ponderacio-opcio" value="2">0.2</option>
+            </select>
+          </label>
         </div>
         <input type="number" min="0" max="10" class="nota-input" id="especifica-2"></input>
       </p>
@@ -48,17 +53,19 @@ permalink: /utils/calculadora_sele
 
     <div class="calculadora-item secc-general">
       <h2>Fase General</h2>
-      <p>Català:         <input type="number" min="0" max="10" class="nota-input" id="catala"></input></p>
-      <p>Castellà:       <input type="number" min="0" max="10" class="nota-input" id="castella"></input></p>
-      <p>Anglès:         <input type="number" min="0" max="10" class="nota-input" id="angles"></input></p>
-      <p>Història:       <input type="number" min="0" max="10" class="nota-input" id="historia"></input></p>
-      <p>Comuna d'opció: <input type="number" min="0" max="10" class="nota-input" id="comuna"></input></p>
+      <p>Català:         <label><input type="number" min="0" max="10" class="nota-input" id="catala"></input></label></p>
+      <p>Castellà:       <label><input type="number" min="0" max="10" class="nota-input" id="castella"></input></label></p>
+      <p>Anglès:         <label><input type="number" min="0" max="10" class="nota-input" id="angles"></input></label></p>
+      <p>Història:       <label><input type="number" min="0" max="10" class="nota-input" id="historia"></input></label></p>
+      <p>Comuna d'opció: <label><input type="number" min="0" max="10" class="nota-input" id="comuna"></input></label></p>
     </div>
 
     <div class="calculadora-item secc-resultats">
       <h2>Resultat</h2>
       <button onclick="calcular_nota()" class="sele">Calcular</button>
-      <p>El resultat és: </p>
+      <p class="anunci-resultat">El resultat és: 
+        <span id="resultat" class="resultat-del-calcul"></span>
+      </p>
     </div>
 
   </div>

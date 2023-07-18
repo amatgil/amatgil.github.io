@@ -43,3 +43,11 @@ button.sele {
 .ponderacio-opcio, .ponderacio-opcions-select {
   font-size: 15px;
 }
+
+.anunci-resultat {
+  font-size: 20px;
+}
+.resultat-del-calcul {
+  font-size: 25px;
+  font-weight: bold;
+}

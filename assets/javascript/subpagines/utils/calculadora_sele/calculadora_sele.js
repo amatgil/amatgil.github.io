@@ -23,10 +23,14 @@ function calcular_nota() {
 	const especifiques = [esp1 * pond1, esp2 * pond2];
 	let final_especifica = especifiques[0] + especifiques[1];
 
+	let resultat = batx * 0.6 + final_general * 0.4 + final_especifica;
+
+	document.getElementById('resultat').innerHTML = resultat;
+
 	console.log(batx);
 	console.log(generals);
 	console.log(final_general);
 	console.log(especifiques);
 	console.log(final_especifica);
-	console.log(batx * 0.6 + final_general * 0.4 + final_especifica);
+	console.log(resultat);
 }
