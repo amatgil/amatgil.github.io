@@ -1,0 +1,15 @@
+{
+  "name": "logica_per_wasm_backend",
+  "description": "Backend per a l'analitzador lògic sota amatgil.cat",
+  "version": "0.1.0",
+  "files": [
+    "logica_per_wasm_backend_bg.wasm",
+    "logica_per_wasm_backend.js",
+    "logica_per_wasm_backend.d.ts"
+  ],
+  "module": "logica_per_wasm_backend.js",
+  "types": "logica_per_wasm_backend.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
