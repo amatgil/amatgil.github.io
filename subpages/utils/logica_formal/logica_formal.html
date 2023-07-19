@@ -14,20 +14,26 @@ permalink: /utils/logica_formal
 
 <div class="main-content">
   <h1>Analitzador de frases proposicionals</h1>
-  <h2>Entrada:</h2>
-  <label>
-    <p>
-      <input type="text" id="entrada-logica-formal"></input>
-    </p>
-  </label>
+  <div class="logica-grid">
+    <div class="logica-grid-item logica-entrada">
+      <h2>Entrada:</h2>
+      <label>
+        <p>
+          <input type="text" id="entrada-logica-formal"></input>
+        </p>
+      </label>
+      <label>
+        <button onclick="generar_taula()" class="generador_taula"><b>Generar Taula</b></button>
+      </label>
+    </div>
 
-  <label>
-    <button onclick="generar_taula()" class="generador_taula"><b>Generar Taula</b></button>
-  </label>
-  <h2>Sortida:</h2>
-    <span id="sortida-logica-formal">
-         Brown fox jumping
-    </span>
+    <div class="logica-grid-item logica-sortida">
+      <h2>Sortida:</h2>
+        <span id="sortida-logica-formal">
+             Brown fox jumping
+        </span>
+      </div>
+  </div>
 </div>
 
 

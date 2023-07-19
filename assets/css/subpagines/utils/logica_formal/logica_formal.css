@@ -2,7 +2,7 @@ p.entrada_logica_formal {
 }
 
 #sortida-logica-formal {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 input.entrada_logica_formal {
@@ -22,4 +22,20 @@ button.generador_taula {
   border-color: rgb(54, 58, 79);
   border-radius: 0.1em;
   outline-style: solid;
+}
+
+.logica-grid {
+  display: grid;
+}
+.logica-grid-item {
+  display: inline-grid;
+}
+
+.logica-entrada {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.logica-sortida {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
