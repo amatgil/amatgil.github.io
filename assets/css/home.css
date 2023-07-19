@@ -29,8 +29,6 @@ body {
   padding-top: 0.1em;
   padding-bottom: 0.1em;
 
-  grid-column: 1/-1; /* All first row */
-
 }
 /* It's a link, but hidden: */
 .main-amatgil-title a {
@@ -49,16 +47,16 @@ body {
   line-height: 1.75em;
   overflow-wrap: break-word;
 
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
 .home-right-element {
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 
   grid-column-start: 3;
   grid-column-end: 4;
@@ -68,14 +66,11 @@ body {
 
 .home-grid-container {
   display: grid;
-  column-gap: 10px;
-  grid-template-columns: auto auto 15em; 
+  column-gap: 2em;
+  grid-template-columns: auto auto min-content; 
   grid-template-rows: 8em 1fr auto; 
   min-height: 100vh;
   margin-top:auto;
-}
-
-.home-grid-item {
 }
 
 

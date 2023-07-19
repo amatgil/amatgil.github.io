@@ -6,11 +6,12 @@ p.entrada_logica_formal {
 }
 
 .entrada-logica-formal {
-  width: 10em;
-  font-size: 70px;
-  height: 10em;
-  padding: 5em 10em;
-  margin: 4em 0;
+  width: 8em;
+  font-size: 30px;
+  height: 1em;
+  padding: 0.5em 0em;
+  margin: 1em 0;
+  text-align: center;
 }
 
 button.generador_taula {
@@ -29,7 +30,8 @@ button.generador_taula {
 .logica-grid {
   display: grid;
   grid-gap: 10em;
-  columns: 1fr 3fr;
+  min-width: 100%;
+  grid-template-columns: 40% 60%;
 }
 .logica-grid-item {
   display: inline-grid;
@@ -42,4 +44,6 @@ button.generador_taula {
 .logica-sortida {
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
