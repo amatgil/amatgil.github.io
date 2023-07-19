@@ -27,10 +27,8 @@ function calcular_nota() {
 
 	document.getElementById('resultat').innerHTML = resultat;
 
-	console.log(batx);
-	console.log(generals);
-	console.log(final_general);
-	console.log(especifiques);
-	console.log(final_especifica);
-	console.log(resultat);
+	console.log("Nota batx: " + batx);
+	console.log("Nota general: " + final_general);
+	console.log("Suma especifiques: " + final_especifica);
+	console.log("Resultat final: " + resultat);
 }

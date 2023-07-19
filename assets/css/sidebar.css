@@ -10,8 +10,12 @@ a {
   color: hotpink;
 }
 
+.about-me-button {
+  color: lightgreen;
+}
+
 .home-sidebar-area {
-  font-family: inherit;
+  font-family: iosevka;
   line-height: 2em;
   width: 10em;
   height: 20em;

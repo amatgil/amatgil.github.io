@@ -1,0 +1,25 @@
+p.entrada_logica_formal {
+}
+
+#sortida-logica-formal {
+  white-space: pre;
+}
+
+input.entrada_logica_formal {
+  width: 10em;
+  font-size: 50px;
+  height: 10em;
+}
+
+button.generador_taula {
+  font-size: 19px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(54, 58, 79);
+  color: hotpink;
+
+  border: none;
+  border-color: rgb(54, 58, 79);
+  border-radius: 0.1em;
+  outline-style: solid;
+}
