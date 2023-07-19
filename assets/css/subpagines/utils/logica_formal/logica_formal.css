@@ -26,6 +26,8 @@ button.generador_taula {
 
 .logica-grid {
   display: grid;
+  grid-gap: 10em;
+  columns: 1fr 3fr;
 }
 .logica-grid-item {
   display: inline-grid;
