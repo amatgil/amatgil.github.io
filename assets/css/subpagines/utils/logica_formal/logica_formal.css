@@ -5,10 +5,12 @@ p.entrada_logica_formal {
   white-space: pre-wrap;
 }
 
-input.entrada_logica_formal {
+.entrada-logica-formal {
   width: 10em;
-  font-size: 50px;
+  font-size: 70px;
   height: 10em;
+  padding: 5em 10em;
+  margin: 4em 0;
 }
 
 button.generador_taula {
