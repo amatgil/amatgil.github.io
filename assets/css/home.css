@@ -76,7 +76,7 @@ body {
 
 
 .ifunny-watermark {
-  position: absolute;
+  position: fixed;
 
   bottom: 0px;
   right: 0px;
@@ -86,7 +86,7 @@ body {
 }
 
 .loss {
-  position: absolute;
+  position: fixed;
   top: 0.4em;
   right: 0.4em;
 
