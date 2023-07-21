@@ -15,6 +15,7 @@ permalink: /utils/logica_formal
 <div class="main-content">
   <h1>Analitzador de frases proposicionals</h1>
   <div class="logica-grid">
+
     <div class="logica-grid-item logica-entrada">
       <h2>Entrada:</h2>
       <label>
@@ -33,10 +34,25 @@ permalink: /utils/logica_formal
         </span>
       </div>
     </div>
+
     <div class="logica-grid-item logica-explicació">
       <h2>Com funciona</h2>
       <p>
-      todo!()
+      Aquesta pàgina genera la taula de valors per una donada oració proposicionals. Només cal
+      introduir-la com entrada i prèmer el botó. Si tot surt bé, es presentarà la taula de valors 
+      corresponent.
+      </p>
+      <p>
+      Els caràcters utilitzables són:
+        <ul>
+          <li><kbd>&amp;</kbd> o <kbd>^</kbd>: <kbd>conjunció</kbd></li>
+          <li><kbd>&vert;</kbd> o <kbd>v</kbd>: <kbd>disjunció</kbd></li>
+          <li><kbd>&gt;</kbd>: <kbd>condicional</kbd> (->)</li>
+          <li><kbd>&tilde;</kbd>: <kbd>negació</kbd></li>
+          <li><kbd>[A-Za-z]</kbd>: <kbd>lletra proposicional</kbd> (e.g. <kbd>p</kbd>, <kbd>q</kbd>)</li>
+          <li><kbd>0</kbd> i <kbd>1</kbd>: Valor constant </li>
+          <li><kbd>(</kbd> i <kbd>)</kbd>: Canvia ordre d'operacions</li>
+        </ul>
       </p>
     </div>
 </div>
