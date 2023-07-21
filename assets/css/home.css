@@ -10,6 +10,7 @@ body {
   font-family: iosevka, sans-serif;
   height: 100%;
   overflow: visible; /*No scroll when cap tot*/
+  display: grid;
 }
 
 .main-amatgil-title {
@@ -105,5 +106,5 @@ body {
   width: 14em;
 }
 .home-right-multiple-images {
-  grid-row: 2 / 4;
+  grid-column: 3 / 4;
 }

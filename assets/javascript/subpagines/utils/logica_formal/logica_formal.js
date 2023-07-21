@@ -1,11 +1,3 @@
-/*
-function generar_taula() {
-	alert("AAAAAAAAAAAAAAAA");
-}
-
-*/
-
-
 import init, { crear_taula } from "/assets/wasm/logica_formal/pkg/logica_per_wasm_backend.js"; 
 
 async function generar_taula() {
@@ -24,15 +16,3 @@ async function generar_taula() {
 
 export default generar_taula;
 
-
-/*export { crear_taula };*/
-
-/*
-const generarTaula = async () => {
-  // Instantiate our wasm module
-  const generarTaula = await wasmInit("/assets/wasm/logica_formal/pkg/logica_per_wasm_backend_bg.wasm");
-
-  // Run the exported function
-  rustWasm.generar_taula(); // Should log "This console.log is from wasm!"
-};
-*/

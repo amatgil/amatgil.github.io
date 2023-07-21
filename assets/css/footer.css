@@ -1,10 +1,9 @@
 .main-footer {
   grid-row-start: 3;
-  /*
-  position:absolute;
-  bottom:0;
-  left:0;
-  */
+  grid-row-end: 4;
+
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 .git-icon {
   vertical-align:middle;

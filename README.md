@@ -30,6 +30,8 @@ Encara no hi ha res interessant, per aquesta zona
 - [ ] Breakout?
 - [ ] Gravity?
 - [ ] Conway?
-- [ ] Calculadora nota uni?
+- [X] Lògica
+    - [X] <kbd>Enter</kbd> == Generar taula
+- [X] Calculadora nota uni
 - [ ] Conway GoL?
 
