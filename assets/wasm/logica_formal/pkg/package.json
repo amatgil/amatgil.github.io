@@ -2,6 +2,10 @@
   "name": "logica_per_wasm_backend",
   "description": "Backend per a l'analitzador lògic sota amatgil.cat",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/amatgilvinyes/logica_formal_backend.git"
+  },
   "files": [
     "logica_per_wasm_backend_bg.wasm",
     "logica_per_wasm_backend.js",
