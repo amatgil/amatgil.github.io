@@ -1,4 +1,4 @@
-import init, { crear_taula } from "/assets/wasm/logica_formal/pkg/logica_per_wasm_backend.js"; 
+import init, { crear_taula } from "/assets/wasm/utils/logica_formal/pkg/logica_per_wasm_backend.js"; 
 
 async function generar_taula() {
 	console.log("Començant calculs...");

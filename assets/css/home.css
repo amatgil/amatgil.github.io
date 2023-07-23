@@ -42,6 +42,9 @@ body {
   margin-bottom: 5px;   
 }
 
+h1 {
+  line-height: 1.2em;
+}
 .main-content {
   color: rgb(183, 189, 248);
   max-width: 30em; 
@@ -67,8 +70,8 @@ body {
 
 .home-grid-container {
   display: grid;
-  column-gap: 2em;
-  grid-template-columns: auto auto min-content; 
+  column-gap: 5em;
+  grid-template-columns: min-content auto min-content; 
   grid-template-rows: auto min-content auto; 
   min-height: 100vh;
   margin-top:auto;

@@ -1,0 +1,25 @@
+---
+layout: default
+title: El GoL de Conway
+permalink: /altres/game_of_life
+---
+
+<link rel="stylesheet" href="/assets/css/subpagines/altres/game_of_life/game_of_life.css">
+<script type="module">
+  import {run_universe} from "/assets/javascript/subpagines/altres/game_of_life/game_of_life.js";
+  run_universe()
+</script>
+
+{% include always-present/sidebar.html %}
+<div class="main-content">
+  <div class="GoL-contingut">
+    <div class="GoL-explicacio">
+    <h1 class="GoL-title">Implementació del 'Game of Life' de John Conway</h1>
+    <p>Creat per experimentar amb eines</p>
+    </div>
+  </div>
+
+  <canvas id="GoL-canvas">
+  </canvas>
+</div>
+
