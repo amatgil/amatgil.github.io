@@ -29,10 +29,9 @@ Encara no hi ha res interessant, per aquesta zona
 - [ ] Coses per matrius?
 - [ ] Breakout?
 - [ ] Gravity?
-- [ ] Conway?
 - [X] Lògica
     - [X] <kbd>Enter</kbd> == Generar taula
 - [X] Calculadora nota uni
 - [X] Conway GoL
     - [X] Crec que queda tallada la part de baix (interna)/de la dreta (externa)? Re-calcula les mides
-
+- [ ] Fer READMEs millors

@@ -30,14 +30,15 @@ permalink: /altres/game_of_life
       les generacions avancen amb unes donades normes. Cal destacar que, a aquesta implementació,
       les dues parets en son una de sola (és a dir, si hi ets al punt <code>(0,0)</code> i fas una
       passa a la dreta, surts per la banda de l'esquerra), i de la mateixa manera amb la part de
-      dalt i de baix. De moment, la inicialització emplena la primera columna i deixa que la 
+      dalt i de baix. De moment, la inicialització emplena la primera columna i els punts
+      <code>(30, 0)</code>, <code>(30, 1)</code> i <code>(30, 2)</code> abans de deixar que la 
       simulació avanci, però en un futur s'hi afegirà interacció amb el ratolí per poder dibuixar 
       un propi estat inicial.
     </p>
     <h2>¿Implementació?</h2>
     <p>
       El codi que emmagatzema la graella i calcula les normes per cada generació està escrit en
-      <a href="https://www.rust-lang.org/">Rust</a> i queda compilat a 
+      <a href="https://www.rust-lang.org/">Rust</a> i queda compilat en 
       <a href="https://webassembly.org/">wasm</a>. Per mostrar l'estat a la 
       pàgina, s'utilitza (sorprenentment poc) JavaScript. Com sempre, tot el codi es pot trobar
       al <a href="https://gitlab.com/amatgilvinyes/game-of-life-backend.git">meu GitLab</a>.
