@@ -10,12 +10,18 @@ async function run_universe() {
 
 	const universe_x_cells = universe.get_width();
 	const universe_y_cells = universe.get_height();
-	const cell_size = 875/universe_x_cells;
+	const mida_objectiu_graella = 875;
+
+	const width_pantalla = window.screen.width;
+	const ratio_de_display = 1;//(width_pantalla / 1920);
+	const cell_size = (mida_objectiu_graella/universe_x_cells) * ratio_de_display;
+
 	const line_width = 4;
 	const alive_cell_color = "#ddddff";
 	const line_color = "#181926";
 	const generation_time_delay = 400;
 	ctx.lineCap = "square";
+
 
 	const space_taken_by_only_cells_x = universe_x_cells * cell_size;
 	const space_taken_by_only_cells_y = universe_y_cells * cell_size;
@@ -49,10 +55,11 @@ async function run_universe() {
 
 	// Gaming
 	while (true) {
-		universe.tick(); //TODO: remove when finished code
 		draw(universe, canvas, alive_cell_color, cell_size, wasm);
+		universe.tick(); //TODO: remove when finished code
 		await wait(generation_time_delay);
 	}
+	console.log(width_pantalla, cell_size, ratio_de_display);
 }
 
 async function draw(universe, canvas, alive_color, cell_size, wasm) {
@@ -86,7 +93,7 @@ async function draw(universe, canvas, alive_color, cell_size, wasm) {
 
 	// Dibuixa-ho tot
 	ctx.stroke();
-	console.log("Aquí teniu l'estat actual, en ASCII", universe.render());
+	console.log("Aquí teniu l'estat actual, en ASCII:", universe.render());
 }
 
 function transform_coordinates(x, y, cell_size) {
@@ -98,8 +105,8 @@ function transform_coordinates(x, y, cell_size) {
 }
 
 function idx_to_x_and_y(idx, width) {
-	var x = Math.round(idx / width);
-	var y = idx % width;
+	var x = idx % width;
+	var y = Math.round(idx / width);
 	return [x, y];
 }
 
