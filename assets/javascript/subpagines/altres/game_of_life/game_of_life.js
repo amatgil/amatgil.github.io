@@ -10,7 +10,7 @@ async function run_universe() {
 
 	const universe_x_cells = universe.get_width();
 	const universe_y_cells = universe.get_height();
-	const cell_size = 25;
+	const cell_size = 875/universe_x_cells;
 	const line_width = 4;
 	const alive_cell_color = "#ddddff";
 	const line_color = "#181926";
@@ -33,7 +33,6 @@ async function run_universe() {
 
 			ctx.moveTo(x, 0);
 			ctx.lineTo(x, canvas_height);
-			ctx.stroke();
 		}
 	}
 	for (let y = 0; y <= canvas_height; y++) {
@@ -43,9 +42,10 @@ async function run_universe() {
 
 			ctx.moveTo(0, y);
 			ctx.lineTo(canvas_width, y);
-			ctx.stroke();
 		}
 	}
+
+	ctx.stroke();
 
 	// Gaming
 	while (true) {
@@ -65,27 +65,28 @@ async function draw(universe, canvas, alive_color, cell_size, wasm) {
 
 	// Les vives
 	for (var i = 0; i < universe_width * universe_height; i++) {
-		var [x, y] = idx_to_x_and_y(i, universe_height, universe_height);
+		var [x, y] = idx_to_x_and_y(i, universe_width);
 		var coords = transform_coordinates(x, y, cell_size);
-		//console.log(coords);
+
 		if (cells[i] == Cell.Alive) {
 			ctx.fillStyle = alive_color;
 			ctx.fillRect(coords[0], coords[1], cell_size, cell_size);
 		}
 	}
-	ctx.stroke();
 
 	// Les mortes
 	for (var i = 0; i < universe_width * universe_height; i++) {
-		var [x, y] = idx_to_x_and_y(i, universe_height, universe_height);
+		var [x, y] = idx_to_x_and_y(i, universe_width);
 		var coords = transform_coordinates(x, y, cell_size);
-		//console.log(coords);
+
 		if (cells[i] == Cell.Dead) {
-			ctx.fillStyle = alive_color;
 			ctx.clearRect(coords[0], coords[1], cell_size, cell_size);
 		}
 	}
+
+	// Dibuixa-ho tot
 	ctx.stroke();
+	console.log("Aquí teniu l'estat actual, en ASCII", universe.render());
 }
 
 function transform_coordinates(x, y, cell_size) {
@@ -96,8 +97,8 @@ function transform_coordinates(x, y, cell_size) {
 
 }
 
-function idx_to_x_and_y(idx, width, height) {
-	var x = Math.floor(idx / width);
+function idx_to_x_and_y(idx, width) {
+	var x = Math.round(idx / width);
 	var y = idx % width;
 	return [x, y];
 }

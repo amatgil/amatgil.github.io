@@ -13,13 +13,33 @@ permalink: /altres/game_of_life
 {% include always-present/sidebar.html %}
 <div class="main-content">
   <div class="GoL-contingut">
-    <div class="GoL-explicacio">
-    <h1 class="GoL-title">Implementació del 'Game of Life' de John Conway</h1>
-    <p>Creat per experimentar amb eines</p>
+    <div class="GoL-intro">
+      <h1 class="GoL-title">Implementació del 'Game of Life' de John Conway</h1>
+      <p>Creat per experimentar amb eines</p>
     </div>
   </div>
 
   <canvas id="GoL-canvas">
   </canvas>
+
+  <div class="GoL-explicacio">
+    <h2>¿Com funciona?</h2>
+    <p>
+    La graella de dalt mostra un taulell del famòs
+    <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a>, on
+    les generacions avancen amb unes donades normes. Cal destacar que, a aquesta implementació,
+    les dues parets en son una de sola (és a dir, si hi ets al punt <code>(0,0)</code> i fas una
+    passa a la dreta, surts per la banda de l'esquerra), i de la mateixa manera amb la part de
+    dalt i de baix.
+    </p>
+    <h2>¿Implementació?</h2>
+    <p>
+      El codi que emmagatzema la graella i calcula les normes per cada generació està escrit en
+      <a href="https://www.rust-lang.org/">Rust</a> i queda compilat a 
+      <a href="https://webassembly.org/">wasm</a>. Per mostrar l'estat a la 
+      pàgina, s'utilitza (sorprenentment poc) JavaScript. Com sempre, tot el codi es pot trobar
+      al <a href="https://gitlab.com/amatgilvinyes/game-of-life-backend.git">meu GitLab</a>.
+    </p>
+  </div>
 </div>
 
