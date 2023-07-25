@@ -33,5 +33,6 @@ Encara no hi ha res interessant, per aquesta zona
 - [X] Lògica
     - [X] <kbd>Enter</kbd> == Generar taula
 - [X] Calculadora nota uni
-- [ ] Conway GoL?
+- [X] Conway GoL
+    - [ ] Crec que queda tallada la part de baix (interna)/de la dreta (externa)? Re-calcula les mides
 
