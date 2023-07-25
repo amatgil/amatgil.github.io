@@ -4,4 +4,5 @@
 #GoL-canvas {
   position: relative;
   border: outset;
+  border-color: rgb(183, 189, 248);
 }
