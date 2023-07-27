@@ -1,13 +1,14 @@
 @font-face {
-	font-family: "iosevka";
-	src: local("../assets/fonts/iosevka.woff2");
+	font-family: "Iosevka";
+	src: local("/assets/fonts/iosevka.bold.woff2");
+  font-weight: bold;
 }
 
 body {
   font-size: 20px;
   background-color: rgb(54, 58, 79);
   color: white;
-  font-family: iosevka/*, sans-serif*/;
+  font-family: Iosevka;
   height: 100%;
   overflow: visible; /*No scroll when cap tot*/
   display: grid;
