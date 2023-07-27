@@ -68,10 +68,11 @@ async function draw(universe, canvas, alive_color, cell_size, wasm) {
 	const cells_ptr = universe.get_cells();
 	const universe_width = universe.get_width();
 	const universe_height = universe.get_height();
-	const cells = new Uint8Array(wasm.memory.buffer, cells_ptr, universe_width * universe_height);
+	const universe_area = universe_width * universe_height;
+	const cells = new Uint8Array(wasm.memory.buffer, cells_ptr, universe_area);
 
 	// Les vives
-	for (var i = 0; i < universe_width * universe_height; i++) {
+	for (var i = 0; i <= universe_area; i++) {
 		var [x, y] = idx_to_x_and_y(i, universe_width);
 		var coords = transform_coordinates(x, y, cell_size);
 
@@ -82,7 +83,7 @@ async function draw(universe, canvas, alive_color, cell_size, wasm) {
 	}
 
 	// Les mortes
-	for (var i = 0; i < universe_width * universe_height; i++) {
+	for (var i = 0; i <= universe_area; i++) {
 		var [x, y] = idx_to_x_and_y(i, universe_width);
 		var coords = transform_coordinates(x, y, cell_size);
 
@@ -106,7 +107,7 @@ function transform_coordinates(x, y, cell_size) {
 
 function idx_to_x_and_y(idx, width) {
 	var x = idx % width;
-	var y = Math.round(idx / width);
+	var y = Math.floor(idx / width);
 	return [x, y];
 }
 
