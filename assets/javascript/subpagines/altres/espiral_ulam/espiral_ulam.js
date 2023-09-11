@@ -16,7 +16,7 @@ async function generar_visualitzacio() {
 
 	const grid_x_cells = grid.get_width();
 	const grid_y_cells = grid.get_height();
-	const mida_objectiu_graella = 900;
+	const mida_objectiu_graella = 1050;
 
 
 	const cell_size = mida_objectiu_graella / grid_x_cells;
@@ -35,12 +35,12 @@ async function generar_visualitzacio() {
 	// Setup canvas
 	ctx.lineWidth = line_width;
 	ctx.strokeStyle = line_color;
-	for (let x = 0; x <= canvas_width; x+=cell_size) {
+	for (let x = 0; x <= canvas_width; x += cell_size) {
 		ctx.moveTo(x, 0);
 		ctx.lineTo(x, canvas_height);
 	}
 
-	for (let y = 0; y <= canvas_height; y+=cell_size) {
+	for (let y = 0; y <= canvas_height; y += cell_size) {
 		ctx.moveTo(0, y);
 		ctx.lineTo(canvas_width, y);
 	}
@@ -78,19 +78,6 @@ async function draw(grid, canvas, alive_color, centre_color, cell_size, wasm) {
 			console.log("Centre");
 		}
 	}
-
-	// Les mortes
-	/*
-	for (var i = 0; i <= grid_area; i++) {
-		var [x, y] = idx_to_x_and_y(i, grid_width);
-		var coords = transform_coordinates(x, y, cell_size);
-
-		if (cells[i] == Cell.Composit) {
-			ctx.clearRect(coords[0], coords[1], cell_size, cell_size);
-			console.log("Morta");
-		}
-	}
-	*/
 
 
 	// Dibuixa-ho tot
