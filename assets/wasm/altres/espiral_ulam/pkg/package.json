@@ -1,0 +1,15 @@
+{
+  "name": "espiral_ulam",
+  "description": "Una backend senzilleta per generar la espiral de Ulam",
+  "version": "0.1.0",
+  "files": [
+    "espiral_ulam_bg.wasm",
+    "espiral_ulam.js",
+    "espiral_ulam.d.ts"
+  ],
+  "module": "espiral_ulam.js",
+  "types": "espiral_ulam.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
