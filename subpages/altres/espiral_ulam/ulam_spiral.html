@@ -7,6 +7,7 @@ permalink: /altres/espiral_ulam
 <link rel="stylesheet" href="/assets/css/subpagines/altres/espiral_ulam/espiral_ulam.css">
 <script type="module">
   import {generar_visualitzacio} from "/assets/javascript/subpagines/altres/espiral_ulam/espiral_ulam.js";
+  window.generar_visualitzacio = generar_visualitzacio;
   generar_visualitzacio();
 </script>
 
@@ -19,7 +20,7 @@ permalink: /altres/espiral_ulam
   </div>
 
   <div class="Ulam-centre-atencio">
-    <input type="range" min="10" max="200" value="40"
+    <input type="range" min="10" max="250" value="40"
       class="slider" id="Ulam-Input-Range" onchange="generar_visualitzacio()">
     <canvas id="Ulam-canvas">
     </canvas>
