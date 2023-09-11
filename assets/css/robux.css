@@ -18,16 +18,19 @@ input::-webkit-inner-spin-button {
   margin-top: 1em;
   font-size: 3em;
   vertical-align: middle;
-  width: max-content;
+  width: 6em;
 }
 
 .credit-content {
   display: flex;
   flex-direction: row;
-  flex-basis: max-content min-content;
   gap: 5em;
 }
 
+.content-principal {
+  flex-basis: 90%;
+  flex-shrink: 0;
+}
 .content-dreta {
   align-items: center;
 }
