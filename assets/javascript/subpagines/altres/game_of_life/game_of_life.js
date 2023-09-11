@@ -23,9 +23,6 @@ async function run_universe() {
 	ctx.lineCap = "square";
 
 
-	const space_taken_by_only_cells_x = universe_x_cells * cell_size;
-	const space_taken_by_only_cells_y = universe_y_cells * cell_size;
-
 	const canvas_width = universe_x_cells * cell_size;
 	const canvas_height = universe_y_cells * cell_size;
 	canvas.width = canvas_width;

@@ -1,0 +1,39 @@
+---
+layout: default
+title: Espiral de Ulam
+permalink: /altres/espiral_ulam
+---
+
+<link rel="stylesheet" href="/assets/css/subpagines/altres/espiral_ulam/espiral_ulam.css">
+<script type="module">
+  import {generar_visualitzacio} from "/assets/javascript/subpagines/altres/espiral_ulam/espiral_ulam.js";
+  generar_visualitzacio();
+</script>
+
+{% include always-present/sidebar.html %}
+<div class="main-content">
+  <div class="Ulam-contingut">
+    <div class="Ulam-intro">
+      <h1 class="Ulam-title">Visualitzador interactiu de la Espiral de Ulam</h1>
+    </div>
+  </div>
+
+  <div class="Ulam-centre-atencio">
+    <input type="range" min="10" max="200" value="40"
+      class="slider" id="Ulam-Input-Range" onchange="generar_visualitzacio()">
+    <canvas id="Ulam-canvas">
+    </canvas>
+  </div>
+
+  <div class="Ulam-explicacio">
+    <h2>¿Com funciona?</h2>
+    <p>
+      <code>todo!()</code>
+    </p>
+    <h2>¿Implementació?</h2>
+    <p>
+      <code>todo!()</code>
+    </p>
+  </div>
+</div>
+
