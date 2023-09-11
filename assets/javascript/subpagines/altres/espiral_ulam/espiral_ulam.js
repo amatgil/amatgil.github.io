@@ -20,7 +20,9 @@ async function generar_visualitzacio() {
 
 
 	const cell_size = mida_objectiu_graella / grid_x_cells;
-	const line_width = 3;
+	/* const line_width = 3; */
+	const line_width = Math.min(Math.floor(-input.value / 200) + 3, 0);
+	console.log("Width: ", line_width);
 	const alive_cell_color = "#00ffff";
 	const centre_color = "#ff00f0";
 	const line_color = "#181926";
@@ -70,12 +72,10 @@ async function draw(grid, canvas, alive_color, centre_color, cell_size, wasm) {
 		if (cells[i] == Cell.Primer) {
 			ctx.fillStyle = alive_color;
 			ctx.fillRect(coords[0], coords[1], cell_size, cell_size);
-			console.log("Viva", alive_color);
 
 		} else if (cells[i] == Cell.Centre) {
 			ctx.fillStyle = centre_color;
 			ctx.fillRect(coords[0], coords[1], cell_size, cell_size);
-			console.log("Centre");
 		}
 	}
 
