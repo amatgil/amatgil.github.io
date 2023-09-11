@@ -1,0 +1,33 @@
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.credit-entrada {
+  text-align: center;
+  display: inline;
+}
+.credit-entrada-camp {
+	maxlength: 2;
+  width: 4em;
+  font-size: 1em;
+}
+
+.credit-boto {
+  margin-top: 1em;
+  font-size: 3em;
+  vertical-align: middle;
+  width: max-content;
+}
+
+.credit-content {
+  display: flex;
+  flex-direction: row;
+  flex-basis: max-content min-content;
+  gap: 5em;
+}
+
+.content-dreta {
+  align-items: center;
+}
