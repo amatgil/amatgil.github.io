@@ -6,6 +6,7 @@ permalink: /utils/memoritzador_basic
 
 {% include always-present/sidebar.html %}
 <link rel="stylesheet" href="/assets/css/subpagines/utils/memoritzador_basic/memoritzador_basic.css">
+<script src="/assets/javascript/subpagines/utils/memoritzador_basic/memoritzador_basic.js"></script>
 
 <div class="main-content">
   <h1>Memoritzador bàsic</h1>
@@ -19,4 +20,14 @@ permalink: /utils/memoritzador_basic
         <option value="Bin_to_Hex">Binari a hexadecimal</option>
     </select>
   </p>
+
+  <div class="memoritzador_binari">
+    <!-- Potències binaries -->
+    <div id="memoritzador_potencies">
+      <span id="potencia_a_equivalentar"> 2^(<span id="exponent">2</span>)</span>
+      =
+      <input type="number" id="potencia_resposta">
+      <span id="resultat"></span>
+    </div>
+  </div>
 </div>

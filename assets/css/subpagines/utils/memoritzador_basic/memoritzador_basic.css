@@ -1,3 +1,28 @@
 #opcions_memoritzador_basic {
   font-size: inherit;
 }
+
+.memoritzador_binari {
+  font-size: 70px;
+}
+
+#potencia_resposta {
+  font-size: 80px;
+  width: 3em;
+  -moz-appearance: textfield; /* Les fletxetes get YOTE */
+}
+#exponent {
+  color: #0DD370;
+  line-height: 1.3;
+}
+#potencia_a_equivalentar {
+  display: inline-block; /* Que no col·lapsi el marge */
+  margin-bottom: 0.5em;
+}
+#resultat {
+  font-size: 50px;
+  white-space: pre;
+}
+
+
+
