@@ -1,0 +1,49 @@
+---
+layout: default
+title: Memoritzador Bàsic
+permalink: /utils/aprenentatge_binari
+---
+
+{% include always-present/sidebar.html %}
+<link rel="stylesheet" href="/assets/css/subpagines/utils/aprenentatge_binari/aprenentatge_binari.css">
+<script src="/assets/javascript/subpagines/utils/aprenentatge_binari/aprenentatge_binari.js"></script>
+
+<div class="main-content">
+  <h1>Útils relacionats amb la base númerica binaria</h1>
+    <p>Quin útil vols utilitzar?</p>
+    <select name="opcions_memoritzador_basic" id="opcions_memoritzador_basic">
+      <option value="No_Triat">Tria una opció!</option>
+     <optgroup label="Potències">
+        <option value="Potencies_binaries">Potències de dos</option>
+     <optgroup label="Conversió de bases">
+        <option value="Bin_to_Hex">Binari a hexadecimal</option>
+        <option value="Hex_to_Bin">Hexadecimal a binari</option>
+    </select>
+  </p>
+
+  <div id="memoritzador_binari">
+    <!-- Potències binaries -->
+    <div id="memoritzador_potencies">
+      <span id="potencia_a_equivalentar"> 2^(<span id="exponent">2</span>)</span>
+      =
+      <input type="number" class="entrada "id="potencia_resposta">
+      <span id="resultat"></span>
+    </div>
+  </div>
+
+  <div id="bin_a_hex_practica">
+    <span class="text_conv">0b</span><input type="number" id="entrada_b-h" class="entrada_conv"><br>
+    <span class="text_conv"> = <span/><br>
+    <span class="text_conv">0o</span><span class="sortida_conv" id="octal_res_bh"></span><br>
+    <span class="text_conv">dec</span><span class="sortida_conv" id="dec_res_bh"></span><br>
+    <span class="text_conv">0x</span><span class="sortida_conv" id="hex_res_bh"></span><br>
+  </div>
+
+  <div id="hex_a_bin_practica">
+    <span class="text_conv">0x</span><input type="number" id="entrada_h-b" class="entrada_conv"><br>
+    <span class="text_conv"> = <span/><br>
+    <span class="text_conv">0b</span><span class="sortida_conv" id="bin_res_hb"></span><br>
+    <span class="text_conv">0o</span><span class="sortida_conv" id="octal_res_hb"></span><br>
+    <span class="text_conv">dec</span><span class="sortida_conv" id="dec_res_hb"></span><br>
+  </div>
+</div>

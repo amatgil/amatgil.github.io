@@ -20,8 +20,7 @@ async function generar_visualitzacio() {
 
 
 	const cell_size = mida_objectiu_graella / grid_x_cells;
-	/* const line_width = 3; */
-	const line_width = Math.min(Math.floor(-input.value / 200) + 3, 0);
+	const line_width = Math.max(Math.floor(-input.value / 200) + 3, 0);
 	console.log("Width: ", line_width);
 	const alive_cell_color = "#00ffff";
 	const centre_color = "#ff00f0";
