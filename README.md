@@ -23,6 +23,7 @@ Encara no hi ha res interessant, per aquesta zona
 - [X] Subpàgines per les categories: make a {url}:/utils on t'explica que son (s'hi accedeix amb el mateix botó de la sidebar, que ara mateix no fa res quan el clickes)
 - [ ] Que els links de skill issue al repo portin a la part del repo on es submiteja un issue
 - [X] Custom domain 
+- [ ] Custom mouse???
 
 
 ## Idees per útil
