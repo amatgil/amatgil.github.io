@@ -3,17 +3,32 @@
 /**
 */
 export enum Cell {
-  Dead = 0,
-  Alive = 1,
+  Cap = 0,
+  Cos = 1,
+  Cua = 2,
+  Llana = 3,
+  Buit = 4,
 }
 /**
 */
-export class Universe {
+export enum Direccio {
+  Up = 0,
+  Down = 1,
+  Left = 2,
+  Right = 3,
+}
+/**
+*/
+export class Graella {
   free(): void;
 /**
-* @returns {Universe}
+* @returns {Graella}
 */
-  static new(): Universe;
+  static new(): Graella;
+/**
+* @param {number} dir
+*/
+  tick(dir: number): void;
 /**
 * @returns {number}
 */
@@ -30,24 +45,28 @@ export class Universe {
 * @returns {string}
 */
   render(): string;
+}
 /**
 */
-  tick(): void;
+export class Posicio {
+  free(): void;
 }
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly __wbg_universe_free: (a: number) => void;
-  readonly universe_new: () => number;
-  readonly universe_get_width: (a: number) => number;
-  readonly universe_get_height: (a: number) => number;
-  readonly universe_get_cells: (a: number) => number;
-  readonly universe_render: (a: number, b: number) => void;
-  readonly universe_tick: (a: number) => void;
+  readonly __wbg_graella_free: (a: number) => void;
+  readonly __wbg_posicio_free: (a: number) => void;
+  readonly graella_new: () => number;
+  readonly graella_tick: (a: number, b: number) => void;
+  readonly graella_get_width: (a: number) => number;
+  readonly graella_get_height: (a: number) => number;
+  readonly graella_get_cells: (a: number) => number;
+  readonly graella_render: (a: number, b: number) => void;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
+  readonly __wbindgen_exn_store: (a: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
 }
