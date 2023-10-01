@@ -11,7 +11,8 @@ permalink: /altres/torres_hanoi
 <div class="main-content">
   <h1>Les Torres de Hanoi</h1>
   <h2>...però animades!</h2>
-  <p>Les normes de joc: S'ha de moure la pila de l'esquerra fins la dreta, però una caixa no pot estar a sota d'una altra de més gran. La solució ha estat programada recursivament: es mouen les <code>n - 1</code> caixes a la pila del mig, després la base a la final i finalment les <code>n - 1</code> a la final. Si <code>n = 1</code>, mou-la directament. </p>
+  <p>Les normes de joc: S'ha de moure la pila de l'esquerra fins la dreta, però una caixa no pot estar a sota d'una altra de més gran. </p>
+  <p>La solució ha estat programada recursivament: es mouen les <code>n - 1</code> caixes a la pila del mig, després la base a la final i finalment les <code>n - 1</code> a la final. Si <code>n = 1</code>, mou-la directament. </p>
   <p>Aquesta implementació mostra cada pas a un framerate de 60fps. És a dir, cada pas (definit com "el moviment d'una sola caixa") dura 1/60 segons.</p>
   <p>Per veure les animacions...</p>
   <div class="torres_hanoi-contingut">
@@ -31,6 +32,7 @@ permalink: /altres/torres_hanoi
       <option value="11">11</option>
       <option value="12">12</option>
     </select>
+    <p>&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;</p>
   </div>
   <div id="hanoi-video-container">
     <video id="hanoi-video-elem">
