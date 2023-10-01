@@ -45,6 +45,7 @@ kramdown:
 #theme: 
 plugins:
   #- jekyll-feed
+  - jekyll-redirect-from # Avoid directory listing, send to 404
   - jekyll-sitemap # Hauria d'estar al final de la llista perquè es carreguen en ordre
 
 # Exclude from processing.

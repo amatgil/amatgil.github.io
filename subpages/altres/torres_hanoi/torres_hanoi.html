@@ -1,0 +1,40 @@
+---
+layout: default
+title: Torres de Hanoi
+permalink: /altres/torres_hanoi
+---
+
+<link rel="stylesheet" href="/assets/css/subpagines/altres/torres_hanoi/torres_hanoi.css">
+<script src="/assets/javascript/subpagines/altres/torres_hanoi/torres_hanoi.js"></script>
+
+{% include always-present/sidebar.html %}
+<div class="main-content">
+  <h1>Les Torres de Hanoi</h1>
+  <h2>...però animades!</h2>
+  <p>Les normes de joc: S'ha de moure la pila de l'esquerra fins la dreta, però una caixa no pot estar a sota d'una altra de més gran. La solució ha estat programada recursivament: es mouen les <code>n - 1</code> caixes a la pila del mig, després la base a la final i finalment les <code>n - 1</code> a la final. Si <code>n = 1</code>, mou-la directament. </p>
+  <p>Aquesta implementació mostra cada pas a un framerate de 60fps. És a dir, cada pas (definit com "el moviment d'una sola caixa") dura 1/60 segons.</p>
+  <p>Per veure les animacions...</p>
+  <div class="torres_hanoi-contingut">
+    ...Trïi un valor de <code>n</code>:
+    <select name="tria-n-hanoi" id="tria-n">
+      <option value="No_Triat">Tria una opció!</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+  </div>
+  <div id="hanoi-video-container">
+    <video id="hanoi-video-elem">
+    </video>
+  </div>
+</div>
+

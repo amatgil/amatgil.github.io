@@ -36,7 +36,7 @@ button.dropbtn {
 
 /* Links inside the dropdown */
 .dropdown-content a, .dropdown-content p {
-  padding: 1em 1em 1em 1em; /* top right bottom left */
+  padding: 0.9em 1em 0.9em 1em; /* top right bottom left */
   text-decoration: none;
   display: block;
   color: hotpink;

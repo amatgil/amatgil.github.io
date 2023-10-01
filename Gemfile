@@ -12,6 +12,8 @@ gem "jekyll", "~> 4.3.2"
 gem "minima", "~> 2.5.1"
 # For sitemap generation
 gem 'jekyll-sitemap', "~> 1.4.0"
+# Disable dir listing
+gem 'jekyll-redirect-from'
 
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

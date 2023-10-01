@@ -1,0 +1,13 @@
+#hanoi-video-elem {
+  margin-top: 2em;
+}
+#tria-n {
+  border-style: solid;
+  border-color:  #939ab7;
+  background-color: #24273a;
+  border-width: 2px;
+  color: inherit;
+
+  outline-color:  #8aadf4;
+  font-size: 20px;
+}
