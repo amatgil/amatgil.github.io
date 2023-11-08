@@ -1,0 +1,41 @@
+#sortida-sisa {
+  white-space: pre-wrap;
+}
+
+#entrada-sisa-value {
+  width: 20em;
+  font-size: 30px;
+  height: 1em;
+  padding: 0.5em 0em;
+  margin: 1em 0;
+  text-align: center;
+}
+
+#resultat {
+  font-size: 20px;
+  white-space: pre;
+  color: hotpink;
+}
+
+button.generador_trad {
+  font-size: 19px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(54, 58, 79);
+  color: hotpink;
+  height: 3em;
+  width: 10em;
+
+  border: none;
+  border-color: rgb(54, 58, 79);
+  border-radius: 0.1em;
+  outline-style: solid;
+}
+#trans_selector {
+  display: flex;
+}
+#sel_radios {
+  flex: 1;
+  margin-left: 1em;
+}
+

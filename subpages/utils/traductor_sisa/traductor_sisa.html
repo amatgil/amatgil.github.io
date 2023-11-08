@@ -1,0 +1,128 @@
+---
+layout: default
+title: Traductor SISA
+permalink: /utils/traductor_sisa
+---
+
+{% include always-present/sidebar.html %}
+<link rel="stylesheet" href="/assets/css/subpagines/utils/traductor_sisa.css">
+
+<div class="main-content">
+  <h1>SISA Assembler</h1>
+  <p>Està inacabat (no té totes les instruccions), però és funcional.</p>
+  <p>També hi falten un parell d'instruccions que encara no he implementat (com <code>MOVE</code> o <code>IN</code>). Si apreteu el botó "Translate" i no hi apareix res, mireu la consola i segurament hi veureu un error semblant a "reached unreachable!()": vol dir que encara no l'he escrit. (Si voleu fer una PR de dues línies que em falten, endavant).</p>
+  <h4>Compte!</h4>
+  <ul>
+    <li>Si hi introdueixes un `n` immediat, ha d'estar amb hex i prefix (e.g. `0xF23F`). Si vols utilitzar decimal, et fas la conversió tu solet, que ja ets prou grandet (i no tinc ganes d'haver de detectar el cas i tot això).</li>
+    <li>La entrada ha d'estar neta i sanejada. Si no és correcta, no puc prometre que ho detecti (és UB, podriem dir).</li>
+    <li>Els enters haurien d'estar en Ca2 (e.g. `-1` seria `0xFFFF`, recorda que l'entrada ha d'estar en hex).</li>
+  </ul>
+  <h3>Tria aquí l'ordre amb el que els vols la sortida:</h3>
+  <p>(si t'equivoques, és UB. Fes-ho bé.)</p>
+  <div id="trans_selector">
+    <div id="sel_labels">
+      @A: <br>
+      @B: <br>
+      @D: <br>
+      Rb/n: <br>
+      op: <br>
+      f: <br>
+      In/Alu:<br>
+      WrD:<br>
+    </div>
+    <div id="sel_radios">
+      <div id="a_addr_sel">
+         <input type="radio" name="a_addr_pos" value="0" checked>
+         <input type="radio" name="a_addr_pos" value="1">
+         <input type="radio" name="a_addr_pos" value="2">
+         <input type="radio" name="a_addr_pos" value="3">
+         <input type="radio" name="a_addr_pos" value="4">
+         <input type="radio" name="a_addr_pos" value="5">
+         <input type="radio" name="a_addr_pos" value="6">
+         <input type="radio" name="a_addr_pos" value="7">
+      </div>
+      <div id="b_addr_sel">
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="0">
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="1" checked>
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="2">
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="3">
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="4">
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="5">
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="6">
+         <input type="radio" id="b_addr_pos" name="b_addr_pos" value="7">
+      </div>
+      <div id="d_addr_sel">
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="0">
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="1">
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="2" checked>
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="3">
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="4">
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="5">
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="6">
+         <input type="radio" id="d_addr_pos" name="d_addr_pos" value="7">
+      </div>
+      <div id="rbn_sel">
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="0">
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="1">
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="2">
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="3" checked>
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="4">
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="5">
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="6">
+         <input type="radio" id="rbn_pos" name="rbn_pos" value="7">
+      </div>
+      <div id="op_sel">
+         <input type="radio" id="op_pos" name="op_pos" value="0">
+         <input type="radio" id="op_pos" name="op_pos" value="1">
+         <input type="radio" id="op_pos" name="op_pos" value="2">
+         <input type="radio" id="op_pos" name="op_pos" value="3">
+         <input type="radio" id="op_pos" name="op_pos" value="4" checked>
+         <input type="radio" id="op_pos" name="op_pos" value="5">
+         <input type="radio" id="op_pos" name="op_pos" value="6">
+         <input type="radio" id="op_pos" name="op_pos" value="7">
+      </div>
+      <div id="f_sel">
+         <input type="radio" id="f_pos" name="f_pos" value="0">
+         <input type="radio" id="f_pos" name="f_pos" value="1">
+         <input type="radio" id="f_pos" name="f_pos" value="2">
+         <input type="radio" id="f_pos" name="f_pos" value="3">
+         <input type="radio" id="f_pos" name="f_pos" value="4">
+         <input type="radio" id="f_pos" name="f_pos" value="5" checked>
+         <input type="radio" id="f_pos" name="f_pos" value="6">
+         <input type="radio" id="f_pos" name="f_pos" value="7">
+      </div>
+      <div id="inalu_sel">
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="0">
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="1">
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="2">
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="3">
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="4">
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="5">
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="6" checked>
+         <input type="radio" id="in_alu_pos" name="in_alu_pos" value="7">
+      </div>
+      <div id="wrd_sel">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="0">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="1">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="2">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="3">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="4">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="5">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="6">
+         <input type="radio" id="wrd_pos" name="wrd_pos" value="7" checked>
+      </div>
+    </div>
+  </div>
+  <div class="sisa-other">
+    <input id="entrada-sisa-value"><br>
+
+    <button onclick="window.translate()" class="generador_trad" id="entrada-sisa-btn">Translate</button><br><br>
+    <span id="resultat"></span>
+  </div>
+</div>
+
+
+<script type="module">
+  import { translate } from "/assets/javascript/subpagines/utils/traductor_sisa.js";
+  window.translate = translate;
+</script>

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Wave Function Collapse
+permalink: /altres/inacabat/wave_function
+---
+
+<link rel="stylesheet" href="/assets/css/subpagines/altres/wave_function/wave_function.css">
+<script type="module">
+  import {generar_visualitzacio} from "/assets/javascript/subpagines/altres/wave_function/wave_function.js";
+  window.generar_visualitzacio = generar_visualitzacio;
+  generar_visualitzacio();
+</script>
+
+{% include always-present/sidebar.html %}
+<div class="main-content">
+  <h1>Generació amb Wave Function Collapse</h1>
+
+  <canvas id="Collapse-canvas"></canvas>
+</div>
+

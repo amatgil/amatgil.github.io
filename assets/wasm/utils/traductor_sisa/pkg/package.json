@@ -1,0 +1,14 @@
+{
+  "name": "traductor_SISA",
+  "version": "0.1.0",
+  "files": [
+    "traductor_SISA_bg.wasm",
+    "traductor_SISA.js",
+    "traductor_SISA.d.ts"
+  ],
+  "module": "traductor_SISA.js",
+  "types": "traductor_SISA.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
