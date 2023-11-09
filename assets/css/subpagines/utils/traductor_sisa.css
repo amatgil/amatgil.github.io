@@ -10,6 +10,11 @@
   margin: 1em 0;
   text-align: center;
 }
+input[type=radio] {
+  color: red;
+  border-color: red;
+  accent-color: rgb(183, 189, 248);
+}
 
 #resultat {
   font-size: 20px;

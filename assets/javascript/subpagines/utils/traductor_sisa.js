@@ -17,6 +17,7 @@ async function translate() {
 
 	let in_string = document.getElementById("entrada-sisa-value");
 	let result = await translate_instruction(in_string.value, o1, o2, o3, o4, o5, o6, o7, o8);
+	console.log(o1, o2, o3, o4, o5, o6, o7, o8);
 	console.log(in_string.value);
 	console.log(result);
 	res.innerHTML = result
