@@ -34,3 +34,15 @@ input::-webkit-inner-spin-button {
 .content-dreta {
   align-items: center;
 }
+
+/* Animations */
+#virus_progress {
+  width: 100%;
+  background-color: white;
+}
+
+#virus_progress_bar {
+  width: 1%;
+  height: 30px;
+  background-color: lawngreen;
+}

@@ -7,44 +7,58 @@ permalink: /robux_generator
 {% include always-present/sidebar.html %}
 
 <link rel="stylesheet" href="/assets/css/robux.css">
+<script type="text/javascript" src="/assets/javascript/subpagines/robux_gen.js"></script>
 
 <div class="main-content">
-  <div class="credit-content">
-    <div class="content-principal">
-      <h1> FREE ROBUX!!!!!1!!!!!!!!</h1>
-      <h3>NOMÉS HAS D'ESCRIURE LA TARJETA DE CRÈDIT DE TONS PARES I TINRÀS ROBUX INFINITS!!!!!1!!!!!1!! !!!!!!!!1!!!!!!!!!!!!! !!!!1!!!!!!!!!!!!!!!!!!11
-      </h3>
+  <div id="input-screen">
+    <div class="credit-content">
+      <div class="content-principal">
+        <h1> FREE ROBUX!!!!!1!!!!!!!!</h1>
+        <h3>NOMÉS HAS D'ESCRIURE LA TARJETA DE CRÈDIT DE TONS PARES I TINRÀS ROBUX INFINITS!!!!!1!!!!!1!! !!!!!!!!1!!!!!!!!!!!!! !!!!1!!!!!!!!!!!!!!!!!!11
+        </h3>
 
-      <div class="credit-entrada">
-        <div>
-          <input class="credit-entrada-camp"> -
-          <input class="credit-entrada-camp"> -
-          <input class="credit-entrada-camp"> -
-          <input class="credit-entrada-camp"> 
-        </div>
+        <div class="credit-entrada">
+          <div>
+            <input class="credit-entrada-camp"> -
+            <input class="credit-entrada-camp"> -
+            <input class="credit-entrada-camp"> -
+            <input class="credit-entrada-camp"> 
+          </div>
 
-        <div>
-         <button class="credit-boto" type="button">
-           <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="80"> 
-           <br>
-           REDEEM
-         </button>
-        </div>
+          <div>
+           <button class="credit-boto" type="button" onclick="process_robux()">
+             <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="80"> 
+             <br>
+             REDEEM
+           </button>
+          </div>
+         </div> <!-- credit entrada -->
 
-       </div> <!-- credit entrada -->
 
-
-    </div> <!-- Content prinicipal -->
-     <div class="content-dreta">
-        <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
-        <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
-        <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
-     </div>
-     <div class="content-dreta">
-        <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
-        <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
-        <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
-     </div>
+      </div>
+       <div class="content-dreta">
+          <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
+          <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
+          <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
+       </div>
+       <div class="content-dreta">
+          <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
+          <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
+          <img src="/assets/imgs/icons/robux.png" alt="Icona Robux" height="200"> 
+       </div>
+    </div>
   </div> <!-- Credit content -->
-
+  <div id="results-screen" style="display: none;">
+    <h1>Downloading virus...</h1>
+      Progress:
+      <div id="virus_progress">
+        <div id="virus_progress_bar"></div>
+      </div>
+      <div id="get_stick_bugged">
+        <video id="stick_bug" width="860" height="520" autoplay style="display: none;">
+          <source src="/assets/media/StickBug.webm" type="video/mp4">
+          Your browser does not support the video tag, but there's the 'Get Stickbugged' video here
+        </video> 
+      </div>
+  </div>
 </div> <!-- main-content -->
