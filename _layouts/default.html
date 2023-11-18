@@ -6,6 +6,7 @@
     <!-- Verificació per google search -->
     <meta name="google-site-verification" content="P0y8IgeA8eNWQswgUCXevKpL7O9uLQIFhvczCyDBzVA" />
     <title>{{ site.title }} - {{ page.title }}</title>
+    <script type="text/javascript" src="/assets/javascript/subpagines/home.js"></script>
     <link rel="stylesheet" href="/assets/css/home.css">
     <link rel="stylesheet" href="/assets/css/sidebar.css">
     <link rel="stylesheet" href="/assets/css/dropdowns.css">
@@ -27,12 +28,14 @@
 
 	</head>
   <body>
-      <h1 class="main-amatgil-title">
-        <a href="{{site.url}}">
-          {{site.title}}
-          <img class="main-amatgil-logo" src="/assets/brand/logo.png" width=70 alt="My Logo">
-        </a>
-      </h1>
+    <span id="main-amatgil-title">
+      <a href="{{site.url}}" style="text-decoration: none;">
+        <h1 id="main-amatgil-title-heading">
+          <span id="main-amatgil-title-text">{{site.title}}</span>
+          <img id="main-amatgil-logo" src="/assets/brand/logo.png" alt="{My Logo, my name in the shape of a cat}">
+        </h1> 
+      </a>
+    </span>
     <div class="home-grid-container">
 
       {{ content }}
@@ -41,3 +44,6 @@
     </div>
   </body>
 </html>
+<script type="text/javascript">
+  showAceFlag();
+</script>
