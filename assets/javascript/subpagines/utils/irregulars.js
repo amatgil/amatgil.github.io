@@ -62,7 +62,7 @@ function CheckAnswer() {
 	const c_resposta = document.getElementById("irreg-res-c");
 
 	// Check
-	if (a_div.value == csv[curr_idx].Inf) {
+	if (a_div.value.toLowerCase() == csv[curr_idx].Inf.toLowerCase()) {
 		a_resposta.style.color= "LimeGreen";
 		a_resposta.innerHTML = "Correcte (" + csv[curr_idx].Inf + ")";
 	} else {
@@ -70,7 +70,7 @@ function CheckAnswer() {
 		a_resposta.innerHTML = "Incorrecte (era " + csv[curr_idx].Inf + ")";
 	}
 
-	if (b_div.value == csv[curr_idx].Pret) {
+	if (b_div.value.toLowerCase() == csv[curr_idx].Pret.toLowerCase()) {
 		b_resposta.style.color= "LimeGreen";
 		b_resposta.innerHTML = "Correcte (" + csv[curr_idx].Pret + ")";
 	} else {
@@ -78,7 +78,7 @@ function CheckAnswer() {
 		b_resposta.innerHTML = "Incorrecte (era " + csv[curr_idx].Pret + ")";
 	}
 
-	if (c_div.value == csv[curr_idx].Part) {
+	if (c_div.value.toLowerCase() == csv[curr_idx].Part.toLowerCase()) {
 		c_resposta.style.color= "LimeGreen";
 		c_resposta.innerHTML = "Correcte (" + csv[curr_idx].Part + ")";
 	} else {
