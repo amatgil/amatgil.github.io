@@ -1,0 +1,38 @@
+---
+layout: default
+title: Irregulars
+permalink: /utils/irregulars
+---
+
+{% include always-present/sidebar.html %}
+<link rel="stylesheet" href="/assets/css/subpagines/utils/irregulars.css">
+<script src="/assets/javascript/subpagines/utils/irregulars.js"></script>
+
+
+
+<div class="main-content">
+  <h1>Memoritzador d'irregulars</h1>
+
+  <h2 id="irreg-enunciat"></h2>
+  <div>
+    <input class="irreg-input" id="input-a"></input>
+    <input class="irreg-input" id="input-b"></input>
+    <input class="irreg-input" id="input-c"></input>
+  </div>
+  <ul>
+    <li><span class="irreg-res" id="irreg-res-a"></span></li>
+    <li><span class="irreg-res" id="irreg-res-b"></span></li>
+    <li><span class="irreg-res" id="irreg-res-c"></span></li>
+  </ul>
+  <!--
+  <div id="list-import">
+    <h5>Importar llista:</h5>
+    <form action="/api" method="post" enctype="multipart/form-data">
+      <label for="file">File</label>
+      <input id="file" name="file" type="file" />
+      <button>Upload</button>
+    </form>
+  </div>
+  -->
+</div>
+<script>UpdateChallenge()</script>

@@ -1,27 +1,19 @@
 function toggleAceFlag() {
 	console.log("Toggling Ace Flag");
 	let title = document.getElementById("main-amatgil-title");
-	console.log(title);
 	if (getCookie("aceFlag") == "true") {
-		console.log("Toggling Ace Flag to false");
 		title.style.background = "none";
 		setCookie("aceFlag","false", 1);
 	} else {
-		console.log("Toggling Ace Flag to true");
 		title.style.background = "-webkit-linear-gradient(#000000EE, #A3A3A3EE, #FFFFFFEE, #800080EE)";
 		setCookie("aceFlag","true", 1);
 	}
-	console.log(title);
 }
 function showAceFlag() {
-	console.log("dkljshfdasghfas"); 
 	let title = document.getElementById("main-amatgil-title");
-	console.log(title); 
 	if (getCookie("aceFlag") == "true") {
-		console.log("Is true"); 
 		title.style.background = "-webkit-linear-gradient(#000000EE, #A3A3A3EE, #FFFFFFEE, #800080EE)";
 	} else {
-		console.log("Is not tru"); 
 		title.style.background = "none";
 	}
 }
