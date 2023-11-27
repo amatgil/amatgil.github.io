@@ -90,5 +90,6 @@ function CheckAnswer() {
 	a_div.value = "";
 	b_div.value = "";
 	c_div.value = "";
+	a_div.focus();
 }
 
