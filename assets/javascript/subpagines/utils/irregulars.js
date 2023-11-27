@@ -33,10 +33,12 @@ function parseCSV(csvData) {
 }
 
 var csv = loadCSVFile("/assets/other/irregulars/default.csv");
-var curr_idx = 0;
+var curr_idx = -1;
 
 function UpdateChallenge() {
-	curr_idx = Math.floor(Math.random() * (csv.length - 1)); // Minus one because unavoidable newline at EOF
+	//curr_idx = Math.floor(Math.random() * (csv.length - 1)); // Minus one because unavoidable newline at EOF
+	curr_idx = (curr_idx + 1) % (csv.length - 1);
+	console.log(curr_idx);
 	const enunciat_div = document.getElementById("irreg-enunciat");
 	enunciat_div.innerHTML = csv[curr_idx].Orig + ":";
 
