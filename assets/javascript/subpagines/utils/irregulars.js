@@ -54,7 +54,6 @@ function UpdateChallenge() {
 
 
 function CheckAnswer() {
-	const enunciat_div = document.getElementById("irreg-enunciat");
 	const a_div = document.getElementById("input-a");
 	const b_div = document.getElementById("input-b");
 	const c_div = document.getElementById("input-c");

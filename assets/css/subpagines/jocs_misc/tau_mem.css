@@ -1,0 +1,48 @@
+. {
+  font-size: 70px;
+}
+
+/* Les fletxetes get YOTE (altres buscadors) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#potencia_a_equivalentar {
+  display: inline-block; /* Que no col·lapsi el marge */
+  margin-bottom: 0.5em;
+}
+
+#enunciat-area {
+  font-size: 40px;
+}
+
+#input-area {
+  font-size: 40px;
+  white-space: pre;
+}
+
+#curr_shown {
+  white-space: pre;
+  color: #a6da95;
+}
+
+#curr_input {
+  -moz-appearance: textfield; /* Les fletxetes get YOTE (firefox) */
+  border-style: solid;
+  border-color:  #939ab7;
+  background-color: #24273a;
+  border-width: 2px;
+  color: inherit;
+  font-size: 20px;
+  width: 15em;
+
+  outline-color:  #8aadf4;
+}
+
+
+#list-import {
+  border: dotted;
+  padding: 0.1em 0.2em 0.2em 0.2em;
+}
