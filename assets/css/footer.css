@@ -4,6 +4,8 @@
 
   grid-column-start: 1;
   grid-column-end: -1;
+
+  color: rgb(183, 189, 248);
 }
 
 .main-footer {
