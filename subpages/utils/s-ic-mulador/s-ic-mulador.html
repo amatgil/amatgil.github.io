@@ -6,15 +6,40 @@ permalink: /utils/s-ic-mulador
 
 <link rel="stylesheet" href="/subpages/utils/s-ic-mulador/s-ic-mulador.css">
 <script type="module">
-  import { start_unit } from "/subpages/utils/s-ic-mulador/s-ic-mulador.js";
-  window.start_unit = start_unit;
+  import { run_unit } from "/subpages/utils/s-ic-mulador/s-ic-mulador.js";
+  window.run_unit = run_unit;
 </script>
 
 <div class="main-content">
-  <h1>S-IC-mulador</h1>
-  <h2>Un simulador de l'assembly d'IC</h2>
+  <h2>S-IC-mulador</h2>
+  <h3>Un simulador de l'assembly d'IC</h3>
   <div class="sis-contingut">
-    <button onclick="start_unit()">Quiticlick</button> 
+    <div class="left-side">
+      <p id="info-box">L'informació apareixerà aquí</p>
+      <div class="la-part-important">
+	<div class="mem-holder">
+	  <p id="memory-information">La memòria anirà aquí</p>
+	</div>
+	<div id="middle-holder">
+	  <p id="regs-box">Els registres apareixeran aquí</p>
+	</div>
+      </div>
+    </div>
+    <div class="right-side">
+      <span>Valors inicials</span>
+      <div id="entrades">
+	<textarea id="regs" placeholder="Aquí van els REGISTRES inicials" class="entrades-boxes"></textarea>
+	<textarea id="mem-inicial" placeholder="Aquí van la MEMÒRIA inicial" class="entrades-boxes"></textarea>
+	<textarea id="instruccions" placeholder="Aquí van les INSTRUCCIONS inicials" class="entrades-boxes"></textarea>
+      </div>
+      <div id="advance_buttons">
+	<button onclick="start_unit" class="advance-btn">Inicialitza</button>
+	<button onclick="start_unit" class="advance-btn">Avança un pas</button>
+	<button class="advance-btn">Avança fins al final</button>
+      </div>
+      <div>
+      </div>
+    </div>
   </div>
 
 </div>

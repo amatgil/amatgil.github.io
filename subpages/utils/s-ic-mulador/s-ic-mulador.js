@@ -1,13 +1,13 @@
 import init from "/subpages/utils/s-ic-mulador/pkg/sICmulador.js";
 import { Processador } from "/subpages/utils/s-ic-mulador/pkg/sICmulador.js";
 
-export async function start_unit() {
+export async function run_unit() {
     await init();
     let proc = Processador.new(
-    	"1\n2\n3\n4", // init_regs
+    	"1\n2\n1\n4", // init_regs
     	"0x050 = \"0x0070\"", // init_mem
     	"0", // init_pc
-    	"ADD R0, R1, R2\nADD R0, R1, R2", //instrs
+    	"ADD R2, R2, R1\nADD R2, R2, R1", //instrs
     	"" // init_io
     );
     let v = proc.execute_next();

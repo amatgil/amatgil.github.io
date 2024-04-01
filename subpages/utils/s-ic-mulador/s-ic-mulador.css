@@ -1,0 +1,60 @@
+.sis-contingut {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3em;
+}
+
+.left-side {
+    display: grid;
+}
+.right-side {
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    row-gap: 1em;
+}
+
+.la-part-important {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#memory-information {
+    background-color: #181926;
+    height: 100%;
+    color: inherit;
+    margin: 1em;
+}
+
+#info-box {
+    background-color: beige;
+    color: black;
+    width: 100%;
+    font-size: 20px;
+    overflow: visible;
+}
+
+#regs-box {
+    background-color: #181926;
+    color: inherit;
+    height: 100%;
+    margin: 1em;
+}
+
+.advance-btn {
+    font-size: 15px;
+    margin-top: 1em;
+}
+
+#entrades {
+    border: 0.5em ridge;
+    display: grid;
+    color: inherit;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+}
+
+.entrades-boxes {
+    background-color: #181926;
+    color: inherit;
+    padding: 0.5em;
+}
