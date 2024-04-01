@@ -14,34 +14,33 @@
 }
 
 .la-part-important {
+    border: 0.5em ridge;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#memory-information {
-    background-color: #181926;
-    height: 100%;
-    color: inherit;
-    margin: 1em;
-}
-
 #info-box {
-    background-color: beige;
-    color: black;
+    border: 0.5em ridge;
+    background-color: #181926;
+    color: #cad3f5;
     width: 100%;
     font-size: 20px;
-    overflow: visible;
 }
 
-#regs-box {
+.show-internals {
+    margin: 0;
+    padding: 0;
+}
+
+#memory-information, #regs-box {
     background-color: #181926;
-    color: inherit;
     height: 100%;
-    margin: 1em;
+    width: 10em;
+    color: inherit;
+    border-right: solid;
 }
 
 .advance-btn {
-    font-size: 15px;
     margin-top: 1em;
 }
 
@@ -49,6 +48,8 @@
     border: 0.5em ridge;
     display: grid;
     color: inherit;
+    grid-row: 1 / 3;
+
     grid-template-columns: 1fr 1fr 1fr;
     height: 100%;
 }
@@ -56,5 +57,4 @@
 .entrades-boxes {
     background-color: #181926;
     color: inherit;
-    padding: 0.5em;
 }
