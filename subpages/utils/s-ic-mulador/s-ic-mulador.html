@@ -6,8 +6,11 @@ permalink: /utils/s-ic-mulador
 
 <link rel="stylesheet" href="/subpages/utils/s-ic-mulador/s-ic-mulador.css">
 <script type="module">
-  import { run_unit } from "/subpages/utils/s-ic-mulador/s-ic-mulador.js";
-  window.run_unit = run_unit;
+  import { init_unit, advance_unit, advance_all, populate_fields } from "/subpages/utils/s-ic-mulador/s-ic-mulador.js";
+  populate_fields();
+  window.init_unit = init_unit;
+  window.advance_unit = advance_unit;
+  window.advance_all = advance_all;
 </script>
 
 <div class="main-content">
@@ -15,27 +18,40 @@ permalink: /utils/s-ic-mulador
   <h3>Un simulador de l'assembly d'IC</h3>
   <div class="sis-contingut">
     <div class="left-side">
-      <!--<p id="info-box">Informació variada apareixerà aquí quan calgui</p>-->
-      <p id="info-box">En algun moment, potser, apareixerà aquí informació útil</p>
+      <textarea id="info-box" placeholder="Durant l'execució, apareixerà aquí informació útil. RECORDA PREMER 'INICIALITZA'"></textarea>
       <div class="la-part-important">
-	<p class="show-internals" id="memory-information">La memòria anirà aquí</p>
-	<p class="show-internals" id="regs-box">Els registres apareixeran aquí</p>
+	<textarea class="show-internals" id="memory-information" placeholder="La memòria anirà aquí"></textarea>
+	<textarea class="show-internals" id="regs-box" placeholder="Els registres apareixeran aquí"></textarea>
       </div>
     </div>
     <div class="right-side">
       <div id="entrades">
-	<textarea id="regs"         placeholder="Aquí van els REGISTRES inicials"    class="entrades-boxes"></textarea>
-	<textarea id="mem-inicial"  placeholder="Aquí van la MEMÒRIA inicial"        class="entrades-boxes"></textarea>
 	<textarea id="instruccions" placeholder="Aquí van les INSTRUCCIONS inicials" class="entrades-boxes"></textarea>
+	<textarea id="regs"         placeholder="Aquí van els REGISTRES inicials"    class="entrades-boxes"></textarea>
+	<textarea id="mem-inicial"  placeholder="Aquí va la MEMÒRIA inicial"         class="entrades-boxes"></textarea>
+	<textarea id="io"           placeholder="Aquí va l'IO constant"              class="entrades-boxes"></textarea>
       </div>
       <div id="advance_buttons">
-	<button onclick="start_unit" class="advance-btn">Inicialitza</button>
-	<button onclick="start_unit" class="advance-btn">Avança un pas</button>
-	<button class="advance-btn">Avança fins al final</button>
+	<button onclick="init_unit()" class="advance-btn">Inicialitza</button>
+	<button onclick="advance_unit()" class="advance-btn">Avança un pas</button>
+	<button onlicck="advance_all()" class="advance-btn">Avança fins al final</button>
+	<textarea id="pc"           placeholder="PC inicial"                                class="entrades-boxes"></textarea>
       </div>
       <div>
       </div>
     </div>
+  </div>
+  <div id="explicacio">
+    <h2>Com funciona?</h2>
+    <h3>Mode simple (T8..T13)</h3>
+    <h4>Utilització</h4>
+    Només cal escriure a les caixes de la dreta les instruccions/registres/memòria/IO tal com estan al principi, crear un nou sistema prement "Inicialitza" i anar avançant amb el botó "Avança un pas".
+    <h3>Mode complet (T14)</h3>
+    <code>todo!("Aquí anirà l'explicació del mode d'ús del tema 14 quan hagi fet la frontend d'una vegada")</code>
+    <h4>Apunts extra</h4>
+    <ul>
+      <li>Memòria: Si us fixeu, a l'exemple inicial l'estat <code>0x26 = "0xFFFB"</code> es converteix en <code>0x26 = -5</code> i <code>0x27 = -2</code>. Això és correcte: cada word s'emmagatzema meitat/meitat a les adreces parelles i imparelles </li>
+    <ul>
   </div>
 
 </div>
