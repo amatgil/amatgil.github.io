@@ -1,0 +1,14 @@
+{
+  "name": "sICmulador",
+  "version": "0.2.0",
+  "files": [
+    "sICmulador_bg.wasm",
+    "sICmulador.js",
+    "sICmulador.d.ts"
+  ],
+  "module": "sICmulador.js",
+  "types": "sICmulador.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
