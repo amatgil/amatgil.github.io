@@ -1,5 +1,5 @@
-import init from "/subpages/utils/s-ic-mulador/pkg/sICmulador.js";
-import { Processador } from "/subpages/utils/s-ic-mulador/pkg/sICmulador.js";
+import init from "./pkg/sICmulador.js";
+import { Processador } from "./pkg/sICmulador.js";
 
 
 await init();

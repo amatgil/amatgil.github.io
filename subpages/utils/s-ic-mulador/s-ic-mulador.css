@@ -1,5 +1,6 @@
 .sis-contingut {
     display: grid;
+    width: 100%;
     grid-template-columns: 2fr 1fr;
     column-gap: 3em;
 }
@@ -12,6 +13,7 @@
 
 .right-side {
     display: grid;
+    width: 100%;
     grid-template-rows: 1fr 5fr 1fr;
     row-gap: 1em;
 }
