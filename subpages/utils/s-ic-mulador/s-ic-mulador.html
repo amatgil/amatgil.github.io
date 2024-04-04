@@ -6,11 +6,12 @@ permalink: /utils/s-ic-mulador
 
 <link rel="stylesheet" href="/subpages/utils/s-ic-mulador/s-ic-mulador.css">
 <script type="module">
-  import { init_unit, advance_unit, advance_all, populate_fields } from "/subpages/utils/s-ic-mulador/s-ic-mulador.js";
+  import { init_unit, advance_unit, advance_all, populate_fields, instruct_color_when_changed } from "/subpages/utils/s-ic-mulador/s-ic-mulador.js";
   populate_fields();
-  window.init_unit = init_unit;
+  window.init_unit    = init_unit;
   window.advance_unit = advance_unit;
-  window.advance_all = advance_all;
+  window.advance_all  = advance_all;
+  window.instruct_color = instruct_color_when_changed;
 </script>
 
 <div class="main-content">
@@ -26,16 +27,17 @@ permalink: /utils/s-ic-mulador
     </div>
     <div class="right-side">
       <div id="entrades">
-	<textarea id="instruccions" placeholder="Aquí van les INSTRUCCIONS inicials" class="entrades-boxes"></textarea>
+	<textarea id="instruccions" placeholder="Aquí van les INSTRUCCIONS inicials"
+		  class="entrades-boxes" oninput="instruct_color()"></textarea>
 	<textarea id="regs"         placeholder="Aquí van els REGISTRES inicials"    class="entrades-boxes"></textarea>
 	<textarea id="mem-inicial"  placeholder="Aquí va la MEMÒRIA inicial"         class="entrades-boxes"></textarea>
 	<textarea id="io"           placeholder="Aquí va l'IO constant"              class="entrades-boxes"></textarea>
       </div>
       <div id="advance_buttons">
-	<button onclick="init_unit()" class="advance-btn">Inicialitza</button>
-	<button onclick="advance_unit()" class="advance-btn">Avança un pas</button>
-	<button onlicck="advance_all()" class="advance-btn">Avança fins al final</button>
-	<textarea id="pc"           placeholder="PC inicial"                                class="entrades-boxes"></textarea>
+	<button onclick="init_unit()"      class="advance-btn">Re-Inicialitza</button>
+	<button onclick="advance_unit()"   class="advance-btn">Avança un pas</button>
+	<button onclick="advance_all()"    class="advance-btn">Avança fins al final</button>
+	<textarea placeholder="PC inicial" class="entrades-boxes" id="pc"  ></textarea>
       </div>
       <div>
       </div>
@@ -45,7 +47,8 @@ permalink: /utils/s-ic-mulador
     <h2>Com funciona?</h2>
     <h3>Mode simple (T8..T13)</h3>
     <h4>Utilització</h4>
-    Només cal escriure a les caixes de la dreta les instruccions/registres/memòria/IO tal com estan al principi, crear un nou sistema prement "Inicialitza" i anar avançant amb el botó "Avança un pas".
+    <p>Només cal escriure a les caixes de la dreta les instruccions/registres/memòria/IO tal com estan al principi, crear un nou sistema prement "Re-Inicialitza" i anar avançant amb el botó "Avança un pas".</p>
+    <p><strong>VIGILEU:</strong> Si una entrada està en <span style="color: #ff0000; background-color: #181926">vermell</span> vol dir que el seu valor no és el que el processador té al seu interior. Si això no és el que voleu, premeu "Re-Inicialitza".</p>
     <h3>Mode complet (T14)</h3>
     <code>todo!("Aquí anirà l'explicació del mode d'ús del tema 14 quan hagi fet la frontend d'una vegada")</code>
     <h4>Apunts extra</h4>
