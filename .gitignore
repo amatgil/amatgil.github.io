@@ -6,3 +6,4 @@ vendor
 *.lock
 !flake.lock
 _knowledgeForMe
+.swp

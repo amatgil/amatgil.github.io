@@ -2,6 +2,10 @@
   white-space: pre-wrap;
 }
 
+.explicacio {
+    font-size: 17px;
+    line-height: 1.45em;
+}
 #entrada-sisa-value {
   width: 20em;
   font-size: 30px;

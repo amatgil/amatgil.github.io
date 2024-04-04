@@ -1,9 +1,12 @@
 import init from "/assets/wasm/utils/traductor_sisa/pkg/traductor_SISA.js";
 import { translate_instruction } from "/assets/wasm/utils/traductor_sisa/pkg/traductor_SISA.js";
-import memory from "/assets/wasm/altres/game_of_life/pkg/wasm_game_of_life.js";
 
 
-async function translate() {
+export function initialitza_entrada() {
+    document.getElementById("entrada-sisa-value").value = "ADD R1, R2, R3";
+}
+
+export async function translate() {
 	const wasm = await init();
 	const res = document.getElementById('resultat');
 	let o1    = document.querySelector('input[name="a_addr_pos"]:checked').value;
@@ -22,5 +25,3 @@ async function translate() {
 	console.log(result);
 	res.innerHTML = result
 }
-
-export { translate }

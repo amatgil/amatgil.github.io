@@ -18,6 +18,10 @@ input::-webkit-inner-spin-button {
   font-size: 40px;
 }
 
+#taugtpi {
+    font-size: 60px
+}
+
 #input-area {
   font-size: 40px;
   white-space: pre;

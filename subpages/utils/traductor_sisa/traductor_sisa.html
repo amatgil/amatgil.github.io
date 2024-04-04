@@ -5,20 +5,26 @@ permalink: /utils/traductor_sisa
 ---
 
 {% include always-present/sidebar.html %}
-<link rel="stylesheet" href="/assets/css/subpagines/utils/traductor_sisa.css">
+<link rel="stylesheet" href="/subpages/utils/traductor_sisa/traductor_sisa.css">
+<script type="module">
+  import { translate, initialitza_entrada } from "/subpages/utils/traductor_sisa/traductor_sisa.js";
+  initialitza_entrada();
+  translate();
+  window.translate = translate;
+</script>
 
 <div class="main-content">
   <h1>SISA Assembler</h1>
-  <p>Està inacabat (no té totes les instruccions), però és funcional.</p>
-  <p>També hi falten un parell d'instruccions que encara no he implementat (com <code>MOVE</code> o <code>IN</code>). Si apreteu el botó "Translate" i no hi apareix res, mireu la consola i segurament hi veureu un error semblant a "reached unreachable!()": vol dir que encara no l'he escrit. (Si voleu fer una PR de dues línies que em falten, endavant).</p>
+  <p class="explicacio">Està inacabat (no té totes les instruccions), però és funcional.</p>
+  <p class="explicacio">També hi falten un parell d'instruccions que encara no he implementat (com <code>MOVE</code> o <code>IN</code>). Si apreteu el botó "Translate" i no hi apareix res, mireu la consola i segurament hi veureu un error semblant a "reached unreachable!()": vol dir que encara no l'he escrit. (Si voleu fer una PR de dues línies que em falten, endavant).</p>
   <h4>Compte!</h4>
   <ul>
-    <li>Si hi introdueixes un `n` immediat, ha d'estar amb hex i prefix (e.g. `0xF23F`). Si vols utilitzar decimal, et fas la conversió tu solet, que ja ets prou grandet (i no tinc ganes d'haver de detectar el cas i tot això).</li>
-    <li>La entrada ha d'estar neta i sanejada. Si no és correcta, no puc prometre que ho detecti (és UB, podriem dir).</li>
-    <li>Els enters haurien d'estar en Ca2 (e.g. `-1` seria `0xFFFF`, recorda que l'entrada ha d'estar en hex).</li>
+    <li class="explicacio">Si hi introdueixes un `n` immediat, ha d'estar amb hex i prefix (e.g. `0xF23F`). Si vols utilitzar decimal, et fas la conversió tu solet, que ja ets prou grandet (i no tinc ganes d'haver de detectar el cas i tot això).</li>
+    <li class="explicacio">La entrada ha d'estar neta i sanejada. Si no és correcta, no puc prometre que ho detecti (és UB, podriem dir).</li>
+    <li class="explicacio">Els enters haurien d'estar en Ca2 (e.g. `-1` seria `0xFFFF`, recorda que l'entrada ha d'estar en hex).</li>
   </ul>
   <h3>Tria aquí l'ordre amb el que els vols la sortida:</h3>
-  <p>(si t'equivoques, és UB. Fes-ho bé.)</p>
+  <p class="explicacio">(si t'equivoques, és UB. Fes-ho bé.)</p>
   <div id="trans_selector">
     <div id="sel_labels">
       @A: <br>
@@ -116,13 +122,9 @@ permalink: /utils/traductor_sisa
   <div class="sisa-other">
     <input id="entrada-sisa-value"><br>
 
-    <button onclick="window.translate()" class="generador_trad" id="entrada-sisa-btn">Translate</button><br><br>
+    <button onclick="window.translate()" class="generador_trad" id="entrada-sisa-btn">Tradueix!</button><br><br>
     <span id="resultat"></span>
   </div>
 </div>
 
 
-<script type="module">
-  import { translate } from "/assets/javascript/subpagines/utils/traductor_sisa.js";
-  window.translate = translate;
-</script>
