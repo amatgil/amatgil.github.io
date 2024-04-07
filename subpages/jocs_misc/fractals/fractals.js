@@ -1,5 +1,5 @@
-import init from "./pkg/vonkoch_snowflake.js";
-import { vonkoch } from "./pkg/vonkoch_snowflake.js";
+import init from "./pkg/fractals.js";
+import { vonkoch, sierp } from "./pkg/fractals.js";
 
 
 await init();
@@ -49,12 +49,17 @@ export async function koch_dec_n() {
 
 // SIERP
 export async function get_sierp() {
-    console.log("Making iserp :3")
+    let n = document.getElementById("sierp-n").value;
+    let s = sierp(n);
+
+    let elem = document.getElementById("sierp-holder");
+    elem.outerHTML = s;
+    console.log(s);
 }
 
 export async function sierp_inc_n() {
     let n = 1*document.getElementById("sierp-n").value; // To number (for some reason)
-    document.getElementById("sierp-n").value = Math.min(n + 1, 5);
+    document.getElementById("sierp-n").value = Math.min(n + 1, 8);
     get_sierp();
 }
 

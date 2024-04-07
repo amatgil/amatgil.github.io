@@ -4,7 +4,7 @@
     justify-content: center;
 }*/
 
-#vonkoch-n {
+.n-selector-input {
     max-height: 2em;
     margin-left: 1em;
     width: 1em;
@@ -24,8 +24,7 @@
 
 #n-selector {
     display: flex;
-  align-items: center;
-
+    align-items: center;
 }
 
 #anti-selector {

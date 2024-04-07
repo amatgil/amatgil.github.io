@@ -1,3 +1,5 @@
+# NOTE: This readme is now outdated. There are more fractals than the Snowflake
+
 # (Anti) Koch Snowflake generator
 
 This Rust program generates simple (Anti) Koch snowflakes from the commandline in the

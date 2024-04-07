@@ -1,13 +1,13 @@
 {
-  "name": "vonkoch_snowflake",
-  "version": "0.1.0",
+  "name": "fractals",
+  "version": "0.2.0",
   "files": [
-    "vonkoch_snowflake_bg.wasm",
-    "vonkoch_snowflake.js",
-    "vonkoch_snowflake.d.ts"
+    "fractals_bg.wasm",
+    "fractals.js",
+    "fractals.d.ts"
   ],
-  "module": "vonkoch_snowflake.js",
-  "types": "vonkoch_snowflake.d.ts",
+  "module": "fractals.js",
+  "types": "fractals.d.ts",
   "sideEffects": [
     "./snippets/*"
   ]

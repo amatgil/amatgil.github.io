@@ -37,7 +37,7 @@ permalink: /jocs_misc/fractals
     <div id="inputs">
       <div id="n-selector">
 	<p>Iteracions:  </p>
-	<input type="number" id="vonkoch-n" name="Von Koch Subdivisions" min="0" max="8" value="1" />
+	<input type="number" id="vonkoch-n" class="n-selector-input" name="Von Koch Subdivisions" min="0" max="8" value="1" onchange="get_vonkoch()" />
 	<div id="edit-n-btns">
 	  <button class="edit-n" onclick="koch_inc_n()">Incrementar</button>
 	  <button class="edit-n" onclick="koch_dec_n()">Decrementar</button>
@@ -54,7 +54,7 @@ permalink: /jocs_misc/fractals
     <div id="inputs">
       <div id="n-selector">
 	<p>Iteracions:  </p>
-	<input type="number" id="sierp-n" name="Sierp Subdivisions" min="0" max="5" value="1" />
+	<input type="number" id="sierp-n" class="n-selector-input" name="Sierp Subdivisions" min="0" max="8" value="1" onchange="get_sierp()" />
 	<div id="edit-n-btns">
 	  <button class="edit-n" id="inccer-n" onclick="sierp_inc_n()">Incrementar</button>
 	  <button class="edit-n" id="deccer-n" onclick="sierp_dec_n()">Decrementar</button>
