@@ -1,0 +1,54 @@
+/*#inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+
+#vonkoch-n {
+    max-height: 2em;
+    margin-left: 1em;
+    width: 1em;
+
+    text-align: center; 
+    -moz-appearance: textfield; /* Les fletxetes get YOTE (firefox) */
+    border-style: solid;
+    border-color:  #939ab7;
+    background-color: #24273a;
+    border-width: 2px;
+    color: inherit;
+
+    font-size: 20px;
+
+    outline-color:  #8aadf4;
+}
+
+#n-selector {
+    display: flex;
+  align-items: center;
+
+}
+
+#anti-selector {
+    display: flex;
+  align-items: center;
+}
+
+/* Les fletxetes get YOTE (altres buscadors) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.edit-n {
+    font-size: 15px;
+}
+
+#edit-n-btns {
+    margin-left: 2em;
+    display: flex;
+}
+
+#vonkoch-holder, #sierp-holder {
+    border: 0.5em ridge;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "vonkoch_snowflake",
+  "version": "0.1.0",
+  "files": [
+    "vonkoch_snowflake_bg.wasm",
+    "vonkoch_snowflake.js",
+    "vonkoch_snowflake.d.ts"
+  ],
+  "module": "vonkoch_snowflake.js",
+  "types": "vonkoch_snowflake.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
