@@ -79,11 +79,12 @@ export async function get_tree() {
     let n = document.getElementById("tree-n").value;
     let theta = document.getElementById("tree-theta").value;
     let length = document.getElementById("tree-side-length").value;
-    let s = tree(n, theta, length);
+    let multiplier = document.getElementById("tree-multiplier").value;
+    let s = tree(n, theta, length, multiplier);
 
     let elem = document.getElementById("tree-holder");
     elem.outerHTML = s;
-    console.log("Fent un arbre amb: ", n, theta, length);
+    console.log("Fent un arbre amb: ", n, theta, length, multiplier);
     //console.log(s);
 }
 export async function tree_inc_n() {

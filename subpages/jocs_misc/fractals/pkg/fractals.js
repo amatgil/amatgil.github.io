@@ -73,14 +73,15 @@ export function sierp(n) {
 * @param {number} n
 * @param {number} theta
 * @param {number} branch_length
+* @param {number} branch_multiplier
 * @returns {string}
 */
-export function tree(n, theta, branch_length) {
+export function tree(n, theta, branch_length, branch_multiplier) {
     let deferred1_0;
     let deferred1_1;
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        wasm.tree(retptr, n, theta, branch_length);
+        wasm.tree(retptr, n, theta, branch_length, branch_multiplier);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         deferred1_0 = r0;
