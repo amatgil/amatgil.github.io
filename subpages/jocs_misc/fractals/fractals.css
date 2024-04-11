@@ -1,9 +1,3 @@
-/*#inputs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}*/
-
 .n-selector-input {
     max-height: 2em;
     margin-left: 1em;
@@ -22,7 +16,7 @@
     outline-color:  #8aadf4;
 }
 
-#n-selector {
+.n-selector {
     display: flex;
     align-items: center;
 }
@@ -39,6 +33,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+#fractal-triat {
+  font-family: inherit;
+  background-color:  #494d64;
+  color: #b8c0e0	;
+  border-style: solid;
+  border-color: #6e738d;
+}
 .edit-n {
     font-size: 15px;
 }
@@ -48,6 +49,15 @@ input::-webkit-inner-spin-button {
     display: flex;
 }
 
-#vonkoch-holder, #sierp-holder {
+.tree-input {
+    display: flex;
+    gap: 2em;
+}
+#edit-n-btns {
+    margin-left: 2em;
+    display: flex;
+}
+
+#vonkoch-holder, #sierp-holder, #tree-holder {
     border: 0.5em ridge;
 }
