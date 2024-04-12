@@ -28,15 +28,40 @@ function getStringFromWasm0(ptr, len) {
 }
 /**
 * @param {number} n
-* @param {boolean} anti
+* @param {number} theta
+* @param {number} side_length
 * @returns {string}
 */
-export function vonkoch(n, anti) {
+export function pythagorean_tree(n, theta, side_length) {
     let deferred1_0;
     let deferred1_1;
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        wasm.vonkoch(retptr, n, anti);
+        wasm.pythagorean_tree(retptr, n, theta, side_length);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        deferred1_0 = r0;
+        deferred1_1 = r1;
+        return getStringFromWasm0(r0, r1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_export_0(deferred1_0, deferred1_1, 1);
+    }
+}
+
+/**
+* @param {number} n
+* @param {number} theta
+* @param {number} branch_length
+* @param {number} branch_multiplier
+* @returns {string}
+*/
+export function tree(n, theta, branch_length, branch_multiplier) {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        wasm.tree(retptr, n, theta, branch_length, branch_multiplier);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         deferred1_0 = r0;
@@ -71,17 +96,15 @@ export function sierp(n) {
 
 /**
 * @param {number} n
-* @param {number} theta
-* @param {number} branch_length
-* @param {number} branch_multiplier
+* @param {boolean} anti
 * @returns {string}
 */
-export function tree(n, theta, branch_length, branch_multiplier) {
+export function vonkoch(n, anti) {
     let deferred1_0;
     let deferred1_1;
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        wasm.tree(retptr, n, theta, branch_length, branch_multiplier);
+        wasm.vonkoch(retptr, n, anti);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         deferred1_0 = r0;

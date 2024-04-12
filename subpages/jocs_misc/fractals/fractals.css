@@ -58,6 +58,6 @@ input::-webkit-inner-spin-button {
     display: flex;
 }
 
-#vonkoch-holder, #sierp-holder, #tree-holder {
+#vonkoch-holder, #sierp-holder, #tree-holder, #pyth-tree-holder {
     border: 0.5em ridge;
 }

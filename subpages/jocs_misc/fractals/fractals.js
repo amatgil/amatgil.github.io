@@ -1,5 +1,5 @@
 import init from "./pkg/fractals.js";
-import { vonkoch, sierp, tree } from "./pkg/fractals.js";
+import { vonkoch, sierp, tree, pythagorean_tree } from "./pkg/fractals.js";
 
 
 await init();
@@ -12,6 +12,7 @@ export async function toggle_fractal() {
     document.getElementById("vonkoch").style.display = "none";
     document.getElementById("sierp").style.display   = "none";
     document.getElementById("tree").style.display   = "none";
+    document.getElementById("pyth-tree").style.display   = "none";
 
     if (chosen == "vonkoch") {
 	document.getElementById("vonkoch").style.display = "block";
@@ -22,6 +23,9 @@ export async function toggle_fractal() {
     } else if (chosen == "tree") {
 	document.getElementById("tree").style.display = "block";
 	get_tree();
+    } else if (chosen == "pyth") {
+	document.getElementById("pyth-tree").style.display = "block";
+	get_pyth_tree();
     }
 
 }
@@ -74,7 +78,7 @@ export async function sierp_dec_n() {
     get_sierp();
 }
 
-// TREE
+// BASIC TREE
 export async function get_tree() {
     let n = document.getElementById("tree-n").value;
     let theta = document.getElementById("tree-theta").value;
@@ -85,7 +89,6 @@ export async function get_tree() {
     let elem = document.getElementById("tree-holder");
     elem.outerHTML = s;
     console.log("Fent un arbre amb: ", n, theta, length, multiplier);
-    //console.log(s);
 }
 export async function tree_inc_n() {
     let n = 1*document.getElementById("tree-n").value; // To number (for some reason)
@@ -96,4 +99,28 @@ export async function tree_dec_n() {
     let n = 1*document.getElementById("tree-n").value; // To number (for some reason)
     document.getElementById("tree-n").value = Math.max(n - 1, 0);
     get_tree();
+}
+
+// PYTH TREE
+export async function get_pyth_tree() {
+    let n = document.getElementById("pyth-tree-n").value;
+    let theta = document.getElementById("pyth-tree-theta").value;
+    let length = document.getElementById("pyth-tree-side-length").value;
+    let s = pythagorean_tree(n, theta, length);
+
+    let elem = document.getElementById("pyth-tree-holder");
+    elem.outerHTML = s;
+    console.log("Fent un arbre amb: ", n, theta, length);
+}
+
+export async function pyth_tree_inc_n() {
+    let n = 1*document.getElementById("pyth-tree-n").value; // To number (for some reason)
+    document.getElementById("pyth-tree-n").value = Math.min(n + 1, 13);
+    get_pyth_tree();
+}
+
+export async function pyth_tree_dec_n() {
+    let n = 1*document.getElementById("pyth-tree-n").value; // To number (for some reason)
+    document.getElementById("pyth-tree-n").value = Math.max(n - 1, 0);
+    get_pyth_tree();
 }

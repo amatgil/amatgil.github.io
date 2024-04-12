@@ -1,8 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
-export function vonkoch(a: number, b: number, c: number): void;
-export function sierp(a: number, b: number): void;
+export function pythagorean_tree(a: number, b: number, c: number, d: number): void;
 export function tree(a: number, b: number, c: number, d: number, e: number): void;
+export function sierp(a: number, b: number): void;
+export function vonkoch(a: number, b: number, c: number): void;
 export function __wbindgen_add_to_stack_pointer(a: number): number;
 export function __wbindgen_export_0(a: number, b: number, c: number): void;

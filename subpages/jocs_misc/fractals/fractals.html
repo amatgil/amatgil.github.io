@@ -11,7 +11,8 @@ permalink: /jocs_misc/fractals
   import { toggle_fractal,
 	   get_vonkoch, koch_inc_n, koch_dec_n,
 	   get_sierp, sierp_inc_n, sierp_dec_n,
-	   get_tree, tree_inc_n, tree_dec_n
+	   get_tree, tree_inc_n, tree_dec_n,
+	   get_pyth_tree, pyth_tree_inc_n, pyth_tree_dec_n
 	 } from "/subpages/jocs_misc/fractals/fractals.js"
   toggle_fractal();
 
@@ -28,6 +29,10 @@ permalink: /jocs_misc/fractals
   window.get_tree = get_tree;
   window.tree_inc_n = tree_inc_n;
   window.tree_dec_n = tree_dec_n;
+
+  window.get_pyth_tree = get_pyth_tree;
+  window.pyth_tree_inc_n = pyth_tree_inc_n;
+  window.pyth_tree_dec_n = pyth_tree_dec_n;
 </script>
 
 <div class="main-content">
@@ -37,7 +42,8 @@ permalink: /jocs_misc/fractals
     <option value="nothing">-</option>
     <option value="vonkoch">Von Koch Snowflake</option>
     <option value="sierp">Triangle de Sierpinsky</option>
-    <option value="tree">Arbre</option>
+    <option value="tree">Arbre Bàsic</option>
+    <option value="pyth">Arbre Pitagòric</option>
   </select>
   <div id="vonkoch">
     <div class="inputs">
@@ -93,6 +99,27 @@ permalink: /jocs_misc/fractals
       </div>
     </div>
     <svg id="tree-holder"></svg>
+  </div>
+  <div id="pyth-tree">
+    <div class="inputs">
+      <div class="n-selector">
+	<p>Iteracions:  </p>
+	<input type="number" id="pyth-tree-n" class="n-selector-input" name="Pyth-Tree Subdivisions" min="0" max="13" value="5" onchange="get_pyth-tree()" />
+	<div id="edit-n-btns">
+	  <button class="edit-n" id="inccer-n" onclick="pyth_tree_inc_n()">Incrementar</button>
+	  <button class="edit-n" id="deccer-n" onclick="pyth_tree_dec_n()">Decrementar</button>
+	</div>
+      </div>
+      <div class="pyth-tree-input">
+	<p>Angle: </p>
+	<input type="range" id="pyth-tree-theta" min="1.6" max="6.3" value="2.0" step="0.1" oninput="get_pyth_tree()" />
+      </div>
+      <div class="pyth-tree-input" id="pyth-tree-length-selector">
+	<p>Mida de l'arrel: </p>
+	<input type="range" id="pyth-tree-side-length" min="70" max="500" value="200" oninput="get_pyth_tree()" />
+      </div>
+    </div>
+    <svg id="pyth-tree-holder"></svg>
   </div>
 
 </div>
