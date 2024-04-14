@@ -61,15 +61,15 @@ input::-webkit-inner-spin-button {
     display: flex;
 }
 
-#vonkoch-holder, #sierp-holder, #tree-holder, #pyth-tree-holder, #l-system-holder {
+#vonkoch-holder, #sierp-holder, #tree-holder, #pyth-tree-holder {
     border: 0.5em ridge;
 }
 
-.l-system-turtle-input {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    display: flex;
+#l-system-holder {
+    border: 0.5em ridge;
+    width: 200%;
 }
+
 
 #l-system-axiom {
     text-align: center; 
@@ -105,13 +105,15 @@ input::-webkit-inner-spin-button {
 }
 
 
-.l-system-turtle-input {
+.l-system-turtle-input{
     padding: 1.5em;
     border: ridge 0.2em;
     max-width: 20em;
     display: flex;
     align-items: center;
 
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .l-system-turtle-numeric-input, .l-system-turtle-text-input {
@@ -136,10 +138,57 @@ input::-webkit-inner-spin-button {
     margin: auto;
 }
 
-.l-system-dynamic-input-delete-button {
+.l-system-dynamic-input-delete-turtle-button {
     padding: 0.5em;
     max-height: 3em;
     width: 80%;
     font-size: 10px;
     margin: auto;
+}
+
+.l-system-dynamic-input-delete-rules-button {
+    padding: 0.5em;
+    max-height: 3em;
+    width: 80%;
+    font-size: 15px;
+    margin: auto;
+    margin-left: 0.6em;
+}
+
+.l-system-rules-arrow {
+    min-width: 2em;
+    max-height: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-down: 2em;
+}
+
+.l-system-rules-input {
+    padding: 1.5em;
+    border: ridge 0.2em;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+    max-width: 100%;
+}
+
+.l-system-rules-box {
+    max-height: 2em;
+    width: 8em;
+
+    text-align: center; 
+    -moz-appearance: textfield; /* Les fletxetes get YOTE (firefox) */
+    border-style: solid;
+    border-color:  #939ab7;
+    background-color: #24273a;
+    border-width: 2px;
+    color: inherit;
+
+    outline-color:  #8aadf4;
+
+    margin: auto;
+    margin-right: 0.75em;
 }

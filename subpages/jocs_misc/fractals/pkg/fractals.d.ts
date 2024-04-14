@@ -27,6 +27,29 @@ export function sierp(n: number): string;
 */
 export function vonkoch(n: number, anti: boolean): string;
 /**
+* @returns {any}
+*/
+export function get_empty_rules_map(): any;
+/**
+* @returns {any}
+*/
+export function get_empty_turtle_map(): any;
+/**
+* @param {any} turtle_mapping
+* @param {string} c
+* @param {string} s
+* @param {number} amount
+* @returns {any}
+*/
+export function add_to_turtle_map(turtle_mapping: any, c: string, s: string, amount: number): any;
+/**
+* @param {any} rules_mapping
+* @param {string} lhs
+* @param {string} rhs
+* @returns {any}
+*/
+export function add_to_rules_map(rules_mapping: any, lhs: string, rhs: string): any;
+/**
 * @param {number} n
 * @param {string} axiom
 * @param {any} rules
@@ -47,6 +70,10 @@ export interface InitOutput {
   readonly tree: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly sierp: (a: number, b: number) => void;
   readonly vonkoch: (a: number, b: number, c: number) => void;
+  readonly get_empty_rules_map: () => number;
+  readonly get_empty_turtle_map: () => number;
+  readonly add_to_turtle_map: (a: number, b: number, c: number, d: number, e: number, f: number) => void;
+  readonly add_to_rules_map: (a: number, b: number, c: number, d: number, e: number, f: number) => void;
   readonly generate_l_fractal: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number) => void;
   readonly __wbindgen_export_0: (a: number, b: number) => number;
   readonly __wbindgen_export_1: (a: number, b: number, c: number, d: number) => number;

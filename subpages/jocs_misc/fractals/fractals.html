@@ -13,7 +13,11 @@ permalink: /jocs_misc/fractals
 	   get_sierp, sierp_inc_n, sierp_dec_n,
 	   get_tree, tree_inc_n, tree_dec_n,
 	   get_pyth_tree, pyth_tree_inc_n, pyth_tree_dec_n,
-	   get_l_system, l_system_inc_n, l_system_dec_n, l_system_add_turtle_button, l_system_delete_dynamic_div
+
+	   get_l_system, l_system_inc_n, l_system_dec_n,
+	   l_system_add_turtle_button, l_system_delete_dynamic_turtle_div,
+	   l_system_add_rules_button, l_system_delete_dynamic_rules_div,
+	   l_system_apply_example
 	 } from "/subpages/jocs_misc/fractals/fractals.js"
   toggle_fractal();
 
@@ -39,9 +43,13 @@ permalink: /jocs_misc/fractals
   window.l_system_inc_n = l_system_inc_n;
   window.l_system_dec_n = l_system_dec_n;
   window.l_system_add_turtle_button = l_system_add_turtle_button;
-  window.l_system_delete_dynamic_div = l_system_delete_dynamic_div;
+  window.l_system_add_rules_button = l_system_add_rules_button;
+  window.l_system_delete_dynamic_turtle_div = l_system_delete_dynamic_turtle_div;
+  window.l_system_delete_dynamic_rules_div = l_system_delete_dynamic_rules_div;
+  window.l_system_apply_example = l_system_apply_example;
 
   l_system_add_turtle_button();
+  l_system_add_rules_button();
 </script>
 
 <div class="main-content">
@@ -133,12 +141,19 @@ permalink: /jocs_misc/fractals
   </div>
   <div id="l-system">
     <div class="inputs">
+      <div>
+	<select name="l-system-examples-selector" id="l-system-examples-selector" oninput="l_system_apply_example()">
+	  <option value="nothing">-</option>
+	  <option value="sierp">Sierpinski</option>
+	  <option value="cantor">Cantor</option>
+      </div>
+	       
       <div class="n-selector">
 	<p>Iteracions:  </p>
 	<input type="number" id="l-system-n" class="n-selector-input" name="L-System Subdivisions" min="0" max="13" value="5" onchange="get_l_system()" />
 	<div id="edit-n-btns">
-	  <button class="edit-n" id="inccer-n" onclick="get_l_system_inc_n()">Incrementar</button>
-	  <button class="edit-n" id="deccer-n" onclick="get_l_system_dec_n()">Decrementar</button>
+	  <button class="edit-n" id="inccer-n" onclick="l_system_inc_n()">Incrementar</button>
+	  <button class="edit-n" id="deccer-n" onclick="l_system_dec_n()">Decrementar</button>
 	</div>
       </div>
 
@@ -149,19 +164,26 @@ permalink: /jocs_misc/fractals
 
       <div class="l-system-input">
 	<p>Posició inicial:: </p>
-	<input type="range" id="l-system-start-x" min="20" max="900" value="300" oninput="get_l_system()" />
-	<input type="range" id="l-system-start-y" min="20" max="900" value="300" oninput="get_l_system()" />
+	<input type="range" id="l-system-start-x" min="20" max="1900" value="300" oninput="get_l_system()" />
+	<input type="range" id="l-system-start-y" min="20" max="1900" value="300" oninput="get_l_system()" />
       </div>
 
       <div class="l-system-input">
 	<p>Direcció inicial: </p>
-	<input type="number" id="l-system-start-dir" min="20" max="900" value="300" oninput="get_l_system()" />
+	<input type="number" id="l-system-start-dir" min="20" max="900" value="0" oninput="get_l_system()" />
+      </div>
+
+      <div class="l-system-input">
+	<p>Regles per a l'L-System : </p>
+	<button onclick="l_system_add_rules_button()">Afegir entrada</button>
+	<div id="l-system-dynamic-rules-inputs">
+	</div>
       </div>
 
       <div class="l-system-input">
 	<p>Simbols per la tortuga: </p>
 	<button onclick="l_system_add_turtle_button()">Afegir entrada</button>
-	<div id="l-system-dynamic-inputs">
+	<div id="l-system-dynamic-turtle-inputs">
 	</div>
       </div>
 

@@ -1,5 +1,14 @@
 import init from "./pkg/fractals.js";
-import { vonkoch, sierp, tree, pythagorean_tree, generate_l_fractal } from "./pkg/fractals.js";
+import { vonkoch,
+	 sierp,
+	 tree,
+	 pythagorean_tree,
+	 generate_l_fractal,
+	 get_empty_rules_map,
+	 get_empty_turtle_map,
+	 add_to_turtle_map,
+	 add_to_rules_map
+       } from "./pkg/fractals.js";
 
 
 await init();
@@ -135,18 +144,39 @@ export async function get_l_system() {
     let axiom = document.getElementById("l-system-axiom").value;
     let start_x = document.getElementById("l-system-start-x").value;
     let start_y = document.getElementById("l-system-start-y").value;
-    let start_dir = document.getElementById("l-system-start-dir").value;
+    let start_direction= document.getElementById("l-system-start-dir").value;
     let line_length = document.getElementById("l-system-line-length").value;
 
-    //let s = generate_l_fractal(
-    //	n, axiom, rules, turtle_mapping, start_x, start_y, start_direction, line_length
-    //);
+    let turtle_rules = get_empty_turtle_map();
+    for (const id of used_turtle_ids) {
+	console.log(id);
+	let radio = document.querySelector(`input[type="radio"][name="l-system-turtle-radio-${id}"]:checked`)?.value ?? "[Couldn't read radio button lmao]";
+	let ch = document.getElementById("l-system-input-name-" + id).value;
+	let v = document.getElementById("l-system-numeric-input-" + id).value;
+	console.log("Updating with: ", radio, ch, v);
+	turtle_rules = add_to_turtle_map(turtle_rules, ch, radio, v);
+    }
 
+    let axiom_rules = get_empty_rules_map(); // lmao
+    for (const id of used_rules_ids) {
+	console.log(id);
+	let lhs = document.getElementById("l-system-rules-lhs-" + id).value;
+	let rhs = document.getElementById("l-system-rules-rhs-" + id).value;
+	console.log("Updating rules with: ", lhs);
+	axiom_rules = add_to_rules_map(axiom_rules, lhs, rhs);
+    }
+
+
+    let s = generate_l_fractal(
+    	n, axiom, axiom_rules, turtle_rules, start_x, start_y, start_direction, line_length
+    );
+
+    console.log(s);
     let elem = document.getElementById("l-system-holder");
-    //elem.outerHTML = s;
-    //console.log(
-    //	"L-System with: ", n, axiom, rules, turtle_mapping, start_x, start_y, start_direction, line_length
-    //);
+    elem.outerHTML = s;
+    console.log(
+    	n, axiom, axiom_rules, turtle_rules, start_x, start_y, start_direction, line_length
+    );
 }
 
 export async function l_system_inc_n() {
@@ -161,41 +191,116 @@ export async function l_system_dec_n() {
     get_l_system();
 }
 
-var ids_set = 1;
+var used_turtle_ids = new Set();
 export async function l_system_add_turtle_button() {
-    ids_set += 1;
-    let new_div_inner = l_system_get_turtle_input(ids_set);
+    let id;
+    for (let i = 0; i < 200; ++i) {
+	if (!used_turtle_ids.has(i)) {
+	    id = i;
+	    used_turtle_ids.add(i);
+	    break;
+	}
+    }
+    let new_div_inner = l_system_get_turtle_input(id);
     let new_div = document.createElement('div');
     new_div.innerHTML = new_div_inner;
     new_div.classList.add("l-system-turtle-input");
-    new_div.id = "l-system-turtle-dynamically-spawned-div-" + ids_set;
+    new_div.id = "l-system-turtle-dynamically-spawned-turtle-div-" + id;
 
-    let dynamic_holder = document.getElementById("l-system-dynamic-inputs");
+    let dynamic_holder = document.getElementById("l-system-dynamic-turtle-inputs");
     dynamic_holder.appendChild(new_div);
 
 }
 
-export async function l_system_delete_dynamic_div(i) {
-    let elem = document.getElementById("l-system-turtle-dynamically-spawned-div-" + i);
+var used_rules_ids = new Set();
+export async function l_system_add_rules_button() {
+    let id;
+    for (let i = 0; i < 200; ++i) {
+	if (!used_rules_ids.has(i)) {
+	    id = i;
+	    used_rules_ids.add(i);
+	    break;
+	}
+    }
+    let new_div_inner = l_system_get_rules_input(id);
+    let new_div = document.createElement('div');
+    new_div.innerHTML = new_div_inner;
+    new_div.classList.add("l-system-rules-input");
+    new_div.id = "l-system-rules-dynamically-spawned-rules-div-" + id;
+
+    let dynamic_holder = document.getElementById("l-system-dynamic-rules-inputs");
+    dynamic_holder.appendChild(new_div);
+
+}
+
+export async function l_system_delete_dynamic_turtle_div(i) {
+    let elem = document.getElementById("l-system-turtle-dynamically-spawned-turtle-div-" + i);
+    used_turtle_ids.delete(i);
+    elem.remove();
+}
+
+export async function l_system_delete_dynamic_rules_div(i) {
+    let elem = document.getElementById("l-system-rules-dynamically-spawned-rules-div-" + i);
+    used_rules_ids.delete(i);
     elem.remove();
 }
 
 
+
 function l_system_get_turtle_input(i) {
     
-    let new_div = //`<div class=\"l-system-turtle-input\">
-`
-<div class=\"l-system-turtle-radio-bunch\">
-<span><input type=\"radio\" name=\"l-system-turtl-radio-${i}\" value=\"rotate\">Girar (graus)</span>
-<span><input type=\"radio\" name=\"l-system-turtl-radio-${i}\" value=\"advance\">Avançar (mult)</span>
-<span><input type=\"radio\" name=\"l-system-turtl-radio-${i}\" value=\"draw\">Dibuixar (mult)</span>
+    let new_div = 
+`<div class=\"l-system-turtle-radio-bunch\">
+<div>
+<input type=\"radio\" name=\"l-system-turtle-radio-${i}\" id=\"l-system-turtle-radio-${i}-rotate\" onchange=\"get_l_system()\" value=\"rotate\" checked=\"checked\">
+<label for=\"l-system-turtle-radio-${i}-rotate\">Girar (graus)</label>
+</div>
+<div>
+<input type=\"radio\" name=\"l-system-turtle-radio-${i}\" id=\"l-system-turtle-radio-${i}-advance\" onchange=\"get_l_system()\" value=\"advance\">
+<label for=\"l-system-turtle-radio-${i}-advance\">Avançar (mult)</label>
+</div>
+<div>
+<input type=\"radio\" name=\"l-system-turtle-radio-${i}\" id=\"l-system-turtle-radio-${i}-draw\" onchange=\"get_l_system()\" value=\"draw\">
+<label for=\"l-system-turtle-radio-${i}-draw\">Dibuixar (mult)</label>
+</div>
 </div>
 <div class=\"l-system-keyboard-input-wrapper\">
 <input type=\"text\" class=\"l-system-turtle-text-input\" id=\"l-system-input-name-${i}\" maxlength=\"1\" width=\"3em\" placeholder=\"Char\" oninput=\"get_l_system()\" />
-<input type=\"text\" class=\"l-system-turtle-numeric-input\" id=\"l-system-numeric-input-${i}\" maxlength=\"1\" width=\"3em\" placeholder=\"Valor\" oninput=\"get_l_system()\" />
-<button class="l-system-dynamic-input-delete-button" onclick=\"l_system_delete_dynamic_div(${i})\">Delete</button>
+<input type=\"text\" class=\"l-system-turtle-numeric-input\" id=\"l-system-numeric-input-${i}\" maxlength=\"4\" width=\"3em\" placeholder=\"Valor\" value=\"1\"oninput=\"get_l_system()\" />
+<button class="l-system-dynamic-input-delete-turtle-button" onclick=\"l_system_delete_dynamic_turtle_div(${i})\">Delete</button>
 </div>`;
-//</div>`;
 
     return new_div;
+}
+
+
+function l_system_get_rules_input(i) {
+    
+    let new_div = 
+`<input type="text" id="l-system-rules-lhs-${i}" class="l-system-rules-box" oninput="get_l_system()" />
+<p class="l-system-rules-arrow"> &rarr; </p>
+<input type="text" id="l-system-rules-rhs-${i}" class="l-system-rules-box" oninput="get_l_system()" />
+<button class="l-system-dynamic-input-delete-rules-button" onclick="l_system_delete_dynamic_rules_div(${i})">Delete</button>`;
+    return new_div;
+}
+
+
+export async function l_system_apply_example() {
+    let chosen = document.getElementById("l-system-examples-selector").value;
+
+    let axiom = document.getElementById("l-system-axiom");
+    let start_x = document.getElementById("l-system-start-x");
+    let start_y = document.getElementById("l-system-start-y");
+    let start_direction= document.getElementById("l-system-start-dir");
+    let line_length = document.getElementById("l-system-line-length");
+
+    console.log("Applying example", chosen);
+    if (chosen == "sierp") {
+	axiom.value = "F-G-G";
+	start_x.value = "20";
+	start_y.value = "1200";
+	start_direction.value = "0";
+	line_length.value = "100";
+    } else if (chosen == "cantor") {
+    }
 }
