@@ -26,6 +26,18 @@ export function sierp(n: number): string;
 * @returns {string}
 */
 export function vonkoch(n: number, anti: boolean): string;
+/**
+* @param {number} n
+* @param {string} axiom
+* @param {any} rules
+* @param {any} turtle_mapping
+* @param {number} start_x
+* @param {number} start_y
+* @param {number} start_direction
+* @param {number} line_length
+* @returns {string}
+*/
+export function generate_l_fractal(n: number, axiom: string, rules: any, turtle_mapping: any, start_x: number, start_y: number, start_direction: number, line_length: number): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
@@ -35,8 +47,12 @@ export interface InitOutput {
   readonly tree: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly sierp: (a: number, b: number) => void;
   readonly vonkoch: (a: number, b: number, c: number) => void;
+  readonly generate_l_fractal: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number) => void;
+  readonly __wbindgen_export_0: (a: number, b: number) => number;
+  readonly __wbindgen_export_1: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
-  readonly __wbindgen_export_0: (a: number, b: number, c: number) => void;
+  readonly __wbindgen_export_2: (a: number, b: number, c: number) => void;
+  readonly __wbindgen_export_3: (a: number) => void;
 }
 
 export type SyncInitInput = BufferSource | WebAssembly.Module;
