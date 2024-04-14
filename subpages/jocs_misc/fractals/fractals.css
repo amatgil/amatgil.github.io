@@ -192,3 +192,13 @@ input::-webkit-inner-spin-button {
     margin: auto;
     margin-right: 0.75em;
 }
+
+#l-system-examples-selector {
+  font-family: inherit;
+  background-color:  #494d64;
+  color: #b8c0e0	;
+  border-style: solid;
+  border-color: #6e738d;
+
+  margin: auto;
+}

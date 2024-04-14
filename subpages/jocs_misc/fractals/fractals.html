@@ -140,32 +140,21 @@ permalink: /jocs_misc/fractals
     <svg id="pyth-tree-holder"></svg>
   </div>
   <div id="l-system">
+    <label for="l-system-examples-selector">Exemples:</label>
+    <select name="l-system-examples-selector" id="l-system-examples-selector" oninput="l_system_apply_example()">
+      <option value="nothing">-</option>
+      <option value="sierp">Sierpinski</option>
+      <!--<option value="cantor">Cantor</option>-->
+      <option value="koch">Koch</option>
+      <option value="dragon">del Drac</option>
+    </select>
     <div class="inputs">
       <div>
-	<select name="l-system-examples-selector" id="l-system-examples-selector" oninput="l_system_apply_example()">
-	  <option value="nothing">-</option>
-	  <option value="sierp">Sierpinski</option>
-	  <option value="cantor">Cantor</option>
       </div>
-	       
-      <div class="n-selector">
-	<p>Iteracions:  </p>
-	<input type="number" id="l-system-n" class="n-selector-input" name="L-System Subdivisions" min="0" max="13" value="5" onchange="get_l_system()" />
-	<div id="edit-n-btns">
-	  <button class="edit-n" id="inccer-n" onclick="l_system_inc_n()">Incrementar</button>
-	  <button class="edit-n" id="deccer-n" onclick="l_system_dec_n()">Decrementar</button>
-	</div>
-      </div>
-
+      
       <div class="l-system-input">
 	<p>Axioma: </p>
 	<input type="text" id="l-system-axiom" value="" oninput="get_l_system()" />
-      </div>
-
-      <div class="l-system-input">
-	<p>Posició inicial:: </p>
-	<input type="range" id="l-system-start-x" min="20" max="1900" value="300" oninput="get_l_system()" />
-	<input type="range" id="l-system-start-y" min="20" max="1900" value="300" oninput="get_l_system()" />
       </div>
 
       <div class="l-system-input">
@@ -187,9 +176,26 @@ permalink: /jocs_misc/fractals
 	</div>
       </div>
 
+      <div class="n-selector">
+	<p>Iteracions:  </p>
+	<input type="number" id="l-system-n" class="n-selector-input" name="L-System Subdivisions" min="0" max="13" value="5" onchange="get_l_system()" />
+	<div id="edit-n-btns">
+	  <button class="edit-n" id="inccer-n" onclick="l_system_inc_n()">Incrementar</button>
+	  <button class="edit-n" id="deccer-n" onclick="l_system_dec_n()">Decrementar</button>
+	</div>
+      </div>
+
+
+      <div class="l-system-input">
+	<p>Posició inicial:: </p>
+	<input type="range" id="l-system-start-x" min="20" max="1900" value="300" oninput="get_l_system()" />
+	<input type="range" id="l-system-start-y" min="20" max="1900" value="300" oninput="get_l_system()" />
+      </div>
+
+
       <div class="l-system-input" id="l-system-length-selector">
 	<p>Mida de les linies: </p>
-	<input type="range" id="l-system-line-length" min="30" max="300" value="200" oninput="get_l_system()" />
+	<input type="range" id="l-system-line-length" min="10" max="150" value="200" step="2" oninput="get_l_system()" />
       </div>
     </div>
     <svg id="l-system-holder"></svg>

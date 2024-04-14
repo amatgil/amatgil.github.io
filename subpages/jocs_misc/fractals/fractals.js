@@ -139,6 +139,75 @@ export async function pyth_tree_dec_n() {
 }
 
 // L-system
+
+// L-System presets
+var l_system_cantor_preset = { // Unused, 1D ones look bad
+    'axiom': "A",
+    'start_x': 10,
+    'start_y': 10,
+    'start_direction': 0,
+    'line_length': 10,
+    'rules': [
+	["A", "ABA"],
+	["B", "BBB"]
+    ],
+    'turtles': [
+	['A', "draw", 1],
+	['B', "advance", 1],
+    ]
+};
+var l_system_sierp_preset = {
+    'axiom': "F-G-G",
+    'start_x': 520,
+    'start_y': 1200,
+    'start_direction': 0,
+    'line_length': 10,
+    'rules': [
+	["F", "F-G+F+G-F"],
+	["G", "GG"]
+    ],
+    'turtles': [
+	['F', "draw", 1],
+	['G', "draw", 1],
+	['+', "rotate", -120],
+	['-', "rotate", 120]
+    ]
+};
+
+var l_system_dragon_preset = {
+    'axiom': "F-G-G",
+    'start_x': 520,
+    'start_y': 1200,
+    'start_direction': 0,
+    'line_length': 50,
+    'rules': [
+	["F", "F+G"],
+	["G", "F-G"]
+    ],
+    'turtles': [
+	['F', "draw", 1],
+	['G', "draw", 1],
+	['+', "rotate", 90],
+	['-', "rotate", -90]
+    ]
+};
+
+var l_system_koch_preset = {
+    'axiom': "F-G-G",
+    'start_x': 520,
+    'start_y': 1200,
+    'start_direction': 0,
+    'line_length': 10,
+    'rules': [
+	["F", "F+F-F-F+F"],
+    ],
+    'turtles': [
+	['F', "draw", 1],
+	['+', "rotate", 90],
+	['-', "rotate", -90]
+    ],
+
+};
 export async function get_l_system() {
     let n = document.getElementById("l-system-n").value;
     let axiom = document.getElementById("l-system-axiom").value;
@@ -210,6 +279,7 @@ export async function l_system_add_turtle_button() {
     let dynamic_holder = document.getElementById("l-system-dynamic-turtle-inputs");
     dynamic_holder.appendChild(new_div);
 
+    return id;
 }
 
 var used_rules_ids = new Set();
@@ -231,6 +301,8 @@ export async function l_system_add_rules_button() {
     let dynamic_holder = document.getElementById("l-system-dynamic-rules-inputs");
     dynamic_holder.appendChild(new_div);
 
+    console.log("Created rules box, id = ", id);
+    return id;
 }
 
 export async function l_system_delete_dynamic_turtle_div(i) {
@@ -296,11 +368,56 @@ export async function l_system_apply_example() {
 
     console.log("Applying example", chosen);
     if (chosen == "sierp") {
-	axiom.value = "F-G-G";
-	start_x.value = "20";
-	start_y.value = "1200";
-	start_direction.value = "0";
-	line_length.value = "100";
-    } else if (chosen == "cantor") {
+	l_system_apply_preset(
+	    l_system_sierp_preset,
+	    axiom, start_x, start_y, start_direction, line_length
+	);
+    } /*else if (chosen == "cantor") {
+	l_system_apply_preset(
+	    l_system_cantor_preset,
+	    axiom, start_x, start_y, start_direction, line_length
+	);
+	}*/
+    else if (chosen == "koch") {
+	l_system_apply_preset(
+	    l_system_koch_preset,
+	    axiom, start_x, start_y, start_direction, line_length
+	);
+    } else if (chosen == "dragon") {
+	l_system_apply_preset(
+	    l_system_dragon_preset,
+	    axiom, start_x, start_y, start_direction, line_length
+	);
     }
+}
+
+async function l_system_apply_preset(
+    preset, axiom, start_x, start_y, start_direction, line_length
+) {
+    console.log("Applying preset", preset);
+    // Clear current ones
+    for (const id of used_turtle_ids) { l_system_delete_dynamic_turtle_div(id); }
+    for (const id of used_rules_ids) { l_system_delete_dynamic_rules_div(id); }
+
+    axiom.value = preset.axiom;
+    start_x.value = preset.start_x
+    start_y.value = preset.start_y
+    start_direction.value = preset.start_direction;
+    line_length.value = preset.line_length;
+
+    for (const rule of preset.rules) {
+	let id = await l_system_add_rules_button();
+	document.getElementById("l-system-rules-lhs-" + id).value = rule[0];
+	document.getElementById("l-system-rules-rhs-" + id).value = rule[1];
+    }
+
+    for (const turtle of preset.turtles) {
+	let id = await l_system_add_turtle_button();
+	console.log(id);
+	document.getElementById("l-system-input-name-" + id).value = turtle[0];
+	document.getElementById("l-system-turtle-radio-" + id + "-" + turtle[1]).checked = "checked";
+	document.getElementById("l-system-numeric-input-" + id).value = turtle[2];
+    }
+
+    get_l_system();
 }
