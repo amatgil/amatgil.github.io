@@ -7,3 +7,4 @@ vendor
 !flake.lock
 _knowledgeForMe
 .swp
+.direnv

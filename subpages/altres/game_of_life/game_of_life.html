@@ -6,8 +6,11 @@ permalink: /altres/game_of_life
 
 <link rel="stylesheet" href="/subpages/altres/game_of_life/game_of_life.css">
 <script type="module">
-  import {run_universe} from "/subpages/altres/game_of_life/game_of_life.js";
-  run_universe()
+  import { run_universe, toggle_which_canvas } from "/subpages/altres/game_of_life/game_of_life.js";
+  window.toggle_which_canvas = toggle_which_canvas;
+
+  toggle_which_canvas();
+
 </script>
 
 {% include always-present/sidebar.html %}
@@ -15,12 +18,42 @@ permalink: /altres/game_of_life
   <div class="GoL-contingut">
     <div class="GoL-intro">
       <h1 class="GoL-title">Implementació del 'Game of Life' de John Conway</h1>
-      <p>Creat per experimentar amb eines</p>
     </div>
   </div>
 
-  <canvas id="GoL-canvas">
-  </canvas>
+  <!-- Hola! Tot això està deprecat, no hi ha res interessant
+    <label for="tipus-triat">Tria una opció:</label>
+    <select name="tipus-triat" id="canvas-chooser" oninput="toggle_which_canvas()">
+        <option value="-">-</option>
+        <option value="original">No interactiu (original)</option>
+        <option value="macroquad">Interactiu</option>
+    </select>
+       
+  <div id="original-canvas">
+    <canvas id="GoL-canvas">
+    </canvas>
+
+    Aquest no és interactiu (perquè no sé prou JavaScript), trieu l'altra opció si voleu jugar-hi!
+
+    Per compensar-hi, s'inicialitzen les cel·les de la primera columna
+    i els punts <code>(30, 0)</code>, <code>(30, 1)</code> i <code>(30, 2)</code>.
+
+  </div>
+  -->
+
+  <div id="macroquad-canvas">
+    <!-- Rust canvas -->
+    <canvas id="glcanvas" tabindex='1' width="1280" height="720"></canvas>
+    <script src="https://not-fl3.github.io/miniquad-samples/gl.js"></script>
+    <script>load("/assets/wasm/altres/game_of_life/gameoflife.wasm");</script> 
+
+    <p>
+    Els controls son <code>U</code>, <code>D</code>, <code>R</code> & <code>Espai</code>. També és pot fer click per canviar el seu estat, car.
+    </p>
+    <p>
+    La simulació comença pausada, prem <code>Espai</code> per que comenci a fer!
+    </p>
+  </div>
 
   <div class="GoL-explicacio">
     <h2>¿Com funciona?</h2>
@@ -30,18 +63,14 @@ permalink: /altres/game_of_life
       les generacions avancen amb unes donades normes. Cal destacar que, a aquesta implementació,
       les dues parets en son una de sola (és a dir, si hi ets al punt <code>(0,0)</code> i fas una
       passa a l'esquerra, surts per la banda de la dreta), i de la mateixa manera amb la part de
-      dalt i de baix. De moment, la inicialització emplena la primera columna i els punts
-      <code>(30, 0)</code>, <code>(30, 1)</code> i <code>(30, 2)</code> abans de deixar que la 
-      simulació avanci, però en un futur s'hi afegirà interacció amb el ratolí per poder dibuixar 
-      un propi estat inicial.
-    </p>
+      dalt i de baix.
     <h2>¿Implementació?</h2>
     <p>
       El codi que emmagatzema la graella i calcula les normes per cada generació està escrit en
       <a href="https://www.rust-lang.org/">Rust</a> i queda compilat en 
       <a href="https://webassembly.org/">wasm</a>. Per mostrar l'estat a la 
       pàgina, s'utilitza (sorprenentment poc) JavaScript. Com sempre, tot el codi es pot trobar
-      al <a href="https://gitlab.com/amatgilvinyes/game-of-life-backend.git">meu GitLab</a>.
+      al <a href="https://github.com/amatgil/macroquad-GameOfLife">meu GitHub</a>.
     </p>
   </div>
 </div>

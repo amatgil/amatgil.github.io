@@ -114,4 +114,21 @@ function wait(time) {
     });
 }
 
+export async function toggle_which_canvas() {
+   let chosen = document.getElementById("canvas-chooser").value;
+
+    console.log("TOGGLING", chosen);
+    document.getElementById("original-canvas").style.display = "none";
+    document.getElementById("macroquad-canvas").style.display  = "none";
+
+    document.getElementById("macroquad-canvas").style.display = "block";
+
+    //if (chosen == "original") {
+    //    document.getElementById("original-canvas").style.display = "block";
+    //} else if (chosen == "macroquad-canvas") {
+    //    document.getElementById("sierp").style.display = "block";
+    //}
+}
+
+
 export {run_universe}

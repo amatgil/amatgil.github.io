@@ -1,6 +1,9 @@
 .GoL-contingut {
 }
 
+p {
+    font-size: 18px;
+}
 #GoL-canvas {
   position: relative;
   border: outset;
