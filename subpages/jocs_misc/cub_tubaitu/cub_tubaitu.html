@@ -1,0 +1,31 @@
+---
+layout: default
+title: Cub 2x2
+permalink: /jocs_misc/cub_tubaitu
+---
+
+<link rel="stylesheet" href="/subpages/jocs_misc/cub_tubaitu/cub_tubaitu.css">
+
+{% include always-present/sidebar.html %}
+<div class="main-content">
+  <div class="cub-intro">
+    <h1 class="cub-title">Cub 2x2, en directe</h1>
+  </div>
+
+  <canvas id="glcanvas" tabindex='1' width="700" height="700"></canvas>
+  <script src="https://not-fl3.github.io/miniquad-samples/gl.js"></script>
+  <script>load("/assets/wasm/jocs_misc/cub_tubaitu/cub_tubaitu.wasm");</script> 
+
+
+  <p>
+    Els controls son:
+    <ul>
+      <li><kbd>R</kbd>, <kbd>L</kbd>, <kbd>U</kbd>,<kbd>D</kbd>,<kbd>F</kbd>,<kbd>B</kbd>: Seleccionen la cara a girar</li>
+      <li><kbd>&larr;</kbd>, <kbd>&rarr;</kbd>: fer el moviment (<kbd>&larr;</kbd> vol dir prima/invers, <kbd>&rarr;</kbd> vol dir natural)</li>
+      <li><kbd>S</kbd>: Barrejar-lo/Desfer-lo</li>
+      <li><kbd>Q</kbd>: Resoldre'l (calculat i fet pas a pas)</li>
+      <li><kbd>P</kbd>: Resetejar-lo (és com canviar els adhesius de lloc)</li>
+    </ul>
+  </p>
+</div>
+
