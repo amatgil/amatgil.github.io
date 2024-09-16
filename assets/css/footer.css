@@ -1,13 +1,3 @@
-.main-footer-content {
-  grid-row-start: 2;
-  grid-row-end: 3;
-
-  grid-column-start: 1;
-  grid-column-end: -1;
-
-  color: rgb(183, 189, 248);
-}
-
 .main-footer {
   grid-row-start: 2;
   grid-row-end: 3;

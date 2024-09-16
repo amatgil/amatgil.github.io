@@ -24,12 +24,9 @@ input::-webkit-inner-spin-button {
 .credit-content {
   display: flex;
   flex-direction: row;
-  gap: 5em;
 }
 
 .content-principal {
-  flex-basis: 90%;
-  flex-shrink: 0;
 }
 .content-dreta {
   align-items: center;

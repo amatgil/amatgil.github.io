@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <!-- Verificació per google search -->
     <meta name="google-site-verification" content="P0y8IgeA8eNWQswgUCXevKpL7O9uLQIFhvczCyDBzVA" />
     <title>{{ site.title }} - {{ page.title }}</title>
@@ -19,15 +19,16 @@
       href="/assets/brand/favicon-light-theme.ico"
       rel="icon"
       media="(prefers-color-scheme: light)"
-    />
+      />
     <link
       href="/assets/brand/favicon-dark-theme.ico"
       rel="icon"
       media="(prefers-color-scheme: dark)"
-    />
+      />
 
-	</head>
+  </head>
   <body>
+
     <span id="main-amatgil-title">
       <a href="{{site.url}}" style="text-decoration: none;">
         <h1 id="main-amatgil-title-heading">
@@ -36,14 +37,14 @@
         </h1> 
       </a>
     </span>
+
     <div class="home-grid-container">
-
       {{ content }}
-
-      {% include always-present/footer.html %}
     </div>
+
   </body>
 </html>
+
 <script type="text/javascript">
   showAceFlag();
 </script>

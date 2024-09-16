@@ -13,7 +13,7 @@
 }
 
 body {
-  font-size: 20px;
+  font-size: 16px;
   background-color: rgb(54, 58, 79);
   color: white;
   font-family: Iosevka;
@@ -23,7 +23,7 @@ body {
 }
 
 button {
-  font-size: 19px;
+  font-size: inherit;
   padding: 10px;
   cursor: pointer;
   background-color: rgb(54, 58, 79);
@@ -42,6 +42,7 @@ button {
   vertical-align: middle;
   max-height: 1em;
 }
+
 #main-amatgil-title {
   font-family: Iosevka;
   display: inline;
@@ -65,6 +66,7 @@ button {
   padding-right: 0.8em;
 
 }
+
 #main-amatgil-title-text {
   color: white;
 }
@@ -79,9 +81,13 @@ h1 {
   line-height: 1.2em;
 }
 
+h1 h2 h3 h4 h5 {
+    text-shadow: 2px 2px 0px #FF0000; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+}
+
 .main-content {
   color: rgb(183, 189, 248);
-  max-width: 30em; 
+  max-width: 70em;
   line-height: 1.75em;
   overflow-wrap: break-word;
 
@@ -103,12 +109,13 @@ h1 {
 }
 
 .home-grid-container {
-  display: grid;
+  display: flex;
   column-gap: 5em;
-  grid-template-columns: min-content auto min-content; 
-  grid-template-rows: auto min-content auto; 
-  min-height: 100vh;
   margin-top:auto;
+
+  /*grid-template-columns: min-content auto min-content; 
+  grid-template-rows: auto min-content auto; 
+  min-height: 100vh;*/
 }
 
 
