@@ -19,7 +19,6 @@ body {
   font-family: Iosevka;
   height: 100%;
   overflow: visible; /*No scroll when cap tot*/
-  display: grid;
 }
 
 button {
@@ -40,30 +39,29 @@ button {
   margin-top: 0.2em;
   margin-bottom: 0.4em;
   vertical-align: middle;
-  max-height: 1em;
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.325em;
+  border-radius: 0.8em;
+  border-color: rgb(147, 154, 183);
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 
 #main-amatgil-title {
   font-family: Iosevka;
-  display: inline;
   width: fit-content;
   /*background: -webkit-linear-gradient(#000000BB, #A3A3A3BB, #FFFFFFBB, #800080BB);*/
 
+  height: 1em;
   -moz-box-align: center;
   align-items: center;
   -moz-box-pack: center;
   justify-content: center;
   position: relative;
   vertical-align: middle;
-
-  border-style: solid;
-  border-width: 0.525em;
-  border-radius: 1.3em;
-  border-color: rgb(147, 154, 183);
-
-  margin-top:1.2em;
-  padding-left: 0.5em;
-  padding-right: 0.8em;
 
 }
 
@@ -90,33 +88,24 @@ main {
   max-width: 70em;
   line-height: 1.75em;
   overflow-wrap: break-word;
-
-  grid-row-start: 1;
-  grid-row-end: 2;
-
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-.home-right-element {
-  grid-row-start: 1;
-  grid-row-end: 2;
-
-  grid-column-start: 3;
-  grid-column-end: 4;
-
-  column-width: 3em;
+  flex-grow: 3;
 }
 
 .home-grid-container {
   display: flex;
-  flex-direction: row;
-  column-gap: 5em;
-  margin-top:auto;
+  margin: auto;
 
-  /*grid-template-columns: min-content auto min-content; 
-  grid-template-rows: auto min-content auto; 
-  min-height: 100vh;*/
+  flex-direction: row;
+  column-gap: 3em;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  /*align-items: center; /*centers items on the cross-axis (y by default)*/
+
+  /*min-height: 100vh;*/
+}/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .home-grid-container {
+    flex-direction: column;
+  }
 }
 
 
@@ -151,5 +140,4 @@ main {
   width: 14em;
 }
 .home-right-multiple-images {
-  grid-column: 3 / 4;
 }

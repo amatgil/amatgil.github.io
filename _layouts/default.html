@@ -26,21 +26,18 @@
       media="(prefers-color-scheme: dark)"
       />
   </head>
+  <header id="main-amatgil-title">
+    <a href="{{site.url}}" style="text-decoration: none;">
+      <h1 id="main-amatgil-title-heading">
+        <span id="main-amatgil-title-text">{{site.title}}</span>
+        <img id="main-amatgil-logo" src="/assets/brand/logo.png" alt="{My Logo, my name in the shape of a cat}">
+      </h1> 
+    </a>
+  </header>
   <body>
-
-    <span id="main-amatgil-title">
-      <a href="{{site.url}}" style="text-decoration: none;">
-        <h1 id="main-amatgil-title-heading">
-          <span id="main-amatgil-title-text">{{site.title}}</span>
-          <img id="main-amatgil-logo" src="/assets/brand/logo.png" alt="{My Logo, my name in the shape of a cat}">
-        </h1> 
-      </a>
-    </span>
-
     <main class="home-grid-container">
       {{ content }}
     </main>
-
   </body>
 </html>
 

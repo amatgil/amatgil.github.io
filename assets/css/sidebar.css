@@ -19,11 +19,15 @@ a {
   min-width: 12em;
   align-self: flex-start;  
 
+  /*flex: 0 0 min-content;*/
+
+  float: left;
   border-style: solid;
   border-width: 0.2em;
   border-radius: 0.5em;
   border-color: rgb(147, 154, 183);
   margin-top: 1.5em;
+  margin: 0 auto;
   padding-left: 0.8em;
   padding-bottom: 0.5em;
 }
