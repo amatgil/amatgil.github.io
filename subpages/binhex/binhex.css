@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'HexRunes';
-    /* src: url('/assets/fonts/Hexrunes-alsobin.ttf');  */
-    /* src: url('/assets/fonts/HexRunes.ttf'); */
-    src: url('/assets/fonts/TESTING-JetBrainsMono-Bold.ttf'); 
+    /* src: url('/assets/fonts/Hexrunes-alsobin.ttf'); */
+    src: url('/assets/fonts/HexRunes.ttf');
+    /* src: url('/assets/fonts/TESTING-JetBrainsMono-Bold.ttf');  */
 }
 
 .hex {
