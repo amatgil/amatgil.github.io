@@ -30,20 +30,11 @@ button.generador_taula {
 .logica-grid {
   display: flex;
   column-gap: 6em;
-  /*min-width: 100%;*/
-  /*grid-template-columns: 40% 60%;*/
 }
 .logica-grid-item {
-  /*display: inline-grid;*/
 }
 
 .logica-entrada {
-  grid-column-start: 1;
-  grid-column-end: 2;
 }
 .logica-sortida {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
 }

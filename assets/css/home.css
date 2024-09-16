@@ -81,11 +81,11 @@ h1 {
   line-height: 1.2em;
 }
 
-h1 h2 h3 h4 h5 {
-    text-shadow: 2px 2px 0px #FF0000; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+h1, h2, h3, h4, h5 {
+    text-shadow: 2px 2px 0px #000000; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
-.main-content {
+main {
   color: rgb(183, 189, 248);
   max-width: 70em;
   line-height: 1.75em;
@@ -110,6 +110,7 @@ h1 h2 h3 h4 h5 {
 
 .home-grid-container {
   display: flex;
+  flex-direction: row;
   column-gap: 5em;
   margin-top:auto;
 
