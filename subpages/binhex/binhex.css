@@ -5,8 +5,49 @@
     /* src: url('/assets/fonts/TESTING-JetBrainsMono-Bold.ttf');  */
 }
 
-.hex {
-    font-variant-ligatures: common-ligatures;
+.hex, .hex-operand-0, .hex-operand-1, .hex-result {
     font-family: 'HexRunes';
     font-weight: bold;
+}
+
+
+/* ===== For showing operations ====== */
+.hex-addition {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    font-size: 40px;
+}
+.hex-operand-0 {
+    grid-row: 1;
+    grid-column: 2;
+}
+.hex-operand-1 {
+    margin-top: 2%;
+    grid-row: 2;
+    grid-column: 2;
+}
+.hex-divider {
+    grid-row: 3;
+    grid-column: 2;
+}
+.hex-operator {
+    grid-row: 3;
+    grid-column: 1;
+}
+.hex-result {
+    grid-row: 4;
+    grid-column: 2;
+}
+.hex-line {
+    width: 2em;
+}
+
+code {
+    font-family: monospace;
+    white-space: pre;
+    background: #000000;
+    word-wrap: break-word;
+    box-decoration-break: clone;
+    padding: .1rem .3rem .2rem;
+    border-radius: .2rem;
 }

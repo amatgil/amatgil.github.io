@@ -8,14 +8,124 @@ permalink: /binhex
 
 {% include always-present/sidebar.html %}
 <div class="main-content">
-  <h1>WARNING: THERE IS NOTHING OF VALUE HERE</h1>
+  <h1>WARNING: THERE IS NOTHING OF VALUE HERE YET</h1>
   <h1>THIS IS STILL UNDER CONSTRUCTION AND IS BEING USED AS A FONT TESTING GROUND</h1>
 
   <h1> Binary as a Human Base </h1>
   Lorem ipsum
+  <h2>Notation</h2>
+  <p>Binary numbers are usually represented with '0' and '1'. This works in a pinch, but we can do better: since there's only two states, we use two lines of different height: <span class="hex">i</span> for 1 and <span class="hex">o</span> for 0.</p>
+
+  <p>Binary bits can be grouped, just like decimal ones: <span class="hex">ioii</span> = <span class="hex">i_o_i_i</span>; grouping them makes it easier to be treated as a single unit and simplifies alignment with operations like addition.</p>
+
+  <p>Speaking of which...</p>
+
   <h2>Arithmetic</h2>
-  Lorem ipsum
+  <p>Binary simplifies arithmetic substantially: only having two digits trivializes essentially all steps that can be done in decimal and even unlocks new ones previously impossible in decimal.</p> <!--for a human are brought down to the realm of possibility or outright skipped.</p>-->
+  <h3>Addition/Subtraction</h3>
+  <ul>
+    <li>Line up the bits that are different, mark a <span class="hex">i</span></li>
+    <li>If both of them are <span class="hex">i</span>, carry it</li>
+  </ul>
+  That's it! For example:
+  <div style="display: flex;column-gap:4%;margin-top:5%;margin-bottom:5%;">
+    <div class="hex-addition">
+      <div class="hex-operand-0">i_o_o_o</div>
+      <div class="hex-operand-1">o_o_i_i</div>
+      <div class="hex-divider">&mdash;</div>
+      <div class="hex-operator">+</div>
+      <div class="hex-result">i_o_i_i</div>
+    </div>
+    <div class="hex-addition">
+      <div class="hex-operand-0">i_o_i_o</div>
+      <div class="hex-operand-1">o_o_i_i</div>
+      <div class="hex-divider">&mdash;</div>
+      <div class="hex-operator">+</div>
+      <div class="hex-result">i_i_o_i</div>
+    </div>
+    <div class="hex-addition">
+      <div class="hex-operand-0">i_o_i_i</div>
+      <div class="hex-operand-1">o_o_i_i</div>
+      <div class="hex-divider">&mdash;</div>
+      <div class="hex-operator">+</div>
+      <div class="hex-result">i_i_i_o</div>
+    </div>
+  </div>
+  
   <h2>Higher powers</h2>
+  <p>Since binary is such a small number, its first powers are also quite small. We can use this to our advantadge and group the bits in groups of four in more ways than just an underline. If we make the arbitrary choice of, say, rotating them τ/4 counter-clockwise and angle the lines towards eachother, we get this sort of notation:</p>
+  <div style="display:flex;column-gap:6%;">
+    <div>
+      <div style="font-size:30px;"><span class="hex">o_o_o_o</span> = <span class="hex">0</span></div>
+      <div style="font-size:30px;"><span class="hex">o_o_o_i</span> = <span class="hex">1</span></div>
+      <div style="font-size:30px;"><span class="hex">o_o_i_o</span> = <span class="hex">2</span></div>
+      <div style="font-size:30px;"><span class="hex">o_o_i_i</span> = <span class="hex">3</span></div>
+    </div>
+    <div>
+      <div style="font-size:30px;"><span class="hex">o_i_o_o</span> = <span class="hex">4</span></div>
+      <div style="font-size:30px;"><span class="hex">o_i_o_i</span> = <span class="hex">5</span></div>
+      <div style="font-size:30px;"><span class="hex">o_i_i_o</span> = <span class="hex">6</span></div>
+      <div style="font-size:30px;"><span class="hex">o_i_i_i</span> = <span class="hex">7</span></div>
+    </div>
+    <div>
+      <div style="font-size:30px;"><span class="hex">i_o_o_o</span> = <span class="hex">8</span></div>
+      <div style="font-size:30px;"><span class="hex">i_o_o_i</span> = <span class="hex">9</span></div>
+      <div style="font-size:30px;"><span class="hex">i_o_i_o</span> = <span class="hex">A</span></div>
+      <div style="font-size:30px;"><span class="hex">i_o_i_i</span> = <span class="hex">B</span></div>
+    </div>
+    <div>
+      <div style="font-size:30px;"><span class="hex">i_i_o_o</span> = <span class="hex">C</span></div>
+      <div style="font-size:30px;"><span class="hex">i_i_o_i</span> = <span class="hex">D</span></div>
+      <div style="font-size:30px;"><span class="hex">i_i_i_o</span> = <span class="hex">E</span></div>
+      <div style="font-size:30px;"><span class="hex">i_i_i_i</span> = <span class="hex">F</span></div>
+    </div>
+  </div>
+  <p>See the pattern?</p>
+  <p>We call these "(hex) runes", and we use them to compress binary for display/speaking the numbers.</p>
+  <p>Which leads into...</p>
+
+  <h2>Speaking them with your mouth</h2>
+  <h3>Lucillian nomenclature</h3>
+  Lorem ipsum whatever whatever metapowers of two
+
+  <h3>J.W.Nystrom's nomenclature</h3>
+  <p>"andetigo, subyrame, nikohuvy, lapofyton"</p>
+  <p>Each of those syllables becomes its corresponding nuber from <span class="hex">1</span> to <span class="hex">F</span>:
+    <!--andetigo, subyrame, nikohuvy, lapofyton-->
+  <div style="display:flex;flex-direction:row;column-gap:3%;">
+    <div>
+      <div style="font-size:30px;"><span class="hex">1</span> => an</div>
+      <div style="font-size:30px;"><span class="hex">2</span> => de</div>
+      <div style="font-size:30px;"><span class="hex">3</span> => ti</div>
+      <div style="font-size:30px;"><span class="hex">4</span> => go</div>
+    </div>
+    <div>
+      <div style="font-size:30px;"><span class="hex">5</span> => su</div>
+      <div style="font-size:30px;"><span class="hex">6</span> => by</div>
+      <div style="font-size:30px;"><span class="hex">7</span> => ra</div>
+      <div style="font-size:30px;"><span class="hex">8</span> => me</div>
+    </div>
+    <div>
+      <div style="font-size:30px;"><span class="hex">9</span> => ni</div>
+      <div style="font-size:30px;"><span class="hex">A</span> => ko</div>
+      <div style="font-size:30px;"><span class="hex">B</span> => hu</div>
+      <div style="font-size:30px;"><span class="hex">C</span> => vy</div>
+    </div>
+    <div>
+      <div style="font-size:30px;"><span class="hex">D</span> => la</div>
+      <div style="font-size:30px;"><span class="hex">E</span> => po</div>
+      <div style="font-size:30px;"><span class="hex">F</span> => fi</div>
+      <div style="font-size:30px;"><span class="hex">10</span> => ton</div>
+    </div>
+  </div>
+  <!-- TODO: make it not look very very bad -->
+
+  The ton (<span class="hex">10</span>) combined syllables can be read out loud as the four words for memorization, as a mantra: TODO: acabar això 
+
+  <h2></h2>
+
+
+  <h1>Font tests</h1>
   <p>Example: <span class="hex">2</span> + <span class="hex">4</span> = <span class="hex">6</span></p>
   <p>Sequence (ascending): <span class="hex">0123 4567 89AB CDEF</span></p>
   <p>Sequence (descending): <span class="hex">FEDC BA98 7654 3210</span></p>
@@ -68,3 +178,28 @@ permalink: /binhex
 
 
 </div>
+
+<!--TODO: Put this in a footnote
+
+  If the natural language description isn't clear, here's the same algorithm implemented in Rust:
+  <code class="language-rust">fn generate_binary_name(i: isize) -> String {
+        fn gen(x: isize) -> String {
+            if x == 0 { return String::new(); }
+            else if x == 1 { return "one".into(); }
+            else if x < 0 { return format!("negative {}", generate_binary_name(-i))  }
+            let terms = [
+                "two", "four", "hex", "byte", "short", "int", "long", "overlong", "byteplex"
+            ];
+            let n = (((x as f64).ln() / LN_2).ln()/LN_2).floor() as usize
+
+            let left  = x >> 2usize.pow(n as u32);
+            let right = x % 2usize.pow(2_u32.pow(n as u32));
+            let first_term = gen(left);
+            let last_term = gen(right);
+            format!("{first_term} {middle_term} {last_term}")
+        }
+        if i == 0 { "zero".to_string() }
+        else { gen(i) }
+
+  </code>
+-->
