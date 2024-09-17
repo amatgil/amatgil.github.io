@@ -28,13 +28,13 @@ button.generador_taula {
 }
 
 .logica-grid {
-  display: grid;
-  grid-gap: 10em;
-  min-width: 100%;
-  grid-template-columns: 40% 60%;
+  display: flex;
+  column-gap: 6em;
+  /*min-width: 100%;*/
+  /*grid-template-columns: 40% 60%;*/
 }
 .logica-grid-item {
-  display: inline-grid;
+  /*display: inline-grid;*/
 }
 
 .logica-entrada {
