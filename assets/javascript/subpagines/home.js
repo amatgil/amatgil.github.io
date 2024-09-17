@@ -39,3 +39,10 @@ function getCookie(cname) {
   }
   return "";
 }
+
+function toggleLightMode() {
+    var xs = document.getElementsByTagName('*');
+    for (var i = xs.length; i--;) {
+        xs[i].classList.toggle("very-light-mode");
+    }
+}
