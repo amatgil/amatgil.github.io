@@ -63,4 +63,9 @@ function toggleLightModeStyle() {
     for (var i = xs.length; i--;) {
         xs[i].classList.toggle("very-light-mode");
     }
+
+    if (xs[0].classList.contains("very-light-mode")) {
+        var bang = new Audio('/assets/media/flashbang.mp3');
+        bang.play();
+    }
 }
