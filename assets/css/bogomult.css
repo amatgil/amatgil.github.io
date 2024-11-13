@@ -1,9 +1,24 @@
 #bogomult-source {
-    white-space: pre-wrap;
+    display: flex;
+    column-gap: 2em;
+}
+
+#bogomult-rust-outer, #bogomult-cpp-outer {
     background-color: rgb(30, 32, 48);
-    width: fit-content;
     padding: 0em 2em 0em 2em; /* top right bottom left*/
-    margin-bottom: 2em;
+}
+
+#bogomult-rust-inner, #bogomult-cpp-inner {
+    white-space: pre-wrap;
+    margin-top: 0em;
+    width: fit-content;
+    height: fit-content;
+    padding: 0em 0em 0em 0em; /* top right bottom left*/
+}
+
+.bogo-source-title {
+    padding-bottom: 0em;
+    margin-bottom: 0em;
 }
 
 .bogo-fn {
