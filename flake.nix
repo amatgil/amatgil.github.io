@@ -18,7 +18,6 @@
             rubyPackages.jekyll-feed
             rubyPackages.jekyll-redirect-from
             bundler
-
           ];
 
           shellHook = "";
