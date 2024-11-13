@@ -1,0 +1,33 @@
+#bogomult-source {
+    white-space: pre-wrap;
+    background-color: rgb(30, 32, 48);
+    width: fit-content;
+    padding: 0em 2em 0em 2em; /* top right bottom left*/
+    margin-bottom: 2em;
+}
+
+.bogo-fn {
+    color: rgb(138, 173, 244);
+}
+
+.bogo-idnt {
+    /*color: rgb(166, 218, 149);*/
+    color: rgb(237, 135, 150);
+    /*color:rgb(198, 160, 246);*/
+}
+
+.bogo-type {
+    color:#f5ab35;
+}
+
+.bogo-keyword {
+    color: #c678dd;
+}
+
+.bogo-number {
+    color: #d19a66;
+}
+
+.bogo-punctuation {
+    color:#a5a2a2;
+}

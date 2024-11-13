@@ -29,6 +29,8 @@ url: "https://amatgil.cat" # the base hostname & protocol for your site, e.g. ht
 include:
   - ./assets
     # ....
+exclude:
+  - .direnv
 
 # Github specifics
 lsi: false

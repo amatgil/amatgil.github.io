@@ -1,0 +1,27 @@
+---
+layout: default
+title: Bogomult
+permalink: /bogomult
+---
+
+{% include always-present/sidebar.html %}
+
+<link rel="stylesheet" href="/assets/css/bogomult.css">
+
+<div class="main-content">
+  <h1>Bogomult</h1>
+  <h2>El revolucionari nou algorisme de multiplicació</h2>
+  <div id="bogomult-source">
+<span class="bogo-keyword">fn</span> <span class="bogo-fn">bogomult</span>(<span class="bogo-idnt">x</span>: <span class="bogo-type">u64</span>, <span class="bogo-idnt">y</span>: <span class="bogo-type">u64</span>) <span class="bogo-punctuation">-&gt;</span> <span class="bogo-type">u64</span> &#123;
+  <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">0</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-number">0</span> &#125;
+  <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">1</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-idnt">y</span> &#125;
+
+  <span class="bogo-keyword">let</span> <span class="bogo-keyword">mut </span><span class="bogo-variable"><span class="bogo-idnt">n</span></span> = <span class="bogo-number">0</span>;
+  <span class="bogo-keyword">while</span> <span class="bogo-idnt">n</span> &lt; <span class="bogo-fn">bogomult</span>(<span class="bogo-idnt">x</span> - <span class="bogo-number">1</span>, <span class="bogo-idnt">y</span>) + <span class="bogo-idnt">y</span> &#123; <span class="bogo-idnt">n</span> += <span class="bogo-number">1</span> &#125;
+  <span class="bogo-idnt">n</span>
+&#125;
+  </div>
+  <div>
+    Aquí hi ha un text que és molt interessant, sí, realment ho és
+  </div>
+</div> <!-- main-content -->
