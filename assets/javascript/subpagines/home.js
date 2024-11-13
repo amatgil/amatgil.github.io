@@ -39,3 +39,33 @@ function getCookie(cname) {
   }
   return "";
 }
+
+function toggleLightModeStatus() {
+    if (getCookie("veryLightMode") == "true") {
+        setCookie("veryLightMode","false", 1);
+    } else {
+        setCookie("veryLightMode","true", 1);
+    }
+    toggleLightModeStyle();
+}
+
+function loadLightModeStyle() {
+    if (getCookie("veryLightMode") == "true") {
+        var xs = document.getElementsByTagName('*');
+        for (var i = xs.length; i--;) {
+            xs[i].classList.add("very-light-mode");
+        }
+    }
+}
+
+function toggleLightModeStyle() {
+    var xs = document.getElementsByTagName('*');
+    for (var i = xs.length; i--;) {
+        xs[i].classList.toggle("very-light-mode");
+    }
+
+    if (xs[0].classList.contains("very-light-mode")) {
+        var bang = new Audio('/assets/media/flashbang.mp3');
+        bang.play();
+    }
+}

@@ -154,3 +154,8 @@ h1, h2, h3, h4, h5 {
 .home-right-multiple-images {
     grid-column: 3 / 4;
 }
+
+.very-light-mode {
+    color: white !important;
+    background-color: white !important;
+}
