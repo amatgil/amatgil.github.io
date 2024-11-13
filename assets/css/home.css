@@ -78,12 +78,12 @@ button {
 }
 
 h1 {
-    color: rgb(245, 169, 127);
     line-height: 1.2em;
 }
 
-h1 h2 h3 h4 h5 {
-    text-shadow: 2px 2px 0px #FF0000; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+h1, h2, h3, h4, h5 {
+    color: rgb(245, 169, 127);
+    /*text-shadow: 2px 2px 0px rgb(36, 39, 58); */ /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
 .main-content {
@@ -110,13 +110,14 @@ h1 h2 h3 h4 h5 {
 }
 
 .home-grid-container {
-    display: flex;
+    display: grid;
     column-gap: 5em;
     margin-top:auto;
 
-    /*grid-template-columns: min-content auto min-content; 
-  grid-template-rows: auto min-content auto; 
-  min-height: 100vh;*/
+    grid-template-columns: min-content auto min-content; 
+    grid-template-rows: auto min-content auto; 
+    height: 100%;
+    /*min-height: 100vh;*/
 }
 
 
