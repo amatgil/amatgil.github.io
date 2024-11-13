@@ -9,6 +9,8 @@ permalink: /bogomult
 
 
 <link rel="stylesheet" href="/assets/css/bogomult.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <div class="main-content">
   <h1>Bogomult</h1>
   <h2>El revolucionari nou algorisme de multiplicació</h2>
@@ -16,54 +18,56 @@ permalink: /bogomult
   <h3>En Rust:</h3>
   <div id="bogomult-source">
 <span class="bogo-keyword">fn</span> <span class="bogo-fn">bogomult</span>(<span class="bogo-idnt">x</span>: <span class="bogo-type">u64</span>, <span class="bogo-idnt">y</span>: <span class="bogo-type">u64</span>) <span class="bogo-punctuation">-&gt;</span> <span class="bogo-type">u64</span> &#123;
-  <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">0</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-number">0</span> &#125;
-  <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">1</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-idnt">y</span> &#125;
+    <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">0</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-number">0</span> &#125;
+    <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">1</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-idnt">y</span> &#125;
 
-  <span class="bogo-keyword">let</span> <span class="bogo-keyword">mut </span><span class="bogo-variable"><span class="bogo-idnt">n</span></span> = <span class="bogo-number">0</span>;
-  <span class="bogo-keyword">while</span> <span class="bogo-idnt">n</span> &lt; <span class="bogo-fn">bogomult</span>(<span class="bogo-idnt">x</span> - <span class="bogo-number">1</span>, <span class="bogo-idnt">y</span>) + <span class="bogo-idnt">y</span> &#123; <span class="bogo-idnt">n</span> += <span class="bogo-number">1</span> &#125;
-  <span class="bogo-idnt">n</span>
+    <span class="bogo-keyword">let</span> <span class="bogo-keyword">mut </span><span class="bogo-variable"><span class="bogo-idnt">n</span></span> = <span class="bogo-number">0</span>;
+    <span class="bogo-keyword">while</span> <span class="bogo-idnt">n</span> &lt; <span class="bogo-fn">bogomult</span>(<span class="bogo-idnt">x</span> - <span class="bogo-number">1</span>, <span class="bogo-idnt">y</span>) + <span class="bogo-idnt">y</span> &#123; <span class="bogo-idnt">n</span> += <span class="bogo-number">1</span> &#125;
+    <span class="bogo-idnt">n</span>
 &#125;
   </div>
 
-<!--C++-->
-  <h3>En C++:</h3>
-  <div id="bogomult-source">
-<span class="bogo-keyword">uint64_t</span> <span class="bogo-fn">bogomult</span>(<span class="bogo-keyword">uint64_t</span> <span class="bogo-type">x</span>, <span class="bogo-keyword">uint64_t</span> <span class="bogo-type">y</span>)&#123;
-  <span class="bogo-keyword">if</span> (<span class="bogo-idnt">x</span> == <span class="bogo-number">0</span>) &#123; <span class="bogo-keyword">return</span> <span class="bogo-number">0</span> &#125;
-  <span class="bogo-keyword">if</span> (<span class="bogo-idnt">x</span> == <span class="bogo-number">1</span>) &#123; <span class="bogo-keyword">return</span> <span class="bogo-idnt">y</span> &#125;
-
-  <span class="bogo-keyword">uint64_t</span> <span class="bogo-idnt">n</span> = <span class="bogo-number">0</span>;
-  <span class="bogo-keyword">while</span>(<span class="bogo-idnt">n</span> &lt; <span class="bogo-fn">bogomult</span>(<span class="bogo-idnt">x</span> - <span class="bogo-number">1</span>, <span class="bogo-idnt">y</span>) + <span class="bogo-idnt">y</span>) &#123; <span class="bogo-idnt">n</span> += <span class="bogo-number">1</span> &#125;
-  <span class="bogo-idnt">return n;</span>
-&#125;
-  </div>
-
-<!--Explicació-->
+  <!--Explicació-->
   <h3>Explicació de l'algorisme</h3>
   <div>
-    Bogomult rep dos nombres naturals \((x,y)\) i retorna el seu producte \((x \cdot y)\). A continuació s'explicarà pas per pas el seu funcionament.
-    <p></p>
-    <div><strong>Cas base</strong></div>
-    Si \( x = 0 \), la funció retorna 0: qualsevol nombre multiplicat per 0 és 0. <br>
-    Si \( x = 1 \), la funció retorna y: qualsevol nombre multiplicat per 1 és aquell nombre.
-    <p></p>
-    <div><strong>Cas recursiu</strong></div>
-    Si \( x \) és major que 1, la funció fa la crida recursiva i comença el seu descens a l'infern.
-    Es calcula el producte de \( x \cdot y \) sumant \( y \) \( x \)-vegades:
-    <ul>
-      <li>Primer es crida recursivament a \( bogomult(x-1,y) \), el que implica que s'està calculant \( y /cdot (x-1) \).</li>
-      <li>Després, s'afegeix \( y \) al que ens retorna la funció.</li>
-      <li>A continuació, el bucle while incrementa n des de 0 fins a arribar al valor \( bogomult(x - 1, y) + y \). Meravellós!
-      </li>
-    </ul>
+    <p>Bogomult és un excel&middot;lent algorisme que rep dos nombres naturals \((x,y)\) i retorna el seu producte \(xy\) aplicant la estructura recursiva bàsica:</p>
+    <h4>Cas base</h4>
+    <p>
+      Si \( x = 0 \), la funció retorna 0: qualsevol \(y\) multiplicada per 0 és 0.<br>
+      Si \( x = 1 \), la funció retorna \(y\): qualsevol \(y\) multiplicada per 1 és \(y\).
+    </p>
+    <h4>Cas recursiu</h4>
+    <p>La clau d'aquest algorisme és el fet que \(xy = (x-1)y + y\). Aprofitant aquest fet, podem reduir quelsevol parella d'enters a un dels casos base anteriors.</p>
+
+    <p>
+      Fixem-nos és el natural \(n\): mentre \(n \lt xy \), l'anem incrementant. Quan arribi a ser exactament \(xy\), sabrem, per definició, que serà el resultat desitjat.<br>
+      Seguint la hipòtesi d'inducció, sabem que podem calcular \((x-1)y\), i com \(xy = (x-1)y + y\), podem utilitzar-ho com a substituit.
+    </p>
+
     <h3>Exemple d'execució</h3>
     <ol>
+      <li>Es crida a \( bogomult(3, 2) \), iniciant el seu descens a l'infern.</li>
       <li>\( bogomult(3, 2) \) crida a \( bogomult(2, 2) \)</li>
       <li>\( bogomult(2, 2) \) crida a \( bogomult(1, 2) \)</li>
-      <li>\( bogomult(1, 2) \) retorna 2 perque \( x = 1 \)</li>
-      <li>\( bogomult(2, 2) \) inicia un bucle \( while \) que incrementa \( n \) des de 0 fins arribar a \( bogomult(1, 2) + 2\), és a dir, \( 2 + 2 = 4 \), i retorna \( 4 \). </li>
-      <li>Finalment, \( bogomult(3, 2)\) comença un bucle while que incrementa \( n \) fins arribar a \( bogomult(2, 2) + 2\), és a dir, \( 4 + 2 = 6\), i retorna \( 6 \).</li>
+      <li>\( bogomult(1, 2) \) retorna 2, perque \( x = 1 \)</li>
+      <li>\( bogomult(2, 2) \) inicia un bucle que incrementa \( n \) des de 0 fins arribar a \( bogomult(1, 2) + 2\), és a dir, \( 2 + 2 = 4 \), i retorna \( 4 \). </li>
+      <li>Finalment, \( bogomult(3, 2)\) comença un bucle que incrementa \( n \) fins arribar a \( bogomult(2, 2) + 2\), és a dir, \( 4 + 2 = 6\), i retorna \( 6 \).</li>
     </ol>
     
-
+  </div>
 </div> <!-- main-content -->
+
+<!--
+    <h3>En C++:</h3>
+    <div id="bogomult-source">
+      <span class="bogo-keyword">uint64_t</span> <span class="bogo-fn">bogomult</span>(<span class="bogo-keyword">uint64_t</span> <span class="bogo-type">x</span>, <span class="bogo-keyword">uint64_t</span> <span class="bogo-type">y</span>)&#123;
+      <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">0</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-number">0</span> &#125;
+      <span class="bogo-keyword">if</span> <span class="bogo-idnt">x</span> == <span class="bogo-number">1</span> &#123; <span class="bogo-keyword">return</span> <span class="bogo-idnt">y</span> &#125;
+
+      <span class="bogo-keyword">uint64_t</span> <span class="bogo-idnt">n</span> = <span class="bogo-number">0</span>;
+      <span class="bogo-keyword">while</span>(<span class="bogo-idnt">n</span> &lt; <span class="bogo-fn">bogomult</span>(<span class="bogo-idnt">x</span> - <span class="bogo-number">1</span>, <span class="bogo-idnt">y</span>) + <span class="bogo-idnt">y</span>) &#123; <span class="bogo-idnt">n</span> += <span class="bogo-number">1</span> &#125;
+      <span class="bogo-idnt">return n;</span>
+      &#125;
+    </div>
+    C++
+    -->
