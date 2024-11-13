@@ -46,12 +46,17 @@ permalink: /bogomult
 
     <h3>Exemple d'execució</h3>
     <ol>
-      <li>Es crida a \( bogomult(3, 2) \), iniciant el seu descens a l'infern.</li>
+      <li>Es crida a \( bogomult(5, 2) \), iniciant el seu descens a l'infern.</li>
+      <li>\( bogomult(5, 2) \) crida a \( bogomult(4, 2) \)</li>
+      <li>\( bogomult(4, 2) \) crida a \( bogomult(3, 2) \)</li>
       <li>\( bogomult(3, 2) \) crida a \( bogomult(2, 2) \)</li>
       <li>\( bogomult(2, 2) \) crida a \( bogomult(1, 2) \)</li>
       <li>\( bogomult(1, 2) \) retorna 2, perque \( x = 1 \)</li>
-      <li>\( bogomult(2, 2) \) inicia un bucle que incrementa \( n \) des de 0 fins arribar a \( bogomult(1, 2) + 2\), és a dir, \( 2 + 2 = 4 \), i retorna \( 4 \). </li>
-      <li>Finalment, \( bogomult(3, 2)\) comença un bucle que incrementa \( n \) fins arribar a \( bogomult(2, 2) + 2\), és a dir, \( 4 + 2 = 6\), i retorna \( 6 \).</li>
+      <li>\( bogomult(2, 2) \) inicia un bucle que incrementa \( n \) des de 0 fins arribar a \( bogomult(1, 2) + 2 = 2 + 2 = 4 \), i retorna \( 4 \). </li>
+      <li>\( bogomult(3, 2) \) fa el mateix fins arribar a \( bogomult(2, 2) + 2 = 4 + 2 = 6 \), i retorna \( 6 \). </li>
+      <li>\( bogomult(4, 2) \) fa el mateix fins arribar a \( bogomult(3, 2) + 2 = 6 + 2 = 8 \), i retorna \( 8 \). </li>
+      <li>\( bogomult(5, 2) \) fa el mateix fins arribar a \( bogomult(4, 2) + 2 = 8 + 2 = 10\) i retorna \( 10 \).</li>
+      <li>Descobrim que \(5\cdot 2 = 10\)</li>
     </ol>
     
   </div>
