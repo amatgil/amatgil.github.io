@@ -1,84 +1,85 @@
 @font-face {
-  font-family: 'Iosevka';
-  src:url('/assets/fonts/Iosevka-Bold-Extended-112/Iosevka-Bold-Extended-112.woff') format('woff'),
+    font-family: 'Iosevka';
+    src:url('/assets/fonts/Iosevka-Bold-Extended-112/Iosevka-Bold-Extended-112.woff') format('woff'),
         url('/assets/fonts/Iosevka-Bold-Extended-112/Iosevka-Bold-Extended-112.woff2') format('woff2'),
         url('/assets/fonts/Iosevka-Bold-Extended-112/Iosevka-Bold-Extended-112.svg#Iosevka-Bold-Extended-112') format('svg'),
         url('/assets/fonts/Iosevka-Bold-Extended-112/Iosevka-Bold-Extended-112.eot'),
         url('/assets/fonts/Iosevka-Bold-Extended-112/Iosevka-Bold-Extended-112.eot?#iefix') format('embedded-opentype'),
         url('/assets/fonts/Iosevka-Bold-Extended-112/Iosevka-Bold-Extended-112.ttf') format('truetype');
 
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
-  font-size: 16px;
-  background-color: rgb(54, 58, 79);
-  color: white;
-  font-family: Iosevka;
-  height: 100%;
-  overflow: visible; /*No scroll when cap tot*/
-  display: grid;
+    font-size: 16px;
+    background-color: rgb(54, 58, 79);
+    color: white;
+    font-family: Iosevka;
+    height: 100%;
+    overflow: visible; /*No scroll when cap tot*/
+    display: grid;
 }
 
 button {
-  font-size: inherit;
-  padding: 10px;
-  cursor: pointer;
-  background-color: rgb(54, 58, 79);
-  color: hotpink;
+    font-size: inherit;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(54, 58, 79);
+    color: hotpink;
 
-  border: none;
-  border-color: rgb(54, 58, 79);
-  border-radius: 0.1em;
-  outline-style: solid;
+    border: none;
+    border-color: rgb(54, 58, 79);
+    border-radius: 0.1em;
+    outline-style: solid;
 }
 
 #main-amatgil-title-heading {
-  font-size: 2.3em;
-  margin-top: 0.2em;
-  margin-bottom: 0.4em;
-  vertical-align: middle;
-  max-height: 1em;
+    font-size: 2.3em;
+    margin-top: 0.2em;
+    margin-bottom: 0.4em;
+    vertical-align: middle;
+    max-height: 1em;
 }
 
 #main-amatgil-title {
-  font-family: Iosevka;
-  display: inline;
-  width: fit-content;
-  /*background: -webkit-linear-gradient(#000000BB, #A3A3A3BB, #FFFFFFBB, #800080BB);*/
+    font-family: Iosevka;
+    display: inline;
+    width: fit-content;
+    /*background: -webkit-linear-gradient(#000000BB, #A3A3A3BB, #FFFFFFBB, #800080BB);*/
 
-  -moz-box-align: center;
-  align-items: center;
-  -moz-box-pack: center;
-  justify-content: center;
-  position: relative;
-  vertical-align: middle;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    position: relative;
+    vertical-align: middle;
 
-  border-style: solid;
-  border-width: 0.525em;
-  border-radius: 1.3em;
-  border-color: rgb(147, 154, 183);
+    border-style: solid;
+    border-width: 0.525em;
+    border-radius: 1.3em;
+    border-color: rgb(147, 154, 183);
 
-  margin-top:1.2em;
-  padding-left: 0.5em;
-  padding-right: 0.8em;
+    margin-top:1.2em;
+    padding-left: 0.5em;
+    padding-right: 0.8em;
 
 }
 
 #main-amatgil-title-text {
-  color: white;
+    color: white;
 }
 
 #main-amatgil-logo {
-  align-items: center;
-  justify-content: center;
-  width: 1.3em;
+    align-items: center;
+    justify-content: center;
+    width: 1.3em;
 }
 
 h1 {
-  line-height: 1.2em;
+    color: rgb(245, 169, 127);
+    line-height: 1.2em;
 }
 
 h1 h2 h3 h4 h5 {
@@ -86,69 +87,69 @@ h1 h2 h3 h4 h5 {
 }
 
 .main-content {
-  color: rgb(183, 189, 248);
-  max-width: 70em;
-  line-height: 1.75em;
-  overflow-wrap: break-word;
+    color: rgb(183, 189, 248);
+    max-width: 70em;
+    line-height: 1.75em;
+    overflow-wrap: break-word;
 
-  grid-row-start: 1;
-  grid-row-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 
-  grid-column-start: 2;
-  grid-column-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .home-right-element {
-  grid-row-start: 1;
-  grid-row-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 
-  grid-column-start: 3;
-  grid-column-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
 
-  column-width: 3em;
+    column-width: 3em;
 }
 
 .home-grid-container {
-  display: flex;
-  column-gap: 5em;
-  margin-top:auto;
+    display: flex;
+    column-gap: 5em;
+    margin-top:auto;
 
-  /*grid-template-columns: min-content auto min-content; 
+    /*grid-template-columns: min-content auto min-content; 
   grid-template-rows: auto min-content auto; 
   min-height: 100vh;*/
 }
 
 
 .ifunny-watermark {
-  position: fixed;
+    position: fixed;
 
-  bottom: 0px;
-  right: 0px;
-  height: 10px;
+    bottom: 0px;
+    right: 0px;
+    height: 10px;
 
-  opacity: 0.3;
+    opacity: 0.3;
 }
 
 .loss {
-  position: fixed;
-  top: 0.4em;
-  right: 0.4em;
+    position: fixed;
+    top: 0.4em;
+    right: 0.4em;
 
-  color: rgb(110, 115, 141);
-  font-size: 0.5em;
+    color: rgb(110, 115, 141);
+    font-size: 0.5em;
 
 
-  /* Don't show link */
-  text-decoration: inherit;
+    /* Don't show link */
+    text-decoration: inherit;
 
-  /* Don't compress whitespace */ 
-  white-space: break-spaces;
+    /* Don't compress whitespace */ 
+    white-space: break-spaces;
 }
 
 
 .home-right-image {
-  width: 14em;
+    width: 14em;
 }
 .home-right-multiple-images {
-  grid-column: 3 / 4;
+    grid-column: 3 / 4;
 }
