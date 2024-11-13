@@ -40,8 +40,8 @@ permalink: /bogomult
     <p>La clau d'aquest algorisme és el fet que \(xy = (x-1)y + y\). Aprofitant aquest fet, podem reduir quelsevol parella d'enters a un dels casos base anteriors.</p>
 
     <p>
-      Fixem-nos és el natural \(n\): mentre \(n \lt xy \), l'anem incrementant. Quan arribi a ser exactament \(xy\) sabrem, per definició, que és el resultat desitjat.<br>
       Seguint la hipòtesi d'inducció, sabem que podem calcular \((x-1)y\), i com \(xy = (x-1)y + y\), ho utilitzem com a substituit. <br>
+      Fixem-nos ara en el natural \(n\): mentre \(n \lt xy \), l'anem incrementant. Quan arribi a ser exactament \(xy\) sabrem, per definició, que és el resultat desitjat.<br>
       Finalment, quan ja sabem que \(n = xy\), només cal retornar \(n\).
     </p>
 
