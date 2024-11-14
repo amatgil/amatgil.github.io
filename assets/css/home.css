@@ -61,7 +61,8 @@ button {
     border-radius: 1.3em;
     border-color: rgb(147, 154, 183);
 
-    margin-top:1.2em;
+    margin-left: 0.5em;
+    margin-top: 1.2em;
     padding-left: 0.5em;
     padding-right: 0.8em;
 
@@ -166,4 +167,9 @@ h1, h2, h3, h4, h5 {
     .home-sidebar-area {
         display: none;
     }
+    /* Doesn't center :(
+    #main-amatgil-title {
+        margin: auto;
+    }
+   */
 }
