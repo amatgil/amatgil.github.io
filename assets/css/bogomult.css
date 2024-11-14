@@ -1,10 +1,11 @@
 #bogomult-source {
     display: flex;
-    column-gap: 2em;
+    gap: 2em;
 }
 
 #bogomult-rust-outer, #bogomult-cpp-outer {
     background-color: rgb(30, 32, 48);
+    max-width: fit-content;
     padding: 0em 2em 0em 2em; /* top right bottom left*/
 }
 
@@ -45,4 +46,11 @@
 
 .bogo-punctuation {
     color:#a5a2a2;
+}
+
+@media only screen and (max-width: 82em) {
+    #bogomult-source {
+        flex-direction: column;
+        font-size: 14px;
+    }
 }
