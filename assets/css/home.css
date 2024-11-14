@@ -159,3 +159,11 @@ h1, h2, h3, h4, h5 {
     color: white !important;
     background-color: white !important;
 }
+
+
+/* Responsiveness */
+@media screen and (max-width: 800px) {
+    .home-sidebar-area {
+        display: none;
+    }
+}
