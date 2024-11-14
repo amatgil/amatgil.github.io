@@ -1,0 +1,10 @@
+img {
+    width: 40em;
+    margin-right: 1em;
+}
+
+.catpicture {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
