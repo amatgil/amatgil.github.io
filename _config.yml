@@ -23,7 +23,7 @@ email: amatgilvinyes@gmail.com
 gitlab: https://gitlab.com/amatgilvinyes
 github: https://github.com/amatgil
 description: >- # this means to ignore newlines until "baseurl:"
-  Benvolgut! Aquesta web encara està en construcció; encara no hi ha res interessant.
+  Pàgina web d'Amat Gil
 url: "https://amatgil.cat" # the base hostname & protocol for your site, e.g. http://example.com
 
 include:
