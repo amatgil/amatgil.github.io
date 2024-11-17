@@ -51,6 +51,6 @@
 @media only screen and (max-width: 82em) {
     #bogomult-source {
         flex-direction: column;
-        font-size: 14px;
+        font-size: 15px;
     }
 }
