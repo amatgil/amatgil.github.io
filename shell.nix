@@ -13,7 +13,6 @@ let
 in
 pkgs.mkShell {
   # Get dependencies from the main package
-  inputsFrom = [ (pkgs.callPackage ./default.nix { }) ];
   nativeBuildInputs = packages;
   buildInputs = packages;
   env = {
