@@ -9,6 +9,10 @@ let
     rubyPackages.jekyll-feed
     rubyPackages.jekyll-redirect-from
     bundler
+
+    elmPackages.elm
+    elmPackages.elm-language-server
+#uglify-js
   ];
 in
 pkgs.mkShell {

@@ -1,0 +1,21 @@
+---
+layout: default
+title: Tres en Ratlla
+permalink: /altres/tictactoe
+---
+
+<link rel="stylesheet" href="/subpages/altres/tictactoe/tictactoe.css">
+<!--<script src="/subpages/altres/tictactoe/tictactoe.js"></script>-->
+
+{% include always-present/sidebar.html %}
+<div class="main-content">
+  <div id="tictactoe-holder"></div>
+</div>
+
+
+<script src="/subpages/altres/tictactoe/generated-tictactoe.js"></script>
+<script>
+  var app = Elm.TicTacToe.init({
+    node: document.getElementById('tictactoe-holder')
+  });
+</script>
