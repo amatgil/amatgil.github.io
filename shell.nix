@@ -12,7 +12,8 @@ let
 
     elmPackages.elm
     elmPackages.elm-language-server
-#uglify-js
+    uglify-js
+
   ];
 in
 pkgs.mkShell {
