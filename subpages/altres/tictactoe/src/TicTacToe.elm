@@ -1,148 +1,151 @@
 module TicTacToe exposing (main)
--- import Browser
--- import Html exposing (Html, Attribute, div, input, text, h1)
--- import Html.Attributes exposing (..)
--- import Html.Events exposing (onInput)
-
-
-
--- MAIN
-
--- main =
---   Browser.sandbox { init = init, update = update, view = view }
--- 
--- -- MODEL
--- 
--- type Piece
---     = Empty
---     | X
---     | O
--- 
--- type alias Model =
---     { board : List Piece
---     }
---     
---     
--- init : Model
--- init =
---     { board = List.repeat 9 Empty 
---     }
--- 
--- -- UPDATE
--- 
--- 
--- type Msg
---   = PlacePiece Int Int Piece -- Y X Piece
--- 
--- 
--- update : Msg -> Model -> Model
--- update msg model =
---   case msg of
---       PlacePiece row column p ->
---           model
--- 
--- 
--- 
--- -- VIEW
--- 
--- 
--- view : Model -> Html Msg
--- view model =
---   div []
---     [ h1 [] [text "Testing 123 123" ] 
---     , div [] [ text "hai" ] 
---     ]
-
 import Browser
 import Browser.Events exposing (onAnimationFrameDelta)
-import Canvas exposing (rect, shapes)
+import Canvas exposing (rect, shapes, circle, lineTo, moveTo, path, Point)
 import Canvas.Settings exposing (fill)
 import Canvas.Settings.Advanced exposing (rotate, transform, translate)
 import Color
-import Html exposing (Html, div)
+import Dict
+import Html exposing (Html, div, h1, text)
 import Html.Attributes exposing (style)
+import Catppuccin.Macchiato
 
+
+ -- MODEL
+ 
+type Piece
+    = Empty
+    | X
+    | O
 
 type alias Model =
-    { count : Float }
+    { board : List Piece }
+     
+-- UPDATE
 
 
 type Msg
-    = Frame Float
+  = PlacePiece Int Int Piece -- Y X Piece
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+      PlacePiece row column p ->
+          (model, Cmd.none)
+
+
 
 
 main : Program () Model Msg
 main =
     Browser.element
-        { init = \() -> ( { count = 0 }, Cmd.none )
+        { init =  \() -> ({ board = List.repeat 9 Empty }, Cmd.none)
+        , subscriptions = subscriptions
         , view = view
-        , update =
-            \msg model ->
-                case msg of
-                    Frame _ ->
-                        ( { model | count = model.count + 1 }, Cmd.none )
-        , subscriptions = \model -> onAnimationFrameDelta Frame
+        , update = update
         }
 
 
+width : number
 width =
-    400
+    800
 
 
+height : number
 height =
-    400
+    width
 
-
+centerX : Float
 centerX =
     width / 2
 
 
+centerY : Float
 centerY =
     height / 2
 
 
 view : Model -> Html Msg
-view { count } =
+view model =
     div
-        [ style "display" "flex"
-        , style "justify-content" "center"
+        [ style "justify-content" "center"
         , style "align-items" "center"
         ]
-        [ Canvas.toHtml
+        [ h1 [ ] [ text "Tres en Ratlla" ]
+        , Canvas.toHtml
             ( width, height )
             [ style "border" "10px solid rgba(0,0,0,0.1)" ]
             [ clearScreen
-            , render count
+            , renderGrid
+            , render model
             ]
         ]
 
 
+clearScreen : Canvas.Renderable
 clearScreen =
-    shapes [ fill Color.white ] [ rect ( 0, 0 ) width height ]
+    shapes [ fill (Catppuccin.Macchiato.subtext0) ] [ rect ( 0, 0 ) width height ]
 
-
-render count =
+renderGrid : Canvas.Renderable
+renderGrid =
     let
-        size =
-            width / 3
-
-        x =
-            -(size / 2)
-
-        y =
-            -(size / 2)
-
-        rotation =
-            degrees (count * 3)
-
-        hue =
-            toFloat (count / 4 |> floor |> modBy 100) / 100
+        padProp = 0.95
+        padWidthMin = width * (1 - padProp)
+        padHeightMin = height * (1 - padProp)
+        padWidthMax = width * padProp
+        padHeightMax = height * padProp
     in
     shapes
-        [ transform
-            [ translate centerX centerY
-            , rotate rotation
-            ]
-        , fill (Color.hsl hue 0.3 0.7)
+        []
+        [ path ( 1 * width/3, padHeightMin) [ lineTo (1 * width/3, padHeightMax)]
+        , path ( 2 * width/3, padHeightMin) [ lineTo (2 * width/3, padHeightMax)]
+        , path ( padWidthMin, 1 * height/3 ) [ lineTo (padWidthMax, 1 * height/3 )]
+        , path ( padWidthMin, 2 * height/3 ) [ lineTo (padWidthMax, 2 * height/3 )]
         ]
-        [ rect ( x, y ) size size ]
+
+crossShape : Point -> Float -> Float -> Canvas.Shape
+crossShape topleft w h =
+    let
+        pad = 0.9
+        trueLeft = (Tuple.first topleft)
+        trueTop = (Tuple.second topleft)
+        left = trueLeft + (w * (1 - pad))
+        top = trueTop + (h * (1 - pad))
+        right = trueLeft + (w * pad)
+        bottom = trueTop + (h * pad)
+    in
+    path (left, top)
+        [ lineTo (right, bottom)
+        , moveTo (left, bottom)
+        , lineTo (right, top)
+        ]
+
+circleShape : Point -> Float -> Float -> Canvas.Shape
+circleShape topleft w h =
+    let
+        pad = 0.9
+        trueLeft = (Tuple.first topleft)
+        trueTop = (Tuple.second topleft)
+        center_horizontal = trueLeft + w / 2
+        center_vertical = trueTop + h / 2
+    in
+        circle (center_horizontal, center_vertical) (w*pad / 2)
+        
+render : Model -> Canvas.Renderable
+render { board } =
+    let
+        wThird = (toFloat width) / 3.0
+        hThird = (toFloat height) / 3.0
+    in
+    shapes
+        []
+        [ crossShape (wThird, 0) wThird hThird
+        , circleShape (0, hThird) wThird hThird
+        ]
+
+-- SUBSCRIPTIONS
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  Sub.none

@@ -15,7 +15,8 @@
             "elm/time": "1.0.0",
             "ianmackenzie/elm-geometry": "4.0.0",
             "joakin/elm-canvas": "5.0.0",
-            "mpizenberg/elm-pointer-events": "5.0.0"
+            "mpizenberg/elm-pointer-events": "5.0.0",
+            "noordstar/elm-palette": "1.0.0"
         },
         "indirect": {
             "elm/bytes": "1.0.8",

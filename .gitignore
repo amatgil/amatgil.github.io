@@ -9,3 +9,4 @@ _knowledgeForMe
 .swp
 .direnv
 elm-stuff
+/subpages/altres/tictactoe/generated-tictactoe.js
