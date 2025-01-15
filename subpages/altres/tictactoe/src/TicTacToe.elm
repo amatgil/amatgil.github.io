@@ -1,7 +1,7 @@
 module TicTacToe exposing (main)
 import Browser
 import Browser.Events exposing (onAnimationFrameDelta)
-import Canvas exposing (rect, shapes, circle, lineTo, moveTo, path, Point)
+import Canvas exposing (rect, shapes, circle, lineTo, moveTo, path, Point, arc)
 import Canvas.Settings exposing (fill)
 import Canvas.Settings.Advanced exposing (rotate, transform, translate)
 import Color
@@ -77,7 +77,8 @@ view model =
             [ style "border" "10px solid rgba(0,0,0,0.1)" ]
             [ clearScreen
             , renderGrid
-            , render model
+            , renderCircles model
+            , renderCrosses model
             ]
         ]
 
@@ -126,13 +127,31 @@ circleShape topleft w h =
         pad = 0.9
         trueLeft = (Tuple.first topleft)
         trueTop = (Tuple.second topleft)
+        left = trueLeft + (w * (1 - pad))
+        top = trueTop + (h * (1 - pad))
+        right = trueLeft + (w * pad)
+        bottom = trueTop + (h * pad)
         center_horizontal = trueLeft + w / 2
         center_vertical = trueTop + h / 2
+        radius =  w*pad / 2
     in
-        circle (center_horizontal, center_vertical) (w*pad / 2)
+        --arc (left, center_vertical) radius {startAngle = degrees 0, endAngle = degrees 180, clockwise = True}
+        circle (center_horizontal, center_horizontal) radius
+            
         
-render : Model -> Canvas.Renderable
-render { board } =
+renderCircles : Model -> Canvas.Renderable
+renderCircles { board } =
+    let
+        wThird = (toFloat width) / 3.0
+        hThird = (toFloat height) / 3.0
+    in
+    shapes
+        [ fill Color.white ]
+        [ circleShape (wThird, hThird) wThird hThird
+        ]
+
+renderCrosses : Model -> Canvas.Renderable
+renderCrosses { board } =
     let
         wThird = (toFloat width) / 3.0
         hThird = (toFloat height) / 3.0
@@ -140,12 +159,11 @@ render { board } =
     shapes
         []
         [ crossShape (wThird, 0) wThird hThird
-        , circleShape (0, hThird) wThird hThird
         ]
 
 -- SUBSCRIPTIONS
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
+subscriptions _ =
   Sub.none
