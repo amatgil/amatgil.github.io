@@ -43,7 +43,7 @@ function popula_presets() {
         select.add(option);
     }
     const res = document.getElementById('resultat-final');
-    res.innerHtml = "";
+    res.textContent = "<No Info>";
 }
 
 document.addEventListener('DOMContentLoaded', popula_presets, false);
