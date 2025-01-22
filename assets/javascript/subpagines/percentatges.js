@@ -42,6 +42,8 @@ function popula_presets() {
         const option = new Option(nomAssig, nomAssig);
         select.add(option);
     }
+    const res = document.getElementById('resultat-final');
+    res.innerHtml = "";
 }
 
 document.addEventListener('DOMContentLoaded', popula_presets, false);
@@ -58,23 +60,21 @@ function update_boxes_in_valors() {
     const [nomsElements, ponderacions] = presets[volem];
 
     for (var i = 0; i < nomsElements.length; ++i) {
-        //var newDiv = document.createElement("div");
-        valors.classList.add("entrada-valor");
-
         var newDivText = document.createElement("p");
         newDivText.classList.add("entrada-valor-text");
-
-        // TODO: add all ponderacions as children and a style tag
-
         newDivText.textContent = nomsElements[i];
-        newDiv.appendChild(newDivText);
+        newDivText.style.gridRowStart = i.toString();
+        newDivText.style.gridRowEnd = (i+1).toString();
+        newDivText.style.gridColumnStart = "0";
+        newDivText.style.gridColumnEnd = "1";
 
-        for (var j = 0; j < ponderacions.length; ++j) {
-            var newDivPondOp = document.createElement("textarea");
-            newDiv.appendChild(newDivPondOp);
-        }
+        var newDivPondOp = document.createElement("textarea");
+        newDivPondOp.style.gridColumnStart = "1";
+        newDivPondOp.style.gridColumnEnd = "2";
 
-        valors.appendChild(newDiv);
+
+        valors.appendChild(newDivPondOp);
+        valors.appendChild(newDivText);
     }
     
 

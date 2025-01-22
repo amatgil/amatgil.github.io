@@ -2,10 +2,6 @@
     display: grid;
 }
 
-.entrada-valor {
-    display: flex;
-}
-
 .entrada-valor-text {
     margin-right: 1em;
 }
