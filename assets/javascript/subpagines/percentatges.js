@@ -80,3 +80,21 @@ function update_boxes_in_valors() {
 
 }
 
+function computa_preset() {
+    const volem = document.getElementById("preset-select").value;
+    const [nomsElements, ponderacions] = presets[volem];
+    const valors_raw = document.getElementById('container-valors').children;
+
+    var valors = [];
+
+    for (var i = 0; i < valors_raw.length; ++i) {
+        const raw = valors_raw[i];
+        console.log(raw);
+        if ((typeof raw) == "textarea") { // this IF is wrong
+            const v = raw.value;
+            console.log(v);
+            valors.push(v);
+        }
+    }
+    console.log(valors);
+}
