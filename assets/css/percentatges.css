@@ -1,11 +1,31 @@
 #container-valors {
     display: grid;
+    align-items: center;
+    width: 25em;
 }
 
 .entrada-valor-text {
     margin-right: 1em;
 }
 
+.entrada-valor-input, #preset-select {
+    -moz-appearance: textfield; /* Les fletxetes get YOTE (firefox) */
+    border-style: solid;
+    border-color:  #939ab7;
+    background-color: #24273a;
+    border-width: 2px;
+    color: inherit;
+
+    outline-color:  #8aadf4;
+}
+.entrada-valor-input {
+    max-width: 12em;
+    max-height: 2em;
+    width: 7em;
+
+}
+
 #preset-select {
     margin-bottom: 2em;
+    max-height: 2em;
 }

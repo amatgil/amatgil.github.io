@@ -68,9 +68,11 @@ function update_boxes_in_valors() {
         newDivText.style.gridColumnStart = "0";
         newDivText.style.gridColumnEnd = "1";
 
-        var newDivPondOp = document.createElement("textarea");
+        var newDivPondOp = document.createElement("input");
         newDivPondOp.style.gridColumnStart = "1";
         newDivPondOp.style.gridColumnEnd = "2";
+        newDivPondOp.type = "number";
+        newDivPondOp.classList.add("entrada-valor-input");
         newDivPondOp.setAttribute('oninput','computa_preset()');
         valors.appendChild(newDivPondOp);
         valors.appendChild(newDivText);
@@ -105,7 +107,7 @@ function computa_preset() {
     for (var i = 0; i < valors_raw.length; ++i) {
         const raw = valors_raw[i];
         console.log(raw);
-        if (raw.type == "textarea") { // this IF is wrong
+        if (raw.type == "input") { // this IF is wrong
             const v = raw.value;
             console.log(v);
             valors.push(v);
