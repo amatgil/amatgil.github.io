@@ -1,5 +1,21 @@
 
 
+/* `presets` és un mapa tal que la clau és el nom de l'assignatura (l'string que apareixerà
+ * al dropdown) i el valor és un array de dos elements:
+ * - els noms de cada acta evaluable (`NOMSACTES`)
+ * - un array que conté sub-arrays de la mateixa mida que `NOMSACTES`. Cada subarray representa un possible
+ *   camí per aconseguir la nota. Al calcular-se, es farà el màxim de tots (post-càlcul)
+ * 
+ * Recordeu que les ponderacions son sobre 100, no sobre 1!!
+ * Exemple:
+ * ```
+ *  "XC": [
+ *      ["Mitjana Controls Lab", "Examen Final Lab", "Control 1", "Final"],
+ *      [[15,                     15,                 21,          49],
+ *      [ 15,                     15,                 0,           70]]
+ *  ],
+ * ```
+ */
 const presets = {
     "IDI": [
         ["Prova Lab", "Prova Teoria 1", "Prova Teoria 2"],
@@ -27,7 +43,7 @@ const presets = {
     "XC": [
         ["Mitjana Controls Lab", "Examen Final Lab", "Control 1", "Final"],
         [[15,                     15,                 21,          49],
-        [15,                     15,                 0,           70]]
+        [ 15,                     15,                 0,           70]]
     ],
 };
 
