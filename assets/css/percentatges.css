@@ -5,10 +5,12 @@
 }
 
 .entrada-valor-text {
+    font-size: 20px;
     margin-right: 1em;
 }
 
 .entrada-valor-input, #preset-select {
+    font-size: 20px;
     -moz-appearance: textfield; /* Les fletxetes get YOTE (firefox) */
     border-style: solid;
     border-color:  #939ab7;
@@ -19,6 +21,7 @@
     outline-color:  #8aadf4;
 }
 .entrada-valor-input {
+    font-size: 20px;
     max-width: 12em;
     max-height: 2em;
     width: 7em;
@@ -29,6 +32,8 @@
 #preset-select {
     margin-bottom: 2em;
     max-height: 2em;
+    max-width: 15em;
+    width: 12em;
 }
 
 #resultat-final {
@@ -36,7 +41,7 @@
 }
 
 #nota-final-tag {
-    color: #ed8796;
+    color: #ff8796;
     font-size: 18px;
 }
 

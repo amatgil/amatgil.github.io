@@ -115,7 +115,7 @@ function computa_preset() {
         var acc = 0;
         for (var i = 0; i < valors.length; ++i) {
             const ponderacio = ponderacions[p][i] / 100;
-            var nota = parseInt(valors[i]);
+            var nota = parseFloat(valors[i]);
             if (valors[i] == "") nota = 0;
             acc += ponderacio * nota
         }
@@ -138,7 +138,8 @@ function computa_preset() {
 function genera_text_explicacio(noms, ponderacions) {
     var res = "";
     for (var i = 0; i < noms.length; ++i) {
-        res += noms[i] + " " + "(" + ponderacions[i] + "%" + ")";
+        const pondPretty = Math.round(ponderacions[i] * 100) / 100;
+        res += noms[i] + " " + "(" + pondPretty + "%" + ")";
         if (i != noms.length-1) res += " + ";
     }
 
