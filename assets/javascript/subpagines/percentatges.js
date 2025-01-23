@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', popula_presets, false);
 
 function update_boxes_in_valors() {
     const volem = document.getElementById("preset-select").value;
-    console.log(volem);
     if (volem == "") return;
 
     // Borrem el temari anterior
@@ -106,11 +105,8 @@ function computa_preset() {
 
     for (var i = 0; i < valors_raw.length; ++i) {
         const raw = valors_raw[i];
-        console.log(raw);
-        if (raw.type == "input") { // this IF is wrong
-            const v = raw.value;
-            console.log(v);
-            valors.push(v);
+        if (raw.tagName == "INPUT") {
+            valors.push(raw.value);
         }
     }
 
@@ -119,7 +115,8 @@ function computa_preset() {
         var acc = 0;
         for (var i = 0; i < valors.length; ++i) {
             const ponderacio = ponderacions[p][i] / 100;
-            const nota = parseInt(valors[i]);
+            var nota = parseInt(valors[i]);
+            if (valors[i] == "") nota = 0;
             acc += ponderacio * nota
         }
 
@@ -135,7 +132,7 @@ function computa_preset() {
     }
 
 
-    console.log("Abans de fer el màxim, les notes eren: ", resultats);
+    console.log("Abans de fer el màxim, les opcions de notes eren: ", resultats);
 }
 
 function genera_text_explicacio(noms, ponderacions) {

@@ -22,10 +22,25 @@
     max-width: 12em;
     max-height: 2em;
     width: 7em;
+    height: 1.5em;
 
 }
 
 #preset-select {
     margin-bottom: 2em;
     max-height: 2em;
+}
+
+#resultat-final {
+    font-size: 20px;
+}
+
+#nota-final-tag {
+    color: #ed8796;
+    font-size: 18px;
+}
+
+#resultat-holder {
+    margin-top: 2em;
+    margin-bottom: 3em;
 }
