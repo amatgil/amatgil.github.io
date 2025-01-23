@@ -71,13 +71,28 @@ function update_boxes_in_valors() {
         var newDivPondOp = document.createElement("textarea");
         newDivPondOp.style.gridColumnStart = "1";
         newDivPondOp.style.gridColumnEnd = "2";
-
-
+        newDivPondOp.setAttribute('oninput','computa_preset()');
         valors.appendChild(newDivPondOp);
         valors.appendChild(newDivText);
     }
-    
 
+
+    const elemExplicacio = document.getElementById("calcul-fet");
+
+    var explicacioTextAcc = "";
+
+    if (ponderacions.length > 1) {
+        explicacioTextAcc += "max("
+        for (var p = 0; p < ponderacions.length; ++p) {
+            explicacioTextAcc += genera_text_explicacio(nomsElements, ponderacions[p]);
+            explicacioTextAcc += ","
+        }
+        explicacioTextAcc += ")"
+    } else {
+        explicacioTextAcc += genera_text_explicacio(nomsElements, ponderacions[0]);
+    }
+
+    elemExplicacio.textContent = explicacioTextAcc;
 }
 
 function computa_preset() {
@@ -90,11 +105,43 @@ function computa_preset() {
     for (var i = 0; i < valors_raw.length; ++i) {
         const raw = valors_raw[i];
         console.log(raw);
-        if ((typeof raw) == "textarea") { // this IF is wrong
+        if (raw.type == "textarea") { // this IF is wrong
             const v = raw.value;
             console.log(v);
             valors.push(v);
         }
     }
-    console.log(valors);
+
+    var resultats = [];
+    for (var p = 0; p < ponderacions.length; ++p) {
+        var acc = 0;
+        for (var i = 0; i < valors.length; ++i) {
+            const ponderacio = ponderacions[p][i] / 100;
+            const nota = parseInt(valors[i]);
+            acc += ponderacio * nota
+        }
+
+        resultats.push(acc);
+    }
+    const elemResultat = document.getElementById("resultat-final");
+    const notaFinal = Math.round(Math.max(resultats) * 100) / 100;
+
+    if (Number.isNaN(notaFinal)) {
+        elemResultat.textContent = "<Entrada invàlida>";
+    } else {
+        elemResultat.textContent = notaFinal;
+    }
+
+
+    console.log("Abans de fer el màxim, les notes eren: ", resultats);
+}
+
+function genera_text_explicacio(noms, ponderacions) {
+    var res = "";
+    for (var i = 0; i < noms.length; ++i) {
+        res += noms[i] + " " + "(" + ponderacions[i] + "%" + ")";
+        if (i != noms.length-1) res += " + ";
+    }
+
+    return res;
 }
