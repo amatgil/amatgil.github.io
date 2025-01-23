@@ -85,7 +85,7 @@ function update_boxes_in_valors() {
         explicacioTextAcc += "max("
         for (var p = 0; p < ponderacions.length; ++p) {
             explicacioTextAcc += genera_text_explicacio(nomsElements, ponderacions[p]);
-            explicacioTextAcc += ","
+            if (p != ponderacions.length - 1) explicacioTextAcc += ", \n"
         }
         explicacioTextAcc += ")"
     } else {
