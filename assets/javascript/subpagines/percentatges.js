@@ -139,7 +139,7 @@ function computa_preset() {
         resultats.push(acc);
     }
     const elemResultat = document.getElementById("resultat-final");
-    const notaFinal = Math.round(Math.max(resultats) * 100) / 100;
+    const notaFinal = Math.round(100 * Math.max.apply(null, resultats)) / 100;
 
     if (Number.isNaN(notaFinal)) {
         elemResultat.textContent = "<Entrada invàlida>";
@@ -148,7 +148,7 @@ function computa_preset() {
     }
 
 
-    console.log("Abans de fer el màxim, les opcions de notes eren: ", resultats);
+    console.log("Abans de fer el màxim, les opcions de notes eren: ", resultats, "i s'hi ha triat", notaFinal);
 }
 
 function genera_text_explicacio(noms, ponderacions) {
