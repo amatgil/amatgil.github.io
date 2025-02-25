@@ -15,8 +15,8 @@ export function updateTime() {
     setTimeout(updateTime, 200);
 }
 
-function weee() {
-    console.log("Wheeing");
+export function weee() {
+    console.log("Weeing: engaged");
     let e = document.getElementById('wahoo');
     e.style.display = 'inline';
     e.classList.add("wahoo-class");

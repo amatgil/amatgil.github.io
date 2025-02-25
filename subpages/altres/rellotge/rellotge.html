@@ -14,6 +14,7 @@ permalink: /altres/rellotge
 </div>
 
 <script type="module">
-  import { updateTime } from "/subpages/altres/rellotge/rellotge.js";
+  import { updateTime, weee } from "/subpages/altres/rellotge/rellotge.js";
+  window.weee = weee; // For being able to run it without needing the exact time
   updateTime(); // loop go brrr
 </script>
