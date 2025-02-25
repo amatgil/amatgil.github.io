@@ -1,0 +1,19 @@
+---
+layout: default
+title: Rellotge
+permalink: /altres/rellotge
+---
+
+<link rel="stylesheet" href="/subpages/altres/rellotge/rellotge.css">
+
+{% include always-present/sidebar.html %}
+<div class="main-content">
+  <h1>Són les...</h1>
+  <p id="time-container">loading :3</p>
+  <img id="wahoo" src="/assets/media/tada.png"></img>
+</div>
+
+<script type="module">
+  import { updateTime } from "/subpages/altres/rellotge/rellotge.js";
+  updateTime(); // loop go brrr
+</script>
