@@ -4,6 +4,7 @@ Benvolgut!
 
 Encara no hi ha res interessant, per aquesta zona
 
+NO AI WAS USED FOR ANY PURPOSE IN THE CREATION OF THIS PROJECT
 
 ## TODO
 - [X] Footer amb informació de contacte (nom, github/lab, etc.)
