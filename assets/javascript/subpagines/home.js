@@ -61,10 +61,13 @@ function loadLightModeStyle() {
 function toggleLightModeStyle() {
     var xs = document.getElementsByTagName('*');
     for (var i = xs.length; i--;) {
+        console.log(xs[i]);
+        if (xs[i].id == "light-mode-toggler") continue;
+
         xs[i].classList.toggle("very-light-mode");
     }
 
-    if (xs[0].classList.contains("very-light-mode")) {
+    if (getCookie("veryLightMode") == "true") {
         var bang = new Audio('/assets/media/flashbang.mp3');
         bang.play();
     }

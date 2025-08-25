@@ -11,12 +11,21 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'APL387';
+    src: url('/assets/fonts/APL387.woff2') format('woff2'),
+
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
-    font-size: 16px;
+    font-size: 17px;
     background-color: rgb(54, 58, 79);
     color: white;
-    font-family: Iosevka;
+    font-family: APL387;
+    font-weight: 800;
     height: 100%;
     overflow: visible; /*No scroll when cap tot*/
     display: grid;
@@ -29,6 +38,7 @@ button {
     background-color: rgb(54, 58, 79);
     color: hotpink;
 
+    margin-top: 0.4em;
     border: none;
     border-color: rgb(54, 58, 79);
     border-radius: 0.1em;
@@ -98,6 +108,8 @@ h1, h2, h3, h4, h5 {
 
     grid-column-start: 2;
     grid-column-end: 3;
+
+    margin-top: 1.4em; /*Align with sidebar title*/
 }
 
 .home-right-element {
@@ -154,6 +166,7 @@ h1, h2, h3, h4, h5 {
 }
 .home-right-multiple-images {
     grid-column: 3 / 4;
+    margin-right: 1em;
 }
 
 .very-light-mode {

@@ -1,6 +1,8 @@
-.sidebar-button {
+.sidebar-button, #light-mode-toggler {
   text-align: center;
-  text-indent: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: APL387;
 
   border: none;
   cursor: pointer;

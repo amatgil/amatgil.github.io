@@ -1,8 +1,11 @@
 
 /* Style The Dropdown Button */
-button.dropbtn {
-  font-size: 19px;
-  font-family: inherit;
+.dropbtn {
+  font-size: 18px;
+
+  font-family: Apl387;
+  font-weight: 800;
+
   padding: 10px;
   cursor: pointer;
   color: hotpink;
@@ -22,6 +25,7 @@ button.dropbtn {
   position: relative;
   display: inline-block;
   font-size: 15px;
+  margin-top: 0.4em;
 }
 
 /* Dropdown Content (Hidden by Default) */
