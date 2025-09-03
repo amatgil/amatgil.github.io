@@ -22,7 +22,7 @@ function inputhandler() {
     entrada.addEventListener("keyup", ({key}) => {
         if (key === "Enter") {
             if (entrada.value == "") {
-                console.log("no")
+                console.log("(whoops, invalid)")
                 return;
             } 
             if (isInputCorrect(challenge.innerText, Number(entrada.value))) {
@@ -40,8 +40,6 @@ function inputhandler() {
 
 
 function putintothething() {
-    console.log(entrada.value);
-    console.log(challenge.innerText);
     entrada.value = fromChar(challenge.innerText).toString();
 }
 
