@@ -28,7 +28,15 @@ function inputhandler() {
             if (isInputCorrect(challenge.innerText, Number(entrada.value))) {
                 feedback.innerHTML = 'Correcte! '.concat(challenge.innerText).concat('←').concat(entrada.value)
                 feedback.style.color = "#048A47"
-                challenge.innerText = toChar(getRandomInt(26))
+                let oldc = challenge.innerText;
+                while (true) {
+                    let newc = toChar(getRandomInt(parseInt(rangselec.value)+1));
+
+                    if (newc != oldc) {
+                        challenge.innerText = newc;
+                        break;
+                    }
+                }
             } else {
                 feedback.innerHTML = "Incorrecte :("
                 feedback.style.color = "#DA6573"

@@ -1,4 +1,4 @@
-#entrada {
+#entrada, #rangselec {
   -moz-appearance: textfield; /* Les fletxetes get YOTE (firefox) */
   border-style: solid;
   border-color:  #939ab7;
@@ -9,6 +9,10 @@
   outline-color:  #8aadf4;
 
   font-size: 20px;
+}
+
+#rangselec {
+    text-align: center;
 }
 
 #challenge {
