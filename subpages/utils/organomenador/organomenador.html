@@ -1,0 +1,15 @@
+---
+layout: default
+title: organomenador
+permalink: /utils/organomenador
+---
+
+{% include always-present/sidebar.html %}
+<link rel="stylesheet" href="/subpages/utils/organomenador/organomenador.css">
+<script src="/subpages/utils/organomenador/organomenador.js"></script>
+
+<div class="main-content">
+  <canvas id="glcanvas" tabindex='1'></canvas>
+  <script src="https://not-fl3.github.io/miniquad-samples/gl.js"></script>
+  <script>load("/assets/wasm/utils/organomenador/organomenador.wasm");</script> 
+</div>
